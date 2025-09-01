@@ -9,6 +9,14 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@heroui/navbar";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+} from "@heroui/drawer";
+
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
@@ -19,6 +27,7 @@ import {
   RiArrowRightSLine,
   RiTiktokFill,
   RiInstagramFill,
+  RiArrowDownSLine,
 } from "react-icons/ri";
 
 export const Navbar = () => {
@@ -43,6 +52,8 @@ export const Navbar = () => {
   //   />
   // );
 
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
       {/* nav izquierda */}
@@ -63,7 +74,7 @@ export const Navbar = () => {
         <div className="hidden sm:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item, index) => (
             <NavbarItem key={item.href}>
-              {index > 0 && index < siteConfig.navItems.length - 1 ? (
+              {index < siteConfig.navItems.length - 1 ? (
                 <Link
                   className={clsx(
                     linkStyles({ color: "foreground" }),
@@ -75,7 +86,17 @@ export const Navbar = () => {
                   {item.label}
                 </Link>
               ) : (
-                ""
+                <Link
+                  className={clsx(
+                    linkStyles({ color: "primary" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  )}
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
+                  <RiArrowDownSLine className="text-2xl" />
+                </Link>
               )}
             </NavbarItem>
           ))}
@@ -125,6 +146,7 @@ export const Navbar = () => {
         <NavbarMenuToggle />
       </NavbarContent>
 
+      {/* menu hamburgesa */}
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
