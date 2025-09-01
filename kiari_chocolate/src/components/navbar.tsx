@@ -1,5 +1,3 @@
-import { Button } from "@heroui/button";
-import { Link } from "@heroui/link";
 import {
   Navbar as HeroUINavbar,
   NavbarBrand,
@@ -9,25 +7,20 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerBody,
-  DrawerFooter,
-} from "@heroui/drawer";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
 
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
+import MenuDrawer from "./menu_drawer";
 import { Logo } from "@/components/icons";
 import {
   RiArrowRightSLine,
   RiTiktokFill,
   RiInstagramFill,
-  RiArrowDownSLine,
 } from "react-icons/ri";
 
 export const Navbar = () => {
@@ -51,8 +44,6 @@ export const Navbar = () => {
   //     type="search"
   //   />
   // );
-
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
@@ -86,17 +77,18 @@ export const Navbar = () => {
                   {item.label}
                 </Link>
               ) : (
-                <Link
-                  className={clsx(
-                    linkStyles({ color: "primary" }),
-                    "data-[active=true]:text-primary data-[active=true]:font-medium"
-                  )}
-                  color="foreground"
-                  href={item.href}
-                >
-                  {item.label}
-                  <RiArrowDownSLine className="text-2xl" />
-                </Link>
+                // <Link
+                //   className={clsx(
+                //     linkStyles({ color: "primary" }),
+                //     "data-[active=true]:text-primary data-[active=true]:font-medium"
+                //   )}
+                //   color="foreground"
+                //   href={item.href}
+                // >
+                //   {item.label}
+                //   <RiArrowDownSLine className="text-2xl" />
+                // </Link>
+                <MenuDrawer />
               )}
             </NavbarItem>
           ))}
