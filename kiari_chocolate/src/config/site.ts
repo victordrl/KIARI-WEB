@@ -11,6 +11,14 @@ import { articulos } from "./articulos";
 
 export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
+export const baner_1 = {
+  bg_img: "default.png",
+  mini_titulo: "Sabor",
+  titulo: "Bienvenido a KIARI",
+  text: "Transformamos el pescado en una experiencia deliciosa y saludable para todos.",
+  href: "/",
+};
+
 export const siteConfig = {
   name: "Kiari Shop House J&L",
   description: "Descubre la frescura del pescado KIARI",
