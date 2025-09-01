@@ -21,15 +21,21 @@ import {
   RiInstagramFill,
 } from "react-icons/ri";
 
-export default function DefaultLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode;
-}) {
+  backgroundUrl?: string;
+}
+
+export default function DefaultLayout({ children, backgroundUrl }: Props) {
   return (
     <div className="relative flex flex-col h-screen">
       <MiNavbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
+      <main
+        className="container mx-auto max-w-7xl px-6 flex-grow pt-16 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : "",
+        }}
+      >
         {children}
       </main>
       <footer className="flex flex-col justify-between items-center w-full bg-primary-400 dark:bg-primary-300">

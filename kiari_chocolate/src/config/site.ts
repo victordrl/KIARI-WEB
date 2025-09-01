@@ -9,6 +9,8 @@ import {
 } from "react-icons/ri";
 import { articulos } from "./articulos";
 
+export const giftDefault = "https://i.gifer.com/fxoU.gif";
+
 export const siteConfig = {
   name: "Kiari Shop House J&L",
   description: "Descubre la frescura del pescado KIARI",
