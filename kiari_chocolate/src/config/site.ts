@@ -9,61 +9,54 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Productos",
+      href: "/productos",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Nosotros",
+      href: "/nosotros",
+    },
+    {
+      label: "Explora",
+      href: "/",
+    },
+  ],
+  navMenuItems: [
+    {
+      label: "Productos",
+      href: "/productos",
+    },
+    {
+      label: "Recetas",
+      href: "/recetas",
+    },
+    {
+      label: "Articulos",
+      href: "/articulos",
+    },
+    {
+      label: "Testimonios",
+      href: "/testimonios",
+    },
+    {
+      label: "Nosotros",
+      href: "/nosotros",
+    },
+    {
+      label: "Distribuidores",
+      href: "/distribuidores",
     },
     {
       label: "Blog",
       href: "/blog",
     },
     {
-      label: "About",
-      href: "/about",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Contactanos",
+      href: "#",
     },
   ],
   links: {
-    github: "https://github.com/frontio-ai/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    ig: "https://www.instagram.com/kiarichocolate",
+    tiktok: "https://www.tiktok.com/@kiarichocolate",
   },
 };
