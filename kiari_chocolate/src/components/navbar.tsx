@@ -77,17 +77,6 @@ export const Navbar = () => {
                   {item.label}
                 </Link>
               ) : (
-                // <Link
-                //   className={clsx(
-                //     linkStyles({ color: "primary" }),
-                //     "data-[active=true]:text-primary data-[active=true]:font-medium"
-                //   )}
-                //   color="foreground"
-                //   href={item.href}
-                // >
-                //   {item.label}
-                //   <RiArrowDownSLine className="text-2xl" />
-                // </Link>
                 <MenuDrawer />
               )}
             </NavbarItem>
@@ -105,7 +94,7 @@ export const Navbar = () => {
             href={siteConfig.links.ig}
             title="instagram"
           >
-            <RiInstagramFill className="text-default-500 text-2xl" />
+            <RiInstagramFill className="text-default-500 size-6" />
           </Link>
           <Link
             className="px-2"
@@ -113,7 +102,7 @@ export const Navbar = () => {
             href={siteConfig.links.tiktok}
             title="tiktok"
           >
-            <RiTiktokFill className="text-default-500 text-2xl" />
+            <RiTiktokFill className="text-default-500 size-6" />
           </Link>
           <ThemeSwitch className=" hidden sm:block" />
         </NavbarItem>
@@ -124,7 +113,7 @@ export const Navbar = () => {
             as={Link}
             className="text-sm font-semibold text-default-600 bg-default-100"
             href="#"
-            endContent={<RiArrowRightSLine className="text-primary text-2xl" />}
+            endContent={<RiArrowRightSLine className="text-primary size-6" />}
             variant="flat"
           >
             Contactar
