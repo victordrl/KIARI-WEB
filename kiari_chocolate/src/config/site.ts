@@ -11,7 +11,7 @@ import { articulos } from "./articulos";
 
 export const siteConfig = {
   name: "Kiari Shop House J&L",
-  description: "Goku le gana",
+  description: "Descubre la frescura del pescado KIARI",
   exploraItems: {
     prod: [
       {
@@ -124,6 +124,24 @@ export const siteConfig = {
     {
       label: "Contactanos",
       href: "#",
+    },
+  ],
+  footerItem: [
+    {
+      label: "Inicio",
+      href: "/",
+    },
+    {
+      label: "Productos",
+      href: "/productos",
+    },
+    {
+      label: "Nosotros",
+      href: "/nosotros",
+    },
+    {
+      label: "Testimonios",
+      href: "/testimonios",
     },
   ],
   links: {

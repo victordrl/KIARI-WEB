@@ -23,7 +23,7 @@ import {
   RiInstagramFill,
 } from "react-icons/ri";
 
-export const Navbar = () => {
+export const MiNavbar = () => {
   // const searchInput = (
   //   <Input
   //     aria-label="Search"
@@ -46,7 +46,7 @@ export const Navbar = () => {
   // );
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar maxWidth="xl" isBordered position="sticky">
       {/* nav izquierda */}
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         {/* logo y titulo */}
