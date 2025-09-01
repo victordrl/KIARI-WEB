@@ -60,7 +60,7 @@ export default function DefaultLayout({
               ))}
             </div>
           </div>
-          <div className="flex flex-col justify-center gap-4 ">
+          <div className="flex md:flex-col flex-row justify-center gap-4 ">
             <Link
               className="font-mono text-default-600 px-2 gap-1"
               isExternal

@@ -46,7 +46,7 @@ export const MiNavbar = () => {
   // );
 
   return (
-    <HeroUINavbar maxWidth="xl" isBordered position="sticky">
+    <HeroUINavbar isBordered isBlurred maxWidth="xl" position="sticky">
       {/* nav izquierda */}
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         {/* logo y titulo */}
