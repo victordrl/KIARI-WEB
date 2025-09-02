@@ -1,8 +1,9 @@
-import { baner_1, giftDefault, inicio } from "@/config/site";
+import { baner_1, giftDefault, inicio, triptico } from "@/config/site";
 import { MiNavbar } from "@/components/navbar";
 import Inicio from "@/layouts/inicio";
 import BanerLayout from "@/layouts/baner";
 import Footer from "@/layouts/footer";
+import Triptico_1 from "@/layouts/triptico_1";
 
 export default function IndexPage() {
   return (
@@ -12,7 +13,6 @@ export default function IndexPage() {
         bg_img={inicio.bg_img}
         titulo={inicio.titulo}
         text={inicio.text}
-        mini_titulo={inicio.mini_titulo}
         href_1={inicio.href_1}
         href_2={inicio.href_2}
       ></Inicio>
@@ -24,6 +24,12 @@ export default function IndexPage() {
         text={baner_1.text}
         href_1={baner_1.href_1}
         href_2={baner_1.href_2}
+      />
+      <Triptico_1
+        mini_titulo={triptico.mini_titulo}
+        titulo={triptico.titulo}
+        text={triptico.text}
+        contenido={triptico.contenido}
       />
       <Footer />
     </div>

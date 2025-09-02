@@ -13,7 +13,6 @@ export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
 export const inicio = {
   bg_img: giftDefault,
-  mini_titulo: "",
   titulo: "El mejor Tarpon del Venezuela",
   text: " En KIARI, ofrecemos pescado de alta calidad, 100% natural y libre de conservantes. Nuestros productos, como el pisillo, nuggets y medallones, son ideales para disfrutar de una experiencia gastronómica única.",
   href_1: "/",
@@ -27,6 +26,31 @@ export const baner_1 = {
   text: "Transformamos el pescado en una experiencia deliciosa y saludable para todos.",
   href_1: "/",
   href_2: "/",
+};
+
+export const triptico = {
+  mini_titulo: "Servicios",
+  titulo: "Transformación y Procesamiento del Sábalo",
+  text: "En KIARI, nos especializamos en la transformación del sábalo, ofreciendo productos de alta calidad. Nuestro proceso asegura que cada bocado sea delicioso y libre de impurezas.",
+  contenido: [
+    {
+      img: "default.png",
+      subtitulo: "Productos Innovadores y Saludables",
+      texto: "Ofrecemos pisillo, nuggets y medallones, todos 100% naturales.",
+    },
+    {
+      img: "default.png",
+      subtitulo: "Compromiso con la Calidad y Sostenibilidad",
+      texto: "Nuestros productos son elaborados sin conservantes artificiales.",
+    },
+    {
+      img: "default.png",
+      subtitulo: "Fácil Acceso a Nuestros Productos",
+      texto: "Contáctanos para realizar tus pedidos de manera sencilla.",
+    },
+  ],
+  href_1: "/comprar",
+  href_2: "/conocenos",
 };
 
 export const siteConfig = {

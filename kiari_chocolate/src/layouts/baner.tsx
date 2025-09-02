@@ -26,19 +26,22 @@ export default function BanerLayout({
 }: Props) {
   return (
     <section
-      className={`min-h-[30vh] w-full flex px-12 py-16 bg-cover bg-center bg-no-repeat ${bg_color}`}
+      className={`flex bg-cover bg-center bg-no-repeat bg-default-100/15 w-full sm:min-h-[30vh] min-h-[45vh] sm:px-12 sm:py-16 px-6 py-8 ${bg_color}`}
       style={{
         backgroundImage: bg_imag ? `url(${bg_imag})` : "",
+        backgroundBlendMode: "overlay",
       }}
     >
       {/* children o contenido por defecto */}
       {children ? (
         children
       ) : (
-        <div className="flex flex-col md:w-2/3 w-full ml-12 gap-4 ">
-          <span className="subtitulo">{mini_titulo}</span>
-          <span className="titulo">{titulo}</span>
-          <p className="parrafo">{text}</p>
+        <div className="flex flex-col justify-between w-2/3 sm:ml-12 gap-4">
+          <div className="flex flex-col justify-between gap-4">
+            <span className="minititulo">{mini_titulo}</span>
+            <span className="titulo">{titulo}</span>
+            <p className="parrafo">{text}</p>
+          </div>
           <div className="flex gap-3 mt-8 ">
             <Button
               color="primary"
