@@ -11,12 +11,22 @@ import { articulos } from "./articulos";
 
 export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
+export const inicio = {
+  bg_img: giftDefault,
+  mini_titulo: "",
+  titulo: "El mejor Tarpon del Venezuela",
+  text: " En KIARI, ofrecemos pescado de alta calidad, 100% natural y libre de conservantes. Nuestros productos, como el pisillo, nuggets y medallones, son ideales para disfrutar de una experiencia gastronómica única.",
+  href_1: "/",
+  href_2: "/",
+};
+
 export const baner_1 = {
   bg_img: "default.png",
   mini_titulo: "Sabor",
   titulo: "Bienvenido a KIARI",
   text: "Transformamos el pescado en una experiencia deliciosa y saludable para todos.",
-  href: "/",
+  href_1: "/",
+  href_2: "/",
 };
 
 export const siteConfig = {
