@@ -44,7 +44,11 @@ export default function Testimonio1({ bg_color }: Props) {
       <div
         className={`container flex flex-col-reverse justify-center items-center sm:flex-row p-8 mx-auto ${bg_color}`}
       >
-        <Image isBlurred src={img} width={600} className="" />
+        <Image
+          isBlurred
+          src={img}
+          className="lg:min-w-[550px] md:min-w-[420px] sm:min-w-[400px]"
+        />
         {/* resenia */}
         <div className="sm:p-12 p-4 my-auto">
           {/* estrellas */}
