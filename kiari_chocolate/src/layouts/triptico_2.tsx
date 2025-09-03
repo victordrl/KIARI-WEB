@@ -26,7 +26,7 @@ interface Props {
   href_2?: string;
 }
 
-export default function Triptico_2({
+export default function Triptico2({
   children,
   bg_color = "foreground",
   contenido = [

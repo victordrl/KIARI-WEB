@@ -93,6 +93,27 @@ export const triptico_1 = {
   ],
 };
 
+export const info_img_2 = {
+  minititulo: "Natural",
+  img: "default.png",
+  titulo: "Descubre los Beneficios de KIARI",
+  text: "Los productos de KIARI son 100% naturales y de alta calidad. Disfruta de un sabor auténtico sin conservantes artificiales.",
+  contenido: [
+    {
+      subtitulo: "Calidad Superior",
+      texto:
+        "Disfruta de pescado fresco y delicioso, ideal para toda la familia.",
+    },
+    {
+      subtitulo: "Sin Conservantes",
+      texto:
+        "Nuestro productos estan completamente libres de aditivos y conservantes.",
+    },
+  ],
+  href_1: "/",
+  href_2: "/",
+};
+
 export const siteConfig = {
   name: "Kiari Shop House J&L",
   description: "Descubre la frescura del pescado KIARI",

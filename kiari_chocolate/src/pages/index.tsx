@@ -1,6 +1,7 @@
 import {
   baner_1,
   info_img,
+  info_img_2,
   inicio,
   triptico_1,
   triptico_2,
@@ -9,9 +10,10 @@ import { MiNavbar } from "@/components/navbar";
 import Inicio from "@/layouts/inicio";
 import BanerLayout from "@/layouts/baner";
 import Footer from "@/layouts/footer";
-import Triptico_1 from "@/layouts/triptico_1";
-import InfoImg from "@/layouts/info_img";
-import Triptico_2 from "@/layouts/triptico_2";
+import Triptico1 from "@/layouts/triptico_1";
+import InfoImg1 from "@/layouts/info_img_1";
+import Triptico2 from "@/layouts/triptico_2";
+import InfoImg2 from "@/layouts/info_img_2";
 
 export default function IndexPage() {
   return (
@@ -33,24 +35,34 @@ export default function IndexPage() {
         href_1={baner_1.href_1}
         href_2={baner_1.href_2}
       />
-      <Triptico_1
+      <Triptico1
         mini_titulo={triptico_1.mini_titulo}
         titulo={triptico_1.titulo}
         text={triptico_1.text}
         contenido={triptico_1.contenido}
       />
-      <InfoImg
+      <InfoImg1
         icon={info_img.icon}
+        img={info_img.img}
         titulo={info_img.titulo}
         text={info_img.text}
         href_1={info_img.href_1}
         href_2={info_img.href_2}
       />
-      <Triptico_2
+      <Triptico2
         mini_titulo={triptico_2.mini_titulo}
         titulo={triptico_2.titulo}
         text={triptico_2.text}
         contenido={triptico_2.contenido}
+      />
+      <InfoImg2
+        img={info_img.img}
+        minititulo={info_img_2.minititulo}
+        titulo={info_img.titulo}
+        text={info_img.text}
+        contenido={info_img_2.contenido}
+        href_1={info_img.href_1}
+        href_2={info_img.href_2}
       />
       <Footer />
     </div>

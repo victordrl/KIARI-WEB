@@ -1,12 +1,17 @@
-import { Button, Image, Card } from "@heroui/react";
+import { Button, Image, Card, CardHeader, CardBody } from "@heroui/react";
 import { Logo } from "@/components/icons";
 import { Link } from "react-router-dom";
-import { IconType } from "react-icons";
+
+interface Cartas {
+  subtitulo?: string;
+  texto?: string;
+}
 
 interface Props {
   children?: React.ReactNode;
-  icon?: IconType;
   img?: string;
+  minititulo?: string;
+  contenido?: Cartas[];
   bg_color?: string;
   titulo?: string;
   text?: string;
@@ -14,10 +19,14 @@ interface Props {
   href_2?: string;
 }
 
-export default function InfoImg({
+export default function InfoImg2({
   children,
-  icon: Icon,
   img = "default.png",
+  minititulo = "minititulo",
+  contenido = [
+    { subtitulo: "subtitulo", texto: "Hola que tal" },
+    { subtitulo: "subtitulo", texto: "Hola que tal" },
+  ],
   bg_color = "default",
   titulo = "Titular",
   text = "Lore expndido",
@@ -31,33 +40,47 @@ export default function InfoImg({
       ) : (
         <Card
           radius="none"
+          shadow="sm"
           className={`flex flex-col sm:flex-row justify-between w-full p-4 ${bg_color}`}
         >
-          <div className="my-auto max-w-3xl p-8">
-            {Icon && (
-              <Icon className="lg:size-40 md:size-36 sm:size-24 size-20" />
-            )}
+          {/* contenido */}
+          <div className="my-auto sm:w-1/2 w-full p-8">
+            <span className="minititulo">{minititulo}</span>
             <h2 className="titulo my-4">{titulo}</h2>
             <p className="parrafo">{text}</p>
+
+            {/* cartas de info*/}
+            <div className="flex gap-4 p-5 pl-0 -m-3">
+              {contenido.map((item, index) => (
+                <Card key={index} shadow="none" className="w-full">
+                  <CardHeader className="subtitulo">
+                    {item.subtitulo}
+                  </CardHeader>
+                  <CardBody className="parrafo">{item.texto}</CardBody>
+                </Card>
+              ))}
+            </div>
             {/* botones */}
             <div className="flex gap-3 my-8">
               <Button
+                size="lg"
                 color="primary"
-                variant="ghost"
+                variant="solid"
                 as={Link}
                 href={href_1}
                 endContent={<Logo className="sm:size-5 size-4" />}
               >
-                Mas
+                Ordenar
               </Button>
               <Button
-                color="primary"
+                size="lg"
+                color="secondary"
                 variant="light"
                 as={Link}
                 href={href_2}
                 endContent={<Logo className="sm:size-5 size-4" />}
               >
-                Contactanos
+                Mas
               </Button>
             </div>
           </div>
@@ -67,8 +90,8 @@ export default function InfoImg({
               isZoomed
               src={img}
               radius="sm"
-              shadow="sm"
-              className="lg:w-[720px] lg:h-[720px] md:w-[480px] md:h-[700px] p-2"
+              shadow="none"
+              className="lg:w-[600px] lg:h-[600px] md:w-[480px] md:h-[700px] p-2"
             />
           </div>
         </Card>

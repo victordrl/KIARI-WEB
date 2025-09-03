@@ -26,7 +26,7 @@ interface Props {
   text?: string;
 }
 
-export default function Triptico_1({
+export default function Triptico1({
   children,
   bg_color = "foreground",
   mini_titulo = "minititulo",
@@ -67,7 +67,7 @@ export default function Triptico_1({
                     className={`md:w-1/3  h-[450px]`}
                   >
                     <CardHeader className="justify-center">
-                      <Icon className="size-32 mb-4 text-primary" />
+                      <Icon className="size-32 mb-4 text-secondary" />
                     </CardHeader>
                     <CardBody className="flex flex-col items-center text-center p-6">
                       <h4 className="subtitulo">{item.subtitulo}</h4>
