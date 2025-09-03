@@ -14,7 +14,7 @@ interface Props {
   href_2?: string;
 }
 
-export default function BanerLayout({
+export default function Baner1({
   children,
   bg_imag,
   bg_color = "bg-base",

@@ -114,6 +114,16 @@ export const info_img_2 = {
   href_2: "/",
 };
 
+export const baner_2 = {
+  bg_img: "",
+  bg_color: "secondary",
+  mini_titulo: "",
+  titulo: "¡Disfruta del sabor del sábalo!",
+  text: "Realiza tu pedido y descubre nuestros deliciosos productos.",
+  href_1: "/",
+  href_2: "/",
+};
+
 export const siteConfig = {
   name: "Kiari Shop House J&L",
   description: "Descubre la frescura del pescado KIARI",

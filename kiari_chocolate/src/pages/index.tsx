@@ -1,5 +1,6 @@
 import {
   baner_1,
+  baner_2,
   info_img,
   info_img_2,
   inicio,
@@ -9,13 +10,14 @@ import {
 import { testimonios } from "@/config/testimonios_config";
 import { MiNavbar } from "@/components/navbar";
 import Inicio from "@/layouts/inicio";
-import BanerLayout from "@/layouts/baner";
+import Baner1 from "@/layouts/baner_1";
 import Footer from "@/layouts/footer";
 import Triptico1 from "@/layouts/triptico_1";
 import InfoImg1 from "@/layouts/info_img_1";
 import Triptico2 from "@/layouts/triptico_2";
 import InfoImg2 from "@/layouts/info_img_2";
 import Testimonio1 from "@/layouts/testimonio_1";
+import Baner2 from "@/layouts/baner_2";
 
 export default function IndexPage() {
   return (
@@ -28,7 +30,7 @@ export default function IndexPage() {
         href_1={inicio.href_1}
         href_2={inicio.href_2}
       ></Inicio>
-      <BanerLayout
+      <Baner1
         bg_imag={baner_1.bg_img}
         bg_color="bg-default"
         titulo={baner_1.titulo}
@@ -72,6 +74,14 @@ export default function IndexPage() {
         mensaje={testimonios.res_1.mensaje}
         estado={testimonios.res_1.estado}
         lugar={testimonios.res_1.lugar}
+      />
+      <Baner2
+        bg_color={baner_2.bg_color}
+        titulo={baner_2.titulo}
+        mini_titulo={baner_2.mini_titulo}
+        text={baner_2.text}
+        href_1={baner_2.href_1}
+        href_2={baner_2.href_2}
       />
       <Footer />
     </div>
