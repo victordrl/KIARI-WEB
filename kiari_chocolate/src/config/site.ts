@@ -1,5 +1,6 @@
 export type SiteConfig = typeof siteConfig;
 import { FaFish } from "react-icons/fa";
+import { PiBowlFoodFill } from "react-icons/pi";
 import {
   RiArticleFill,
   RiBookReadFill,
@@ -51,6 +52,15 @@ export const triptico = {
   ],
   href_1: "/comprar",
   href_2: "/conocenos",
+};
+
+export const info_img = {
+  icon: PiBowlFoodFill,
+  img: "default.png",
+  titulo: "Facilitamos el consumo de pescado delicioso",
+  text: "En KIARI, eliminamos piel, escamas y espinas, garantizando un producto listo para disfrutar. Esto no solo mejora la experiencia del consumidor, sino que también asegura que cada bocado sea puro placer.",
+  href_1: "/",
+  href_2: "/",
 };
 
 export const siteConfig = {
