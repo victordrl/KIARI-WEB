@@ -31,9 +31,9 @@ export default function InfoImg({
       ) : (
         <Card
           radius="none"
-          className={`flex flex-col sm:flex-row justify-between p-4 w-full ${bg_color}`}
+          className={`flex flex-col sm:flex-row justify-between w-full p-4 ${bg_color}`}
         >
-          <div className="my-auto max-w-xl p-8">
+          <div className="my-auto max-w-3xl p-8">
             {Icon && (
               <Icon className="lg:size-40 md:size-36 sm:size-24 size-20" />
             )}
@@ -68,8 +68,7 @@ export default function InfoImg({
               src={img}
               radius="sm"
               shadow="sm"
-              width={500}
-              className=" p-2"
+              className="lg:w-[850px] lg:h-[850px] md:w-[480px] md:h-[700px] w-[100px] h-[100px] p-2"
             />
           </div>
         </Card>
