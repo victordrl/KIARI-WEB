@@ -19,7 +19,7 @@ import MenuDrawer from "./menu_drawer";
 import { Logo } from "@/components/icons";
 import {
   RiArrowRightSLine,
-  RiTiktokFill,
+  // RiTiktokFill,
   RiFacebookBoxFill,
   RiInstagramFill,
 } from "react-icons/ri";

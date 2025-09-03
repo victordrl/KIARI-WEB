@@ -1,12 +1,7 @@
 export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
 import { PiBowlFoodFill } from "react-icons/pi";
-import {
-  FaFish,
-  FaHeartbeat,
-  FaUniversalAccess,
-  FaHandsHelping,
-} from "react-icons/fa";
+import { FaHeartbeat, FaUniversalAccess, FaHandsHelping } from "react-icons/fa";
 
 export const inicio = {
   bg_img: giftDefault,
