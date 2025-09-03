@@ -7,11 +7,10 @@ import {
   triptico_1,
   triptico_2,
 } from "@/config/site";
-import { testimonios } from "@/config/testimonios_config";
-import { MiNavbar } from "@/components/navbar";
+import MiNavbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import Inicio from "@/layouts/inicio";
 import Baner1 from "@/layouts/baner_1";
-import Footer from "@/layouts/footer";
 import Triptico1 from "@/layouts/triptico_1";
 import InfoImg1 from "@/layouts/info_img_1";
 import Triptico2 from "@/layouts/triptico_2";
@@ -68,13 +67,7 @@ export default function IndexPage() {
         href_1={info_img.href_1}
         href_2={info_img.href_2}
       />
-      <Testimonio1
-        star={testimonios.res_1.star}
-        nombre={testimonios.res_1.nombre}
-        mensaje={testimonios.res_1.mensaje}
-        estado={testimonios.res_1.estado}
-        lugar={testimonios.res_1.lugar}
-      />
+      <Testimonio1 />
       <Baner2
         bg_color={baner_2.bg_color}
         titulo={baner_2.titulo}

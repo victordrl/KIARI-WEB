@@ -53,6 +53,7 @@ export default function MenuDrawer() {
               <DrawerBody>
                 {siteConfig.exploraItems.prod.map((item) => (
                   <Button
+                    key={item.kay}
                     as={Link}
                     radius="none"
                     color="default"
@@ -83,6 +84,7 @@ export default function MenuDrawer() {
               <DrawerBody>
                 {siteConfig.exploraItems.info.map((item) => (
                   <Button
+                    key={item.kay}
                     as={Link}
                     radius="none"
                     color="default"
@@ -113,6 +115,7 @@ export default function MenuDrawer() {
               <DrawerBody>
                 {siteConfig.exploraItems.arti.map((item) => (
                   <Button
+                    key={item.kay}
                     as={Link}
                     radius="none"
                     color="default"

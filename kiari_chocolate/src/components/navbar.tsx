@@ -23,7 +23,7 @@ import {
   RiInstagramFill,
 } from "react-icons/ri";
 
-export const MiNavbar = () => {
+export default function MiNavbar() {
   // const searchInput = (
   //   <Input
   //     aria-label="Search"
@@ -151,4 +151,4 @@ export const MiNavbar = () => {
       </NavbarMenu>
     </HeroUINavbar>
   );
-};
+}

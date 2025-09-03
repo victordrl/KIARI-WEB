@@ -1,0 +1,34 @@
+{
+  "tes_1": {
+    "star": 4.5,
+    "mensaje": "Expectacular para rellenar arepas, muy sabroso y rendidor",
+    "nombre": "Karla Rodrígues",
+    "estado": "Cliente satisfecho",
+    "lugar": "La caribeña",
+    "img": "default.png"
+  },
+  "tes_2": {
+    "star": 5,
+    "mensaje": "El mejor pescado que he probado, fresco y de excelente calidad.",
+    "nombre": "Luis Fernández",
+    "estado": "Cliente frecuente",
+    "lugar": "Mercado de Mariscos",
+    "img": "default.png"
+  },
+  "tes_3": {
+    "star": 4,
+    "mensaje": "Muy bueno para compartir en familia, todos quedaron encantados.",
+    "nombre": "Ana Gómez",
+    "estado": "Cliente satisfecha",
+    "lugar": "Restaurante El Sabor",
+    "img": "default.png"
+  },
+  "tes_4": {
+    "star": 4.5,
+    "mensaje": "La atención y el sabor son insuperables. ¡Recomendado 100%!",
+    "nombre": "Carlos Méndez",
+    "estado": "Cliente feliz",
+    "lugar": "La Costa Grill",
+    "img": "default.png"
+  }
+}

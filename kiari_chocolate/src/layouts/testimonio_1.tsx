@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
+
 import { StarRating } from "@/components/star_raiting";
-import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-import { AiOutlineCaretRight } from "react-icons/ai";
 import { Image } from "@heroui/react";
 
 interface Props {
-  star?: number;
+  star: number;
   mensaje?: string;
   nombre?: string;
   estado?: string;
@@ -13,15 +13,32 @@ interface Props {
   bg_color?: string;
 }
 
-export default function Testimonio1({
-  star = 4.5,
-  estado = "Cliente Satisfecho",
-  lugar = "La caribeña",
-  mensaje = "Expectacular, muy bueno para rellenar las arepas",
-  nombre = "Javier Rojas",
-  img = "default.png",
-  bg_color = "default",
-}: Props) {
+export default function Testimonio1({ bg_color }: Props) {
+  const [testimonios, setTestimonios] = useState<Props[]>([]);
+  const [index, setIndex] = useState(0);
+
+  // cargar JSON
+  useEffect(() => {
+    fetch("/data/testimonios.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setTestimonios(Object.values(data));
+      });
+  }, []);
+
+  // rotar cada 5 segundos
+  useEffect(() => {
+    if (testimonios.length === 0) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonios.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [testimonios]);
+
+  if (testimonios.length === 0) return <p>Cargando testimonios...</p>;
+
+  const { star, mensaje, nombre, estado, lugar, img } = testimonios[index];
+
   return (
     <section className="w-full h-fit py-12">
       <div

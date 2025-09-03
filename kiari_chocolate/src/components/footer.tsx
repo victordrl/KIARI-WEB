@@ -23,8 +23,9 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center justify-center">
           <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-7 gap-2">
-            {siteConfig.footerItem.map((item) => (
+            {siteConfig.footerItem.map((item, index) => (
               <Link
+                key={index}
                 className={clsx(
                   linkStyles({ color: "foreground" }),
                   "data-[active=true]:text-primary data-[active=true]:font-medium"

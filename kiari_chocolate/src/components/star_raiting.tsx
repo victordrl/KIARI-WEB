@@ -27,7 +27,9 @@ export function StarRating({ rating, classN, max = 5 }: StarRatingProps) {
       stars.push(<FaStar key={i} className={`text-secondary-400 ${classN}`} />);
     } else {
       // Estrella vacía
-      stars.push(<FaRegStar key={i} className="text-gray-400" />);
+      stars.push(
+        <FaRegStar key={i} className={`text-default-400 ${classN}`} />
+      );
     }
   }
 

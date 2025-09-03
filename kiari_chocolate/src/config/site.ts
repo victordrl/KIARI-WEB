@@ -130,18 +130,21 @@ export const siteConfig = {
   exploraItems: {
     prod: [
       {
+        kay: "producto_1",
         label: "Pisillo de Sabalo",
         href: "/productos/pisillo",
         mensaje: "Delicioso y facil de preparar",
         icon: FaFish,
       },
       {
+        kay: "producto_2",
         label: "Nuggets de Sabalo",
         href: "/productos/nuggets",
         mensaje: "Perfectos para cualquier ocacion",
         icon: FaFish,
       },
       {
+        kay: "producto_3",
         label: "Medallones de Sabalo",
         href: "/productos/medallones",
         mensaje: "Sabroso autentico en cada bocado",
@@ -150,24 +153,28 @@ export const siteConfig = {
     ],
     info: [
       {
+        kay: "testimonio_1",
         label: "Testimonios",
         href: "/testimonios",
         mensaje: "Lo que dicen nuestros clientes",
         icon: RiChat1Fill,
       },
       {
+        kay: "distribuidores",
         label: "Distribuidores",
         href: "/distribuidores",
         mensaje: "Encuentra nuestros prductos cerca de ti",
         icon: RiTruckFill,
       },
       {
+        kay: "recetas",
         label: "Recetas",
         href: "/recetas",
         mensaje: "Inspirate con deliciosas recetas",
         icon: RiFileList3Fill,
       },
       {
+        kay: "blog",
         label: "Blog",
         href: "/",
         mensaje: "Consejos y novedades en redes",
@@ -176,17 +183,20 @@ export const siteConfig = {
     ],
     arti: [
       {
+        kay: "articulo_1",
         label: articulos.a.titulo_corto,
         href: "/articulos/1",
         mensaje: articulos.a.mensaje,
         icon: RiArticleFill,
       },
       {
+        kay: "articulo_2",
         label: "Articulo 2",
         href: "/articulos/2",
         icon: RiArticleFill,
       },
       {
+        kay: "articulo_3",
         label: "Articulo 3",
         href: "/articulos/3",
         icon: RiArticleFill,
