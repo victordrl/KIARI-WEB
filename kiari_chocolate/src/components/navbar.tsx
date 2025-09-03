@@ -20,6 +20,7 @@ import { Logo } from "@/components/icons";
 import {
   RiArrowRightSLine,
   RiTiktokFill,
+  RiFacebookBoxFill,
   RiInstagramFill,
 } from "react-icons/ri";
 
@@ -99,10 +100,10 @@ export default function MiNavbar() {
           <Link
             className="px-2"
             isExternal
-            href={siteConfig.links.tiktok}
-            title="tiktok"
+            href={siteConfig.links.facebook}
+            title="facebook"
           >
-            <RiTiktokFill className="text-default-500 size-6" />
+            <RiFacebookBoxFill className="text-default-500 size-6" />
           </Link>
           <ThemeSwitch className=" hidden sm:block" />
         </NavbarItem>
@@ -112,7 +113,7 @@ export default function MiNavbar() {
             isExternal
             as={Link}
             className="text-sm font-semibold text-default-600 bg-default-100"
-            href="#"
+            href="/cont"
             endContent={<RiArrowRightSLine className="text-primary size-6" />}
             variant="flat"
           >
@@ -140,7 +141,7 @@ export default function MiNavbar() {
                       ? "secondary"
                       : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}

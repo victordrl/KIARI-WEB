@@ -6,7 +6,7 @@ import {
   inicio,
   triptico_1,
   triptico_2,
-} from "@/config/site";
+} from "@/config/index_config";
 import MiNavbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Inicio from "@/layouts/inicio";
@@ -67,7 +67,7 @@ export default function IndexPage() {
         href_1={info_img.href_1}
         href_2={info_img.href_2}
       />
-      <Testimonio1 />
+      <Testimonio1 star={5} />
       <Baner2
         bg_color={baner_2.bg_color}
         titulo={baner_2.titulo}

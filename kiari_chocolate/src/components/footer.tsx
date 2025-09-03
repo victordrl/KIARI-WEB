@@ -6,7 +6,11 @@ import { Divider } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/icons";
 
-import { RiTiktokFill, RiInstagramFill } from "react-icons/ri";
+import {
+  RiTiktokFill,
+  RiFacebookBoxFill,
+  RiInstagramFill,
+} from "react-icons/ri";
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-between items-center w-full bg-primary-400 dark:bg-primary-300">
@@ -51,10 +55,10 @@ export default function Footer() {
           <Link
             className="font-mono text-default-600 px-2 gap-1"
             isExternal
-            href={siteConfig.links.tiktok}
-            title="tiktok"
+            href={siteConfig.links.facebook}
+            title="facebook"
           >
-            <RiTiktokFill className="text-default-700 size-6" />
+            <RiFacebookBoxFill className="text-default-700 size-6" />
             Tiktok
           </Link>
         </div>
