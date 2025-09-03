@@ -40,7 +40,7 @@ export default function BanerLayout({
           <div className="flex flex-col justify-between gap-4">
             <span className="minititulo">{mini_titulo}</span>
             <span className="titulo">{titulo}</span>
-            <p className="parrafo">{text}</p>
+            <p className="parrafo font-semibold">{text}</p>
           </div>
           <div className="flex gap-3 mt-8 ">
             <Button

@@ -22,7 +22,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <div className="flex justify-between gap-7">
+          <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-7 gap-2">
             {siteConfig.footerItem.map((item) => (
               <Link
                 className={clsx(
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
       </div>
       <Divider className="w-[50%]" />
-      <p className="text-center text-sm text-default-50-500 mt-4">
+      <p className="text-center text-sm text-default-50-500 p-3">
         © 2025 Kiari Shop House J&amp;L. Todos los derechos reservados.
         <br />
         Hecho por <span className="font-bold">Pilon</span>{" "}

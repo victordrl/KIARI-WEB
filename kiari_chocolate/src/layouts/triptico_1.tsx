@@ -64,7 +64,7 @@ export default function Triptico1({
                     key={index}
                     radius="none"
                     shadow="sm"
-                    className={`md:w-1/3  h-[450px]`}
+                    className={`md:w-1/3  sm:h-[470px] h-[420px]`}
                   >
                     <CardHeader className="justify-center">
                       <Icon className="size-32 mb-4 text-secondary" />

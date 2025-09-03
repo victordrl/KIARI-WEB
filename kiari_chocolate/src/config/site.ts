@@ -8,7 +8,7 @@ import {
   RiFileList3Fill,
   RiChat1Fill,
 } from "react-icons/ri";
-import { articulos } from "./articulos";
+import { articulos } from "./articulos_config";
 
 export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
@@ -250,7 +250,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    ig: "https://www.instagram.com/kiarichocolate",
+    facebook: "https://www.facebook.com/kiarishophouse/",
+    ig: "https://www.instagram.com/kiarishophouse/",
     tiktok: "https://www.tiktok.com/@kiarichocolate",
   },
 };

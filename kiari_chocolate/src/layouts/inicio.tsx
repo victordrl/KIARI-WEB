@@ -26,7 +26,7 @@ export default function Inicio({
 }: Props) {
   return (
     <main
-      className={`flex-grow h-[80vh] w-full px-6 pt-16 bg-cover bg-center bg-no-repeat bg-default-100/30 ${bg_color}`}
+      className={`flex-grow h-screen w-full px-6 pt-16 bg-cover bg-center bg-no-repeat bg-default-100/30 ${bg_color}`}
       style={{
         backgroundImage: bg_img ? `url(${bg_img})` : "",
         backgroundBlendMode: "overlay",
@@ -59,7 +59,9 @@ export default function Inicio({
                 <div className="sm:mt-4 mt-2"></div>
                 <span className="text-orange-400 font-extrabold">KIARI</span>
               </h1>
-              <p className="parrafo max-w-xl sm:mt-6 mt-2">{text}</p>
+              <p className="parrafo max-w-xl sm:mt-6 mt-2 font-semibold">
+                {text}
+              </p>
             </div>
 
             <div className="flex gap-3 mt-8 ">
