@@ -68,7 +68,7 @@ export default function InfoImg({
               src={img}
               radius="sm"
               shadow="sm"
-              className="lg:w-[850px] lg:h-[850px] md:w-[480px] md:h-[700px] w-[100px] h-[100px] p-2"
+              className="lg:w-[720px] lg:h-[720px] md:w-[480px] md:h-[700px] p-2"
             />
           </div>
         </Card>

@@ -8,12 +8,12 @@
     @apply md:text-5xl sm:text-4xl text-3xl text-foreground font-semibold;
   }
   .subtitulo {
-    @apply md:text-2xl sm:text-xl text-lg text-foreground font-normal;
+    @apply md:text-xl sm:text-lg text-lg text-foreground font-normal;
   }
   .minititulo {
     @apply md:text-2xl sm:text-xl text-medium text-foreground font-extralight;
   }
   .parrafo {
-    @apply xl:text-lg md:text-medium text-sm text-foreground font-light;
+    @apply md:text-medium text-sm text-foreground font-light;
   }
 }

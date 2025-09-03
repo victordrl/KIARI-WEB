@@ -29,25 +29,29 @@ export const baner_1 = {
   href_2: "/",
 };
 
-export const triptico = {
-  mini_titulo: "Servicios",
-  titulo: "Transformación y Procesamiento del Sábalo",
-  text: "En KIARI, nos especializamos en la transformación del sábalo, ofreciendo productos de alta calidad. Nuestro proceso asegura que cada bocado sea delicioso y libre de impurezas.",
+export const triptico_2 = {
+  mini_titulo: "Produtos",
+  titulo:
+    "Descubre nuestras innovadoras presentaciones de pescado para disfrutar en cualquier ocasión",
+  text: "",
   contenido: [
     {
       img: "default.png",
-      subtitulo: "Productos Innovadores y Saludables",
-      texto: "Ofrecemos pisillo, nuggets y medallones, todos 100% naturales.",
+      subtitulo: "Nuggets",
+      texto:
+        "Nuggets la forma más práctica y secilla de disfrutar el sabor del sábalo.",
     },
     {
       img: "default.png",
-      subtitulo: "Compromiso con la Calidad y Sostenibilidad",
-      texto: "Nuestros productos son elaborados sin conservantes artificiales.",
+      subtitulo: "Pisillo",
+      texto:
+        "Presentaciones únicas que transforman tu experiencia con el pescado.",
     },
     {
       img: "default.png",
-      subtitulo: "Fácil Acceso a Nuestros Productos",
-      texto: "Contáctanos para realizar tus pedidos de manera sencilla.",
+      subtitulo: "Medallones",
+      texto:
+        "hamburguesas de pura pulpa al natural para los amantes del pescado.",
     },
   ],
   href_1: "/comprar",
@@ -61,6 +65,32 @@ export const info_img = {
   text: "En KIARI, eliminamos piel, escamas y espinas, garantizando un producto listo para disfrutar. Esto no solo mejora la experiencia del consumidor, sino que también asegura que cada bocado sea puro placer.",
   href_1: "/",
   href_2: "/",
+};
+
+export const triptico_1 = {
+  mini_titulo: "Servicios",
+  titulo: "Transformación y Procesamiento del Sábalo",
+  text: "En KIARI, nos especializamos en la transformación del sábalo, ofreciendo productos de alta calidad. Nuestro proceso asegura que cada bocado sea delicioso y libre de impurezas.",
+  contenido: [
+    {
+      icon: FaFish,
+      subtitulo: "Productos Innovadores y Saludables",
+      texto: "Ofrecemos pisillo, nuggets y medallones, todos 100% naturales.",
+      href: "/",
+    },
+    {
+      icon: FaFish,
+      subtitulo: "Compromiso con la Calidad y Sostenibilidad",
+      texto: "Nuestros productos son elaborados sin conservantes artificiales.",
+      href: "/",
+    },
+    {
+      icon: FaFish,
+      subtitulo: "Fácil Acceso a Nuestros Productos",
+      texto: "Contáctanos para realizar tus pedidos de manera sencilla.",
+      href: "/",
+    },
+  ],
 };
 
 export const siteConfig = {
