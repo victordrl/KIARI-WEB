@@ -6,11 +6,8 @@ import { Divider } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/icons";
 
-import {
-  RiTiktokFill,
-  RiFacebookBoxFill,
-  RiInstagramFill,
-} from "react-icons/ri";
+import { RiFacebookBoxFill, RiInstagramFill } from "react-icons/ri";
+
 export default function Footer() {
   return (
     <footer className="flex flex-col justify-between items-center w-full bg-primary-400 dark:bg-primary-300">
@@ -22,7 +19,9 @@ export default function Footer() {
             href="/"
           >
             <Logo className="size-14 md:size-20"></Logo>
-            <span className="font-bold text-2xl md:text-4xl">KIARI</span>
+            <span className="font-bold text-2xl md:text-4xl -mt-4">KIARI</span>
+
+            <p className="parrafo">KIARI SHOP HOUSE J&L</p>
           </Link>
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -59,7 +58,7 @@ export default function Footer() {
             title="facebook"
           >
             <RiFacebookBoxFill className="text-default-700 size-6" />
-            Tiktok
+            Facebook
           </Link>
         </div>
       </div>
