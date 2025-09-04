@@ -1,36 +1,52 @@
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 import Footer from "@/components/footer";
 import MiNavbar from "@/components/navbar";
 
 import Baner3 from "@/layouts/baner_3";
-import Carrucel from "@/components/carrucel";
 
 import { articulos } from "@/config/articulos_config";
-import { Card, CardFooter, Chip, Divider, Link } from "@heroui/react";
-import { RiFacebookBoxFill, RiInstagramFill } from "react-icons/ri";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/icons";
 
-const images = [
-  "/default.png",
-  "/default.png",
-  "/default.png",
-  "/default.png",
-  "/default.png",
-];
+import { Carousel } from "@material-tailwind/react";
+import { Card, CardFooter, Chip, Divider, Link } from "@heroui/react";
+import { RiFacebookBoxFill, RiInstagramFill } from "react-icons/ri";
 
 export default function ArticulosPage() {
+  const { id } = useParams<{ id: string }>();
+
+  // aquí tomamos el artículo según el id
+  const articulo = articulos[id as keyof typeof articulos];
+
+  if (!articulo) {
+    return <div className="text-center py-20">Artículo no encontrado</div>;
+  }
+
+  useEffect(() => {}, []);
+
   return (
     <>
       <MiNavbar />
       <Baner3
-        titulo={articulos.a.titulo}
-        text={articulos.a.intro}
-        mini_titulo={articulos.a.titulo_corto}
+        titulo={articulo.titulo}
+        text={articulo.resumen}
+        mini_titulo={articulo.frace}
         href_1="/prod"
-        href_2="/arti/2"
+        href_2={articulo.hreft_2}
       />
       <section className="flex flex-col items-center w-full h-full bg-default-200 py-8 px-4">
-        <Carrucel images={images} />
+        <Carousel className="sm:w-[75%] h-[650px] rounded-md">
+          {Object.values(articulo.img).map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`Imagen ${index + 1}`}
+              className="h-full w-full object-cover"
+            />
+          ))}
+        </Carousel>
 
         <Card
           radius="none"
@@ -38,7 +54,8 @@ export default function ArticulosPage() {
           className="container w-full h-full -m-4 p-6 py-20 z-50"
         >
           <div className="max-w-3xl mx-auto">
-            {Object.entries(articulos.a.texto)
+            {Object.entries(articulo.texto)
+
               // .filter(([key]) => key !== "p1") // excluye p1
               .map(([key, parrafo]) => (
                 <div key={key} className="mb-6">

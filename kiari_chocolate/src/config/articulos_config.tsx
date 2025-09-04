@@ -1,5 +1,7 @@
 export const articulos = {
-  a: {
+  "1": {
+    hreft_1: "/prod",
+    hreft_2: "/arti/2",
     titulo_corto: "Sábalo",
     titulo: "Todo sobre el Sábalo",
     frace: "nuevo",
@@ -8,10 +10,10 @@ export const articulos = {
     resumen:
       "El sábalo es un pez marino muy valorado en Venezuela por su sabor y aporte nutricional. Su carne rica en proteínas y omega-3 es ideal para preparaciones como el pisillo, ofreciendo beneficios para la salud cardiovascular y muscular.",
     img: {
-      i1: "sabalo.jpg",
-      i2: "sabalo_pesca.jpg",
-      i3: "pisillo_sabalo.jpg",
-      i4: "sabalo_kiari.jpg",
+      i1: "/default.png",
+      i2: "/default.png",
+      i3: "/default.png",
+      i4: "/default.png",
     },
     texto: {
       p1: {
@@ -36,7 +38,9 @@ export const articulos = {
       },
     },
   },
-  b: {
+  "2": {
+    hreft_1: "/prod",
+    hreft_2: "/arti/3",
     titulo_corto: "Calidad",
     titulo: "Cómo elegir pescado de calidad",
     frace: "nuevo",
@@ -45,10 +49,10 @@ export const articulos = {
     resumen:
       "Un pescado fresco se reconoce por ojos brillantes, branquias rojas, piel firme y olor suave a mar. Comprar en lugares confiables como Kiari asegura frescura, trazabilidad y un producto saludable para tu mesa.",
     img: {
-      i1: "pescados_frescos.jpg",
-      i2: "elegir_pescado.jpg",
-      i3: "mercado_pescado.jpg",
-      i4: "calidad_pescado.jpg",
+      i1: "/default.png",
+      i2: "/default.png",
+      i3: "/default.png",
+      i4: "/default.png",
     },
     texto: {
       p1: {
@@ -73,7 +77,9 @@ export const articulos = {
       },
     },
   },
-  c: {
+  "3": {
+    hreft_1: "/prod",
+    hreft_2: "/arti/1",
     titulo_corto: "Beneficios",
     titulo: "Beneficios del pescado fresco",
     frace: "nuevo",
@@ -82,10 +88,10 @@ export const articulos = {
     resumen:
       "El pescado fresco es un alimento completo: rico en proteínas de calidad, omega-3, vitaminas y minerales. Su consumo regular fortalece el corazón, los huesos y el sistema nervioso, mejorando la concentración y la salud general.",
     img: {
-      i1: "pescado_nutritivo.jpg",
-      i2: "omega3_pescado.jpg",
-      i3: "pescado_salud.jpg",
-      i4: "familia_pescado.jpg",
+      i1: "/default.png",
+      i2: "/default.png",
+      i3: "/default.png",
+      i4: "/default.png",
     },
     texto: {
       p1: {

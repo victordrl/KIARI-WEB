@@ -19,7 +19,7 @@ function App() {
       <Route element={<ProductosPage />} path="/prod" />
       <Route element={<ContactoPage />} path="/cont" />
       <Route element={<NosotrosPage />} path="/noso" />
-      <Route element={<ArticulosPage />} path="/arti" />
+      <Route element={<ArticulosPage />} path="/arti/:id" />
       <Route element={<MedallonesPage />} path="/prod/m" />
       <Route element={<NuggetsPage />} path="/prod/n" />
       <Route element={<PisilloPage />} path="/prod/p" />

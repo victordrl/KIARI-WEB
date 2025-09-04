@@ -70,22 +70,22 @@ export const siteConfig = {
     arti: [
       {
         kay: "articulo_1",
-        label: articulos.a.titulo_corto,
-        mensaje: articulos.a.frace,
+        label: articulos[1].titulo_corto,
+        mensaje: articulos[1].frace,
         href: "/arti/1",
         icon: RiArticleFill,
       },
       {
         kay: "articulo_2",
-        label: articulos.b.titulo_corto,
-        mensaje: articulos.b.frace,
+        label: articulos[2].titulo_corto,
+        mensaje: articulos[2].frace,
         href: "/arti/2",
         icon: RiArticleFill,
       },
       {
         kay: "articulo_3",
-        label: articulos.c.titulo_corto,
-        mensaje: articulos.c.frace,
+        label: articulos[3].titulo_corto,
+        mensaje: articulos[3].frace,
         href: "/arti/3",
         icon: RiArticleFill,
       },
