@@ -72,14 +72,14 @@ export const siteConfig = {
         kay: "articulo_1",
         label: articulos[1].titulo_corto,
         mensaje: articulos[1].frace,
-        href: "/arti/1",
+        href: "/blog/articulo/1",
         icon: RiArticleFill,
       },
       {
         kay: "articulo_3",
         label: articulos[3].titulo_corto,
         mensaje: articulos[3].frace,
-        href: "/arti/3",
+        href: "/blog/articulo/3",
         icon: RiArticleFill,
       },
     ],
@@ -106,10 +106,6 @@ export const siteConfig = {
     {
       label: "Recetas",
       href: "/blog#recetas",
-    },
-    {
-      label: "Articulos",
-      href: "/arti",
     },
     {
       label: "Testimonios",

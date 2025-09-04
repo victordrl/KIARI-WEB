@@ -1,7 +1,7 @@
 export const articulos = {
   "1": {
     hreft_1: "/prod",
-    hreft_2: "/arti/2",
+    hreft_2: "/blog/articulo/2",
     titulo_corto: "Sábalo",
     titulo: "Todo sobre el Sábalo",
     frace: "nuevo",
@@ -82,7 +82,7 @@ export const articulos = {
   },
   "2": {
     hreft_1: "/prod",
-    hreft_2: "/arti/3",
+    hreft_2: "/blog/articulo/3",
     titulo_corto: "Calidad",
     titulo: "Cómo elegir pescado de calidad",
     frace: "nuevo",
@@ -163,7 +163,7 @@ export const articulos = {
   },
   "3": {
     hreft_1: "/prod",
-    hreft_2: "/arti/1",
+    hreft_2: "/blog/articulo/1",
     titulo_corto: "Beneficios",
     titulo: "Beneficios del pescado fresco",
     frace: "nuevo",

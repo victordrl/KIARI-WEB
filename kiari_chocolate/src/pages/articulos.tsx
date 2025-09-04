@@ -69,8 +69,8 @@ export default function ArticulosPage() {
             <span className="minititulo font-semibold">Kiari: </span>
             <p className="parrafo p-6">{articulo.conclucion}</p>
             <div>
-              {Object.values(articulo.referecias).map((ref) => (
-                <div className="mb-6">
+              {Object.values(articulo.referecias).map((ref, index) => (
+                <div key={index} className="mb-6">
                   <h2 className="">{ref.Lugar}</h2>
                   <Link color="secondary" href={ref.ruta}>
                     {ref.ruta}
@@ -103,8 +103,13 @@ export default function ArticulosPage() {
               </div>
               <div className="flex gap-2 ">
                 <div className="flex sm:flex-row items-center flex-col gap-2">
-                  {Object.values(articulo.chip).map((chip) => (
-                    <Chip variant="faded" radius="sm" color="primary">
+                  {Object.values(articulo.chip).map((chip, index) => (
+                    <Chip
+                      key={index}
+                      variant="faded"
+                      radius="sm"
+                      color="primary"
+                    >
                       {chip}
                     </Chip>
                   ))}
