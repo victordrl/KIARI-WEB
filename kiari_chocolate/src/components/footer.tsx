@@ -24,8 +24,8 @@ export default function Footer() {
             <p className="parrafo">KIARI SHOP HOUSE J&L</p>
           </Link>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-7 gap-2">
+        <div className="flex flex-col  ">
+          <div className="flex sm:flex-row w-fit flex-col items-center justify-between sm:-ml-20 sm:gap-7 gap-2">
             {siteConfig.footerItem.map((item, index) => (
               <Link
                 key={index}
@@ -62,7 +62,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <Divider className="w-[50%]" />
+      <Divider className="w-[40%]" />
       <p className="text-center text-sm text-default-50-500 p-3">
         © 2025 Kiari Shop House J&amp;L. Todos los derechos reservados.
         <br />

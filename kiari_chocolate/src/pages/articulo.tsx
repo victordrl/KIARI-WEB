@@ -1,10 +1,8 @@
 import Footer from "@/components/footer";
 import MiNavbar from "@/components/navbar";
 
-import Baner3 from "@/layouts/baner_3";
-
 import { articulos } from "@/config/articulos_config";
-import { siteConfig } from "@/config/site";
+import Hero1 from "@/layouts/hero_1";
 import ImgInfo from "@/layouts/img_nfo";
 import InfoImg from "@/layouts/info_img";
 
@@ -12,6 +10,12 @@ export default function ArticuloPage() {
   return (
     <>
       <MiNavbar />
+      <Hero1
+        bg_img={"default.png"}
+        href_1="/noso"
+        titulo="Sábalo: Frescura, Calidad y Beneficios para tu Mesa"
+        text=""
+      />
       <ImgInfo
         bg_color=""
         img={articulos[1].img.i1}
