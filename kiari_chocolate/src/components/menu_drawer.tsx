@@ -44,7 +44,7 @@ export default function MenuDrawer() {
         onOpenChange={onOpenChange}
       >
         <DrawerContent>
-          <div className="flex md:flex-row flex-col  mx-auto">
+          <div className="flex md:flex-row flex-col py-4  mx-auto">
             <div className=" md:w-1/3 m-2">
               <DrawerHeader className="lg:text-lg text-sm font-semibold -mb-3">
                 <span className="hidden md:block">Nuestros&nbsp;</span>

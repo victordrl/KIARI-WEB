@@ -16,7 +16,6 @@ import { RiFacebookBoxFill, RiInstagramFill } from "react-icons/ri";
 
 export default function ArticulosPage() {
   const { id } = useParams<{ id: string }>();
-
   // aquí tomamos el artículo según el id
   const articulo = articulos[id as keyof typeof articulos];
 
@@ -67,36 +66,18 @@ export default function ArticulosPage() {
               ))}
             <br />
             <br />
-            <span className="minititulo font-semibold">Kiari</span>
-            <p className="parrafo p-6">
-              El pescado es un alimento esencial en la dieta de muchas culturas,
-              y el sábalo se destaca por su versatilidad y sabor. En KIARI,
-              transformamos este delicioso pescado en productos fáciles de
-              consumir, ideales para toda la familia. <br /> <br /> Con nuestras
-              innovadoras presentaciones, como el pisillo, los nuggets y los
-              medallones, garantizamos que disfrutar de pescado nunca ha sido
-              tan sencillo. Cada producto es 100% natural, sin conservantes, y
-              está diseñado para facilitar su preparación y consumo. <br />{" "}
-              <br />
-              Imagen de nuestros productos El pisillo es perfecto para quienes
-              buscan una opción rápida y nutritiva, mientras que los nuggets son
-              ideales para un almuerzo divertido y saludable. <br /> <br /> Por
-              otro lado, los medallones ofrecen una experiencia gourmet en casa,
-              permitiendo que cada bocado sea una delicia. "La calidad del
-              pescado es insuperable, y el sabor es realmente fresco. Mis hijos
-              lo adoran!" - Testimonio de cliente En KIARI, nos preocupamos por
-              ofrecer un producto que no solo sea delicioso, sino también
-              seguro. <br /> <br /> Eliminamos piel, escamas y espinas,
-              asegurando que cada bocado sea placentero. Imagen de un plato
-              preparado con nuestros productos Además, nuestros productos son
-              perfectos para cualquier ocasión, desde una cena rápida hasta una
-              reunión familiar. <br /> <br /> Con KIARI, puedes disfrutar de la
-              frescura del mar en la comodidad de tu hogar. <br /> <br />{" "}
-              Conclusión Si buscas una opción saludable y deliciosa para tus
-              comidas, no busques más. KIARI te ofrece la mejor calidad en
-              pescado, transformado en productos que encantarán a todos.
-              ¡Descubre la diferencia de KIARI y dale un gusto a tu paladar!
-            </p>
+            <span className="minititulo font-semibold">Kiari: </span>
+            <p className="parrafo p-6">{articulo.conclucion}</p>
+            <div>
+              {Object.values(articulo.referecias).map((ref) => (
+                <div className="mb-6">
+                  <h2 className="">{ref.Lugar}</h2>
+                  <Link color="secondary" href={ref.ruta}>
+                    {ref.ruta}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
           <CardFooter className="flex flex-col gap-4">
             <div className="flex flex-col items-center justify-center gap-4">
@@ -122,20 +103,11 @@ export default function ArticulosPage() {
               </div>
               <div className="flex gap-2 ">
                 <div className="flex sm:flex-row items-center flex-col gap-2">
-                  <Chip variant="faded" radius="sm" color="primary">
-                    Sábalo fresco
-                  </Chip>
-                  <Chip variant="faded" radius="sm" color="primary">
-                    Comida saludable
-                  </Chip>
-                </div>
-                <div className="flex sm:flex-row flex-col items-center  gap-2">
-                  <Chip variant="faded" radius="sm" color="primary">
-                    Productos KIARI
-                  </Chip>
-                  <Chip variant="faded" radius="sm" color="primary">
-                    Recetas fáciles
-                  </Chip>
+                  {Object.values(articulo.chip).map((chip) => (
+                    <Chip variant="faded" radius="sm" color="primary">
+                      {chip}
+                    </Chip>
+                  ))}
                 </div>
               </div>
             </div>

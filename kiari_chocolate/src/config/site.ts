@@ -53,6 +53,15 @@ export const siteConfig = {
         icon: RiTruckFill,
       },
       {
+        kay: "blog",
+        label: "Blog",
+        href: "/blog",
+        mensaje: "Consejos , novedades y mas",
+        icon: RiBookReadFill,
+      },
+    ],
+    arti: [
+      {
         kay: "recetas",
         label: "Recetas",
         href: "/blog#rectas",
@@ -60,33 +69,10 @@ export const siteConfig = {
         icon: RiFileList3Fill,
       },
       {
-        kay: "blog",
-        label: "Blog",
-        href: "/blog",
-        mensaje: "Consejos y novedades en redes",
-        icon: RiBookReadFill,
-      },
-    ],
-    arti: [
-      {
-        kay: "articulos",
-        label: "Articulos",
-        mensaje: "Conoce e Informate",
-        href: "/arti",
-        icon: RiArticleFill,
-      },
-      {
         kay: "articulo_1",
         label: articulos[1].titulo_corto,
         mensaje: articulos[1].frace,
         href: "/arti/1",
-        icon: RiArticleFill,
-      },
-      {
-        kay: "articulo_2",
-        label: articulos[2].titulo_corto,
-        mensaje: articulos[2].frace,
-        href: "/arti/2",
         icon: RiArticleFill,
       },
       {

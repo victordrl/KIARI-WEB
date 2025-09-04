@@ -5,6 +5,12 @@ export const articulos = {
     titulo_corto: "Sábalo",
     titulo: "Todo sobre el Sábalo",
     frace: "nuevo",
+    chip: {
+      a: "Sábalo fresco",
+      b: "Comida saludable",
+      c: "Productos KIARI",
+      d: "Recetas fáciles",
+    },
     intro:
       "El Sábalo (Megalops atlanticus), también conocido como tarpon, es un pescado marino apreciado en la gastronomía venezolana. Su carne firme y sabrosa lo hace ideal para platos tradicionales como el pisillo de sábalo. A continuación, conoce más sobre sus características y beneficios nutricionales.",
     resumen:
@@ -37,6 +43,42 @@ export const articulos = {
           "El consumo regular de sábalo fresco aporta beneficios a la salud cardiovascular y muscular. A diferencia de la carne roja, su contenido de grasa saludable favorece niveles bajos de colesterol. Con Kiari, comer pescado es fácil y delicioso: sus presentaciones garantizan un producto práctico, sabroso y apto para toda la familia.",
       },
     },
+    referecias: {
+      resf1: {
+        Lugar: `Food and Agriculture Organization of the United Nations (FAO). 
+        "Tarpon (Megalops atlanticus) – Species Fact Sheets".`,
+        ruta: "https://www.fao.org/fishery/en/species/2931",
+      },
+      resf2: {
+        Lugar: `Ministerio del Poder Popular de Pesca y Acuicultura (Venezuela). 
+      "Consumo y aprovechamiento del sábalo en la gastronomía venezolana".`,
+        ruta: "https://www.mppa.gob.ve",
+      },
+    },
+    conclucion: `El pescado es un alimento esencial en la dieta de muchas culturas 
+    y el sábalo se destaca por su versatilidad y sabor. En KIARI,
+    transformamos este delicioso pescado en productos fáciles de
+    consumir, ideales para toda la familia.
+    Con nuestras innovadoras presentaciones, como el pisillo, los nuggets
+    y los medallones, garantizamos que disfrutar de pescado nunca ha sido
+    tan sencillo. Cada producto es 100% natural, sin conservantes, y está
+    diseñado para facilitar su preparación y consumo. 
+    Imagen de nuestros productos: El pisillo es perfecto para quienes
+    buscan una opción rápida y nutritiva, mientras que los nuggets son
+    ideales para un almuerzo divertido y saludable. 
+    Por otro lado, los medallones ofrecen una experiencia gourmet en casa,
+    permitiendo que cada bocado sea una delicia. "La calidad del pescado es
+    insuperable, y el sabor es realmente fresco. ¡Mis hijos lo adoran!" - Testimonio de cliente. 
+    En KIARI, nos preocupamos por ofrecer un producto que no solo sea delicioso,
+    sino también seguro. Eliminamos piel, escamas y espinas, asegurando que cada
+    bocado sea placentero. Imagen de un plato preparado con nuestros productos. 
+    Además, nuestros productos son perfectos para cualquier ocasión, desde una cena
+    rápida hasta una reunión familiar. Con KIARI, puedes disfrutar de la frescura
+    del mar en la comodidad de tu hogar. 
+    Conclusión: Si buscas una opción saludable y deliciosa para tus comidas,
+    no busques más. KIARI te ofrece la mejor calidad en pescado, transformado
+    en productos que encantarán a todos. ¡Descubre la diferencia de KIARI y
+    dale un gusto a tu paladar!`,
   },
   "2": {
     hreft_1: "/prod",
@@ -44,6 +86,12 @@ export const articulos = {
     titulo_corto: "Calidad",
     titulo: "Cómo elegir pescado de calidad",
     frace: "nuevo",
+    chip: {
+      a: "Sábalo fresco",
+      b: "Comida saludable",
+      c: "Productos KIARI",
+      d: "Recetas fáciles",
+    },
     intro:
       "Elegir un pescado fresco y de buena calidad es clave para garantizar sabor y salud. Un pescado en mal estado puede causar problemas digestivos, mientras que uno fresco conserva nutrientes esenciales. Estos consejos te ayudarán a reconocerlo en la pescadería.",
     resumen:
@@ -76,6 +124,42 @@ export const articulos = {
           "Finalmente, compra en lugares de confianza: Kiari, por ejemplo, garantiza trazabilidad y frescura en cada producto. Evita precios sospechosamente bajos (podrían ocultar fallas de calidad) y opta por pescaderías reconocidas. Con estos pasos, disfrutarás siempre de un pescado sabroso y saludable.",
       },
     },
+    referecias: {
+      resf1: {
+        Lugar: `Food and Agriculture Organization of the United Nations (FAO). 
+        "Tarpon (Megalops atlanticus) – Species Fact Sheets".`,
+        ruta: "https://www.fao.org/fishery/en/species/2931",
+      },
+      resf2: {
+        Lugar: `Ministerio del Poder Popular de Pesca y Acuicultura (Venezuela). 
+      "Consumo y aprovechamiento del sábalo en la gastronomía venezolana".`,
+        ruta: "https://www.mppa.gob.ve",
+      },
+    },
+    conclucion: `El pescado es un alimento esencial en la dieta de muchas culturas 
+    y el sábalo se destaca por su versatilidad y sabor. En KIARI,
+    transformamos este delicioso pescado en productos fáciles de
+    consumir, ideales para toda la familia.
+    Con nuestras innovadoras presentaciones, como el pisillo, los nuggets
+    y los medallones, garantizamos que disfrutar de pescado nunca ha sido
+    tan sencillo. Cada producto es 100% natural, sin conservantes, y está
+    diseñado para facilitar su preparación y consumo. 
+    Imagen de nuestros productos: El pisillo es perfecto para quienes
+    buscan una opción rápida y nutritiva, mientras que los nuggets son
+    ideales para un almuerzo divertido y saludable. 
+    Por otro lado, los medallones ofrecen una experiencia gourmet en casa,
+    permitiendo que cada bocado sea una delicia. "La calidad del pescado es
+    insuperable, y el sabor es realmente fresco. ¡Mis hijos lo adoran!" - Testimonio de cliente. 
+    En KIARI, nos preocupamos por ofrecer un producto que no solo sea delicioso,
+    sino también seguro. Eliminamos piel, escamas y espinas, asegurando que cada
+    bocado sea placentero. Imagen de un plato preparado con nuestros productos. 
+    Además, nuestros productos son perfectos para cualquier ocasión, desde una cena
+    rápida hasta una reunión familiar. Con KIARI, puedes disfrutar de la frescura
+    del mar en la comodidad de tu hogar. 
+    Conclusión: Si buscas una opción saludable y deliciosa para tus comidas,
+    no busques más. KIARI te ofrece la mejor calidad en pescado, transformado
+    en productos que encantarán a todos. ¡Descubre la diferencia de KIARI y
+    dale un gusto a tu paladar!`,
   },
   "3": {
     hreft_1: "/prod",
@@ -83,6 +167,12 @@ export const articulos = {
     titulo_corto: "Beneficios",
     titulo: "Beneficios del pescado fresco",
     frace: "nuevo",
+    chip: {
+      a: "Sábalo fresco",
+      b: "Comida saludable",
+      c: "Productos KIARI",
+      d: "Recetas fáciles",
+    },
     intro:
       "Incluir pescado fresco en la dieta aporta numerosos beneficios para la salud. Su alto contenido de proteínas, vitaminas y minerales lo convierte en un alimento completo y nutritivo. Descubre a continuación cómo tu organismo se beneficia al consumir pescado fresco con regularidad.",
     resumen:
@@ -115,5 +205,41 @@ export const articulos = {
           "Por último, incluir pescado fresco en tus comidas mejora la función cerebral y facilita la digestión. Nutrientes como el zinc, el fósforo y la vitamina B12 favorecen la concentración y el aprendizaje. Además, su carne tierna se digiere con facilidad, ideal para toda la familia. Con Kiari, disfrutar de estos beneficios es sencillo: productos listos para cocinar y llenos de sabor.",
       },
     },
+    referecias: {
+      resf1: {
+        Lugar: `Food and Agriculture Organization of the United Nations (FAO). 
+        "Tarpon (Megalops atlanticus) – Species Fact Sheets".`,
+        ruta: "https://www.fao.org/fishery/en/species/2931",
+      },
+      resf2: {
+        Lugar: `Ministerio del Poder Popular de Pesca y Acuicultura (Venezuela). 
+      "Consumo y aprovechamiento del sábalo en la gastronomía venezolana".`,
+        ruta: "https://www.mppa.gob.ve",
+      },
+    },
+    conclucion: `El pescado es un alimento esencial en la dieta de muchas culturas 
+    y el sábalo se destaca por su versatilidad y sabor. En KIARI,
+    transformamos este delicioso pescado en productos fáciles de
+    consumir, ideales para toda la familia.
+    Con nuestras innovadoras presentaciones, como el pisillo, los nuggets
+    y los medallones, garantizamos que disfrutar de pescado nunca ha sido
+    tan sencillo. Cada producto es 100% natural, sin conservantes, y está
+    diseñado para facilitar su preparación y consumo. 
+    Imagen de nuestros productos: El pisillo es perfecto para quienes
+    buscan una opción rápida y nutritiva, mientras que los nuggets son
+    ideales para un almuerzo divertido y saludable. 
+    Por otro lado, los medallones ofrecen una experiencia gourmet en casa,
+    permitiendo que cada bocado sea una delicia. "La calidad del pescado es
+    insuperable, y el sabor es realmente fresco. ¡Mis hijos lo adoran!" - Testimonio de cliente. 
+    En KIARI, nos preocupamos por ofrecer un producto que no solo sea delicioso,
+    sino también seguro. Eliminamos piel, escamas y espinas, asegurando que cada
+    bocado sea placentero. Imagen de un plato preparado con nuestros productos. 
+    Además, nuestros productos son perfectos para cualquier ocasión, desde una cena
+    rápida hasta una reunión familiar. Con KIARI, puedes disfrutar de la frescura
+    del mar en la comodidad de tu hogar. 
+    Conclusión: Si buscas una opción saludable y deliciosa para tus comidas,
+    no busques más. KIARI te ofrece la mejor calidad en pescado, transformado
+    en productos que encantarán a todos. ¡Descubre la diferencia de KIARI y
+    dale un gusto a tu paladar!`,
   },
 };
