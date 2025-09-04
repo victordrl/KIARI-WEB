@@ -69,6 +69,13 @@ export const siteConfig = {
     ],
     arti: [
       {
+        kay: "articulos",
+        label: "Articulos",
+        mensaje: "Conoce e Informate",
+        href: "/arti",
+        icon: RiArticleFill,
+      },
+      {
         kay: "articulo_1",
         label: articulos[1].titulo_corto,
         mensaje: articulos[1].frace,

@@ -1,11 +1,9 @@
 import { Button, Image, Card } from "@heroui/react";
 import { Logo } from "@/components/icons";
 import { Link } from "react-router-dom";
-import { IconType } from "react-icons";
 
 interface Props {
   children?: React.ReactNode;
-  icon?: IconType;
   img?: string;
   bg_color?: string;
   titulo?: string;
@@ -14,9 +12,8 @@ interface Props {
   href_2?: string;
 }
 
-export default function InfoImg1({
+export default function InfoImg({
   children,
-  icon: Icon,
   img = "default.png",
   bg_color = "default",
   titulo = "Titular",
@@ -31,22 +28,30 @@ export default function InfoImg1({
       ) : (
         <Card
           radius="none"
-          className={`flex flex-col sm:flex-row justify-between w-full p-4 ${bg_color}`}
+          shadow="sm"
+          className={`flex flex-col sm:flex-row justify-around w-full lg:p-20 py-14 px-4 ${bg_color}`}
         >
           {/* contenido */}
-          <div className="my-auto max-w-3xl p-8">
-            {Icon && (
-              <Icon className="text-default-700 lg:size-40 md:size-36 sm:size-24 size-20" />
-            )}
+          <div className="min-w-fit min-h-fit my-auto">
+            <Image
+              isBlurred
+              isZoomed
+              src={img}
+              radius="sm"
+              shadow="none"
+              className="lg:w-[600px] lg:h-[600px] md:w-[400px] md:h-[500px] p-2"
+            />
+          </div>
+          <div className="my-auto max-w-2xl p-8">
             <h2 className="titulo my-4">{titulo}</h2>
             <p className="parrafo">{text}</p>
             {/* botones */}
             <div className="flex gap-3 my-8">
               <Button
                 color="primary"
-                variant="ghost"
+                variant="solid"
                 as={Link}
-                href={href_1}
+                to={href_1}
                 endContent={<Logo className="size-4" />}
               >
                 Mas
@@ -55,22 +60,12 @@ export default function InfoImg1({
                 color="primary"
                 variant="light"
                 as={Link}
-                href={href_2}
+                to={href_2}
                 endContent={<Logo className="size-4" />}
               >
-                Contactanos
+                Blog
               </Button>
             </div>
-          </div>
-          <div className="min-w-fit min-h-fit my-auto">
-            <Image
-              isBlurred
-              isZoomed
-              src={img}
-              radius="sm"
-              shadow="none"
-              className="lg:w-[720px] lg:h-[720px] md:w-[480px] md:h-[700px] p-2"
-            />
           </div>
         </Card>
       )}

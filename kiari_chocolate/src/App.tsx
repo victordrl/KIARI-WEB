@@ -5,7 +5,8 @@ import TestimoniosPage from "@/pages/testimonio";
 import ProductosPage from "@/pages/productos";
 import ContactoPage from "@/pages/contact";
 import NosotrosPage from "@/pages/nosotros";
-import ArticulosPage from "@/pages/articulo";
+import ArticuloPage from "@/pages/articulo";
+import ArticulosPage from "@/pages/articulos";
 import MedallonesPage from "@/pages/Medallones";
 import NuggetsPage from "@/pages/Nuggets";
 import PisilloPage from "@/pages/pisillo";
@@ -19,6 +20,7 @@ function App() {
       <Route element={<ProductosPage />} path="/prod" />
       <Route element={<ContactoPage />} path="/cont" />
       <Route element={<NosotrosPage />} path="/noso" />
+      <Route element={<ArticuloPage />} path="/arti" />
       <Route element={<ArticulosPage />} path="/arti/:id" />
       <Route element={<MedallonesPage />} path="/prod/m" />
       <Route element={<NuggetsPage />} path="/prod/n" />
