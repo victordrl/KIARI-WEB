@@ -2,7 +2,7 @@ import Footer from "@/components/footer";
 import MiNavbar from "@/components/navbar";
 
 import { articulos } from "@/config/articulos_config";
-import { triptico_3 } from "@/config/blog_config";
+import { triptico_3, hero_1 } from "@/config/blog_config";
 import Baner2 from "@/layouts/baner_2";
 import Hero1 from "@/layouts/hero_1";
 import ImgInfo from "@/layouts/img_nfo";
@@ -14,10 +14,12 @@ export default function ArticuloPage() {
     <>
       <MiNavbar />
       <Hero1
-        bg_img={"default.png"}
-        href_1="/noso"
-        titulo="Sábalo: Frescura, Calidad, Recetas y Beneficios para tu Mesa"
-        text=""
+        bg_img={hero_1.bg_image}
+        href_1={hero_1.href}
+        titulo={hero_1.titulo}
+        text={hero_1.texto}
+        btn={hero_1.btn}
+        icon={hero_1.icon}
       />
       <ImgInfo
         bg_color=""

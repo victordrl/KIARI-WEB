@@ -1,9 +1,8 @@
-import { Button, Card } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { FaShoppingCart } from "react-icons/fa";
 
 import { Logo } from "@/components/icons";
 import { Link } from "react-router-dom";
-import { title, subtitle } from "@/components/primitives";
 
 interface Props {
   children?: React.ReactNode;

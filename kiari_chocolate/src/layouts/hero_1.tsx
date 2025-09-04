@@ -1,5 +1,4 @@
 import { Button, Card, Image } from "@heroui/react";
-import { FaShoppingCart } from "react-icons/fa";
 
 import { Logo } from "@/components/icons";
 import { Link } from "react-router-dom";
@@ -10,6 +9,8 @@ interface Props {
   titulo?: string;
   text?: string;
   href_1?: string;
+  btn?: string;
+  icon?: React.ReactNode;
 }
 
 export default function Hero1({
@@ -18,6 +19,8 @@ export default function Hero1({
   titulo = "Titular",
   text = "Lore extendido",
   href_1 = "/",
+  btn = "mas",
+  icon,
 }: Props) {
   return (
     <main className="h-fit">
@@ -46,9 +49,9 @@ export default function Hero1({
               variant="faded"
               as={Link}
               to={href_1}
-              endContent={<Logo className="sm:size-5 size-5" />}
+              endContent={icon}
             >
-              Conocenos
+              {btn}
             </Button>
           </div>
         </div>

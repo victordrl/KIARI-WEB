@@ -1,3 +1,14 @@
+import { RiArrowRightSLine } from "react-icons/ri";
+
+export const hero_1 = {
+  bg_image: "default.png",
+  titulo: "Sábalo: Frescura, Calidad, Recetas y Beneficios para tu Mesa",
+  texto: "",
+  btn: "Conocenos",
+  href: "/noso",
+  icon: <RiArrowRightSLine />,
+};
+
 export const triptico_3 = {
   mini_titulo: "Recetas",
   titulo: "Disfrutas Nuestras recetas",
