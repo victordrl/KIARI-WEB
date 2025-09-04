@@ -20,11 +20,11 @@ export default function Hero1({
   href_1 = "/",
 }: Props) {
   return (
-    <main className="max-h-[500px]">
+    <main className="h-fit">
       <Card
         radius="none"
         shadow="sm"
-        className={`flex-grow h-screen w-full px-6 pt-16 bg-cover md:bg-center bg-bottom bg-no-repeat ${bg_color}`}
+        className={`flex-grow h-[50%] w-full px-6 pt-16 bg-cover md:bg-center bg-bottom bg-no-repeat ${bg_color}`}
         style={{
           backgroundImage: bg_img ? `url(${bg_img})` : "",
           backgroundBlendMode: "overlay",

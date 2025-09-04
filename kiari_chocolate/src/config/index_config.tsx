@@ -1,6 +1,7 @@
 export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
 import { PiBowlFoodFill } from "react-icons/pi";
+import { RiArrowRightSLine } from "react-icons/ri";
 import { FaHeartbeat, FaUniversalAccess, FaHandsHelping } from "react-icons/fa";
 
 export const inicio = {
@@ -16,6 +17,10 @@ export const baner_1 = {
   mini_titulo: "Sabor",
   titulo: "Bienvenido a KIARI",
   text: "Transformamos el pescado en una experiencia deliciosa y saludable para todos.",
+  btn_1: "Mas",
+  btn_2: "Mas",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
   href_1: "/",
   href_2: "/",
 };
@@ -111,6 +116,10 @@ export const baner_2 = {
   mini_titulo: "",
   titulo: "¡Disfruta del sabor del sábalo!",
   text: "Realiza tu pedido y descubre nuestros deliciosos productos.",
+  btn_1: "Mas",
+  btn_2: "Mas",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
   href_1: "/",
   href_2: "/",
 };

@@ -1,3 +1,10 @@
+import { RiArrowRightSLine, RiBox2Line } from "react-icons/ri";
+
+export const bnt_icon = {
+  icon_1: <RiArrowRightSLine className="size-6" />,
+  icon_2: <RiBox2Line className="size-6" />,
+};
+
 export const articulos = {
   "1": {
     hreft_1: "/prod",

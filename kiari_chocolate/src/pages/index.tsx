@@ -37,6 +37,8 @@ export default function IndexPage() {
         text={baner_1.text}
         href_1={baner_1.href_1}
         href_2={baner_1.href_2}
+        icon_1={baner_1.icon_1}
+        icon_2={baner_1.icon_2}
       />
       <Triptico1
         mini_titulo={triptico_1.mini_titulo}
@@ -75,6 +77,10 @@ export default function IndexPage() {
         text={baner_2.text}
         href_1={baner_2.href_1}
         href_2={baner_2.href_2}
+        btn_text_1={baner_2.btn_1}
+        btn_text_2={baner_2.btn_2}
+        icon_1={baner_2.icon_1}
+        icon_2={baner_2.icon_2}
       />
       <Footer />
     </div>

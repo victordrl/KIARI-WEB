@@ -11,11 +11,13 @@ import MedallonesPage from "@/pages/Medallones";
 import NuggetsPage from "@/pages/Nuggets";
 import PisilloPage from "@/pages/pisillo";
 import { ScrollReset } from "./components/scrollr_reset";
+import ScrollToHashElement from "./components/scroll_hash";
 
 function App() {
   return (
     <>
       <ScrollReset />
+      <ScrollToHashElement />
       <Routes>
         <Route element={<IndexPage />} path="/" />
         <Route element={<TestimoniosPage />} path="/test" />

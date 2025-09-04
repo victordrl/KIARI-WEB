@@ -38,20 +38,6 @@ export default function Inicio({
           children
         ) : (
           <>
-            {/* <Card
-              isBlurred
-              radius="sm"
-              shadow="sm"
-              className="text-center bg-default/5 items-center justify-center max-w-fit md:p-8 p-4"
-            >
-              <h1 className="titulo sm:m-0 my-4">
-                <span className="sm:text-nowrap">{titulo}</span>
-                <br />
-                <div className="sm:mt-4 mt-2"></div>
-                <span className="text-orange-400 font-extrabold">KIARI</span>
-              </h1>
-              <p className="parrafo max-w-xl sm:mt-6 mt-2">{text}</p>
-            </Card> */}
             <div className="text-center items-center justify-center max-w-fit md:p-8 p-4">
               <h1 className="titulo sm:m-0 my-4">
                 <span className="sm:text-nowrap">{titulo}</span>
@@ -59,7 +45,7 @@ export default function Inicio({
                 <div className="sm:mt-4 mt-2"></div>
                 <span className="text-orange-400 font-extrabold">KIARI</span>
               </h1>
-              <p className="parrafo max-w-xl sm:mt-6 mt-2 font-semibold">
+              <p className="parrafo max-w-xl sm:mt-6 mt-2 font-semibold mx-auto">
                 {text}
               </p>
             </div>

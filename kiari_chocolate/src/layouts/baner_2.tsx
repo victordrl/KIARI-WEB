@@ -1,5 +1,4 @@
 import { Button } from "@heroui/react";
-import { Logo } from "@/components/icons";
 import { Link } from "react-router-dom";
 
 // props para rrellenar la interface
@@ -10,17 +9,25 @@ interface Props {
   mini_titulo?: string;
   titulo?: string;
   text?: string;
+  btn_text_1?: string;
+  btn_text_2?: string;
+  icon_1?: React.ReactNode;
+  icon_2?: React.ReactNode;
   href_1?: string;
   href_2?: string;
 }
 
-export default function Baner1({
+export default function Baner2({
   children,
   bg_imag,
   bg_color = "bg-base",
   mini_titulo = "mini titulo",
   titulo = "Titular",
   text = "Lore relleno",
+  btn_text_1 = "mas",
+  btn_text_2 = "mas",
+  icon_1,
+  icon_2,
   href_1 = "/",
   href_2 = "/",
 }: Props) {
@@ -48,18 +55,18 @@ export default function Baner1({
               variant="faded"
               as={Link}
               href={href_1}
-              endContent={<Logo className="sm:size-5 size-4" />}
+              endContent={icon_1}
             >
-              Ordenar
+              {btn_text_1}
             </Button>
             <Button
               color="primary"
               variant="shadow"
               as={Link}
               href={href_2}
-              endContent={<Logo className="sm:size-5 size-4" />}
+              endContent={icon_2}
             >
-              Contactanos
+              {btn_text_2}
             </Button>
           </div>
         </div>

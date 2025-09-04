@@ -2,9 +2,12 @@ import Footer from "@/components/footer";
 import MiNavbar from "@/components/navbar";
 
 import { articulos } from "@/config/articulos_config";
+import { triptico_3 } from "@/config/blog_config";
+import Baner2 from "@/layouts/baner_2";
 import Hero1 from "@/layouts/hero_1";
 import ImgInfo from "@/layouts/img_nfo";
 import InfoImg from "@/layouts/info_img";
+import Triptico3 from "@/layouts/triptico_3";
 
 export default function ArticuloPage() {
   return (
@@ -13,7 +16,7 @@ export default function ArticuloPage() {
       <Hero1
         bg_img={"default.png"}
         href_1="/noso"
-        titulo="Sábalo: Frescura, Calidad y Beneficios para tu Mesa"
+        titulo="Sábalo: Frescura, Calidad, Recetas y Beneficios para tu Mesa"
         text=""
       />
       <ImgInfo
@@ -39,6 +42,14 @@ export default function ArticuloPage() {
         text={articulos[3].resumen}
         href_1="/blog/articulo/1"
         href_2="/blog"
+      />
+      <Baner2 href_1="/prod" />
+      <Triptico3
+        id="recetas"
+        mini_titulo={triptico_3.mini_titulo}
+        titulo={triptico_3.titulo}
+        text={triptico_3.text}
+        contenido={triptico_3.contenido}
       />
       <Footer />
     </>

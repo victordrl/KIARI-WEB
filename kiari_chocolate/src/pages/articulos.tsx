@@ -6,7 +6,7 @@ import MiNavbar from "@/components/navbar";
 
 import Baner3 from "@/layouts/baner_3";
 
-import { articulos } from "@/config/articulos_config";
+import { articulos, bnt_icon } from "@/config/articulos_config";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/icons";
 
@@ -34,6 +34,10 @@ export default function ArticulosPage() {
         mini_titulo={articulo.frace}
         href_1="/prod"
         href_2={articulo.hreft_2}
+        btn_text_1="Productos"
+        btn_text_2="Mas"
+        icon_1={bnt_icon.icon_2}
+        icon_2={bnt_icon.icon_1}
       />
       <section className="flex flex-col items-center w-full h-full bg-default-200 py-8 px-4">
         <Carousel className="sm:w-[75%] h-[650px] rounded-md">

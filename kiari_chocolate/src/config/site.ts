@@ -64,7 +64,7 @@ export const siteConfig = {
       {
         kay: "recetas",
         label: "Recetas",
-        href: "/blog#rectas",
+        href: "/blog#recetas",
         mensaje: "Inspirate con deliciosas recetas",
         icon: RiFileList3Fill,
       },
