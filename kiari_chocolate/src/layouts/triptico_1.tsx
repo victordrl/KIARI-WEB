@@ -1,4 +1,3 @@
-import { IconType } from "react-icons";
 import {
   Link,
   Button,
@@ -8,10 +7,8 @@ import {
   CardHeader,
 } from "@heroui/react";
 
-import { Logo } from "@/components/icons";
-
 interface TripticoProps {
-  icon?: IconType;
+  icon?: React.ReactNode;
   subtitulo?: string;
   texto?: string;
   href?: string;
@@ -24,12 +21,16 @@ interface Props {
   mini_titulo?: string;
   titulo?: string;
   text?: string;
+  btn_text?: string;
+  icon?: React.ReactNode;
 }
 
 export default function Triptico1({
   children,
   bg_color = "foreground",
   mini_titulo = "minititulo",
+  btn_text = "Mas",
+  icon,
   contenido = [
     { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
     { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
@@ -58,7 +59,6 @@ export default function Triptico1({
             {/* triptico con 1 a 3 cartas */}
             <div className="flex md:flex-row items-center flex-col w-full lg:p-12 lg:gap-8 px-8 md:my-4 my-12 gap-4">
               {contenido.map((item, index) => {
-                const Icon = item.icon || Logo;
                 return (
                   <Card
                     key={index}
@@ -67,7 +67,7 @@ export default function Triptico1({
                     className={`md:w-1/3  sm:h-[470px] h-[420px]`}
                   >
                     <CardHeader className="justify-center">
-                      <Icon className="size-32 mb-4 text-secondary" />
+                      {item.icon}
                     </CardHeader>
                     <CardBody className="flex flex-col items-center text-center p-6">
                       <h4 className="subtitulo">{item.subtitulo}</h4>
@@ -81,9 +81,9 @@ export default function Triptico1({
                         variant="light"
                         as={Link}
                         href={item.href}
-                        endContent={<Logo className="sm:size-6 size-5" />}
+                        endContent={icon}
                       >
-                        Mas
+                        {btn_text}
                       </Button>
                     </CardFooter>
                   </Card>

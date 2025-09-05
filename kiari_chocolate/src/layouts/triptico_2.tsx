@@ -24,6 +24,10 @@ interface Props {
   text?: string;
   href_1?: string;
   href_2?: string;
+  btn_text_1?: string;
+  btn_text_2?: string;
+  icon_1?: React.ReactNode;
+  icon_2?: React.ReactNode;
 }
 
 export default function Triptico2({
@@ -39,6 +43,10 @@ export default function Triptico2({
   mini_titulo = "minititulo",
   href_1 = "/",
   href_2 = "/",
+  btn_text_1 = "Mas",
+  btn_text_2 = "Mas",
+  icon_1,
+  icon_2,
 }: Props) {
   return (
     <section className="flex justify-center min-h-screen w-full py-12">
@@ -92,18 +100,18 @@ export default function Triptico2({
                 variant="ghost"
                 as={Link}
                 href={href_1}
-                endContent={<Logo className="sm:size-5 size-4" />}
+                endContent={icon_1}
               >
-                Mas
+                {btn_text_1}
               </Button>
               <Button
                 color="primary"
                 variant="light"
                 as={Link}
                 href={href_2}
-                endContent={<Logo className="sm:size-5 size-4" />}
+                endContent={icon_2}
               >
-                Contactanos
+                {btn_text_2}
               </Button>
             </div>
           </>

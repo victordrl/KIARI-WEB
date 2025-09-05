@@ -45,6 +45,8 @@ export default function IndexPage() {
         titulo={triptico_1.titulo}
         text={triptico_1.text}
         contenido={triptico_1.contenido}
+        icon={triptico_1.icon}
+        btn_text={triptico_1.btn_text}
       />
       <InfoImg1
         icon={info_img.icon}
@@ -59,6 +61,12 @@ export default function IndexPage() {
         titulo={triptico_2.titulo}
         text={triptico_2.text}
         contenido={triptico_2.contenido}
+        href_1={triptico_2.href_1}
+        href_2={triptico_2.href_2}
+        btn_text_1={triptico_2.btn_text_1}
+        btn_text_2={triptico_2.btn_text_2}
+        icon_1={triptico_2.icon_1}
+        icon_2={triptico_2.icon_2}
       />
       <InfoImg2
         img={info_img.img}

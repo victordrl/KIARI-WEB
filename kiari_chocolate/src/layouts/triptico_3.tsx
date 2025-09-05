@@ -77,40 +77,6 @@ export default function Triptico3({
                       <p className="text-default-500">{item.texto}</p>
                     </CardFooter>
                   </Card>
-                  // <Card
-                  //   key={index}
-                  //   radius="none"
-                  //   shadow="sm"
-                  //   className="flexmd:w-1/3 md:h-fit sm:h-[450px]"
-                  // >
-                  //   <CardHeader className="justify-center">
-                  //     <Image
-                  //       isZoomed
-                  //       alt={`img_triptico_${index}`}
-                  //       className="w-full object-contain"
-                  //       radius="sm"
-                  //       shadow="lg"
-                  //       src={item.img}
-                  //     />
-                  //   </CardHeader>
-                  //   <CardBody className="flex flex-col items-center text-center p-6">
-                  //     <h4 className="subtitulo">{item.subtitulo}</h4>
-                  //     <p className="text-default-500">{item.texto}</p>
-                  //   </CardBody>
-                  //   <CardFooter className="justify-center">
-                  //     {/* botones */}
-                  //     <Button
-                  //       size="lg"
-                  //       color="primary"
-                  //       variant="light"
-                  //       as={Link}
-                  //       href={item.href}
-                  //       endContent={<Logo className="sm:size-6 size-5" />}
-                  //     >
-                  //       Mas
-                  //     </Button>
-                  //   </CardFooter>
-                  // </Card>
                 );
               })}
             </div>

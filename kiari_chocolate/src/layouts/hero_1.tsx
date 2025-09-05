@@ -1,6 +1,4 @@
-import { Button, Card, Image } from "@heroui/react";
-
-import { Logo } from "@/components/icons";
+import { Button, Card } from "@heroui/react";
 import { Link } from "react-router-dom";
 
 interface Props {

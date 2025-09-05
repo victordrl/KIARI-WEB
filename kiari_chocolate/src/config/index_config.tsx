@@ -52,6 +52,10 @@ export const triptico_2 = {
   ],
   href_1: "/comprar",
   href_2: "/conocenos",
+  btn_text_1: "Mas",
+  btn_text_2: "Contactanos",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
 };
 
 export const info_img = {
@@ -69,24 +73,26 @@ export const triptico_1 = {
   text: "En KIARI, nos especializamos en la transformación del sábalo, ofreciendo productos de alta calidad. Nuestro proceso asegura que cada bocado sea delicioso y libre de impurezas.",
   contenido: [
     {
-      icon: FaHeartbeat,
+      icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
       subtitulo: "Productos Innovadores y Saludables",
       texto: "Ofrecemos pisillo, nuggets y medallones, todos 100% naturales.",
       href: "/",
     },
     {
-      icon: FaHandsHelping,
+      icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
       subtitulo: "Compromiso con la Calidad y Sostenibilidad",
       texto: "Nuestros productos son elaborados sin conservantes artificiales.",
       href: "/",
     },
     {
-      icon: FaUniversalAccess,
+      icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
       subtitulo: "Fácil Acceso a Nuestros Productos",
       texto: "Contáctanos para realizar tus pedidos de manera sencilla.",
       href: "/",
     },
   ],
+  icon: <RiArrowRightSLine />,
+  btn_text: "Mas",
 };
 
 export const info_img_2 = {
