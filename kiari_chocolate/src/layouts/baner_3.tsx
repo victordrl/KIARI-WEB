@@ -52,7 +52,7 @@ export default function Baner3({
           <div className="flex sm:flex-row flex-col justify-between sm:ml-12 gap-4">
             <div className="flex flex-col gap-4">
               <span className="minititulo">{mini_titulo}</span>
-              <span className="titulo">{titulo}</span>
+              <h1 className="titulo">{titulo}</h1>
             </div>
             <div className="h-full sm:w-7/12 sm:pt-8 m-4">
               <p className="parrafo font-semibold">{text}</p>

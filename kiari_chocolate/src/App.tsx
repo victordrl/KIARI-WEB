@@ -12,6 +12,7 @@ import NuggetsPage from "@/pages/Nuggets";
 import PisilloPage from "@/pages/pisillo";
 import { ScrollReset } from "./components/scrollr_reset";
 import ScrollToHashElement from "./components/scroll_hash";
+import RecetaPage from "./pages/receta";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route element={<NosotrosPage />} path="/noso" />
         <Route element={<BlogsPage />} path="/blog" />
         <Route element={<ArticulosPage />} path="/blog/articulo/:id" />
+        <Route element={<RecetaPage />} path="/blog/receta/:id" />
         <Route element={<MedallonesPage />} path="/prod/m" />
         <Route element={<NuggetsPage />} path="/prod/n" />
         <Route element={<PisilloPage />} path="/prod/p" />
