@@ -17,6 +17,7 @@ import Triptico2 from "@/layouts/triptico_2";
 import InfoImg2 from "@/layouts/info_img_2";
 import Testimonio1 from "@/layouts/testimonio_1";
 import Baner2 from "@/layouts/baner_2";
+import Triptico3 from "@/layouts/triptico_3";
 
 export default function IndexPage() {
   return (

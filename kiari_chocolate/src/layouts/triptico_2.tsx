@@ -1,18 +1,11 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Image,
-} from "@heroui/react";
-import { Logo } from "@/components/icons";
+import { Button, Card, CardBody, CardFooter, Image } from "@heroui/react";
 import { Link } from "react-router-dom";
 
 interface TripticoProps {
   img?: string;
   subtitulo?: string;
   texto?: string;
+  href?: string;
 }
 
 interface Props {
@@ -65,32 +58,57 @@ export default function Triptico2({
               <p className="parrafo text-center max-w-xl">{text}</p>
             </div>
             {/* triptico con 1 a 3 imagenes */}
-            <div className="flex md:flex-row items-center flex-col w-full lg:p-12 lg:gap-8 px-8 md:-my-4 my-12 gap-4">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 pt-12 gap-3">
               {contenido.map((item, index) => (
                 <Card
                   key={index}
+                  isPressable
                   shadow="sm"
-                  className={`md:w-1/${contenido.length} md:min-h-full`}
+                  radius="sm"
+                  as={Link}
+                  to={item.href}
+                  className="cursor-pointer"
                 >
-                  <CardHeader>
+                  <CardBody className="overflow-visible p-0">
                     <Image
-                      isZoomed
                       alt={`img_triptico_${index}`}
-                      className="w-full object-contain"
+                      className="w-full object-cover"
                       radius="sm"
-                      shadow="lg"
+                      shadow="sm"
                       src={item.img}
+                      width="100%"
                     />
-                  </CardHeader>
-                  <CardBody>
-                    <h3 className="subtitulo text-center lg:text-4xl md:text-3xl text-3xl">
-                      {item.subtitulo}
-                    </h3>
                   </CardBody>
-                  <CardFooter className="flex flex-col gap-4">
-                    <p className="parrafo text-center">{item.texto}</p>
+                  <CardFooter className="text-small flex-col justify-between">
+                    <h4 className="subtitulo">{item.subtitulo}</h4>
+                    <p className="text-center text-default-500">{item.texto}</p>
                   </CardFooter>
                 </Card>
+                // <Card
+                //   key={index}
+                //   shadow="sm"
+                //   className={`md:w-1/${contenido.length} md:min-h-full`}
+                // >
+                //   <CardHeader>
+                //     <Image
+                //       isZoomed
+                //       alt={`img_triptico_${index}`}
+                //       className="w-full object-contain"
+                //       radius="sm"
+                //       shadow="lg"
+                //       src={item.img}
+                //     />
+                //   </CardHeader>
+                //   <CardBody>
+                //     <h3 className="subtitulo text-center lg:text-4xl md:text-3xl text-3xl">
+                //       {item.subtitulo}
+                //     </h3>
+                //   </CardBody>
+                //   <CardFooter className="flex flex-col gap-4">
+                //     <p className="parrafo text-center">{item.texto}</p>
+                //   </CardFooter>
+                // </Card>
               ))}
             </div>
             {/* botones */}

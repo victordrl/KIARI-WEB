@@ -33,18 +33,21 @@ export const triptico_2 = {
   contenido: [
     {
       img: "default.png",
+      href: "/prod/n",
       subtitulo: "Nuggets",
       texto:
         "Nuggets la forma más práctica y secilla de disfrutar el sabor del sábalo.",
     },
     {
       img: "default.png",
+      href: "/prod/p",
       subtitulo: "Pisillo",
       texto:
         "Presentaciones únicas que transforman tu experiencia con el pescado.",
     },
     {
       img: "default.png",
+      href: "/prod/m",
       subtitulo: "Medallones",
       texto:
         "hamburguesas de pura pulpa al natural para los amantes del pescado.",
