@@ -2,7 +2,7 @@ import Footer from "@/components/footer";
 import MiNavbar from "@/components/navbar";
 
 import { articulos, bnt_icon } from "@/config/articulos_config";
-import { triptico_3, hero_1 } from "@/config/blog_config";
+import { triptico_3, hero_1, baner_2_1 } from "@/config/blog_config";
 import Baner2 from "@/layouts/baner_2";
 import Hero1 from "@/layouts/hero_1";
 import ImgInfo from "@/layouts/img_nfo";
@@ -57,7 +57,18 @@ export default function ArticuloPage() {
         icon_1={bnt_icon.icon_1}
         icon_2={bnt_icon.icon_3}
       />
-      <Baner2 href_1="/prod" />
+      <Baner2
+        bg_imag={baner_2_1.bg_img}
+        mini_titulo={baner_2_1.mini_titulo}
+        titulo={baner_2_1.titulo}
+        text={baner_2_1.text}
+        btn_text_1={baner_2_1.btn_1}
+        btn_text_2={baner_2_1.btn_2}
+        icon_1={baner_2_1.icon_1}
+        icon_2={baner_2_1.icon_2}
+        href_1={baner_2_1.href_1}
+        href_2={baner_2_1.href_2}
+      />
       <Triptico3
         id="recetas"
         mini_titulo={triptico_3.mini_titulo}

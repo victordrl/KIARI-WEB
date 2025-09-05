@@ -1,5 +1,5 @@
 import { Button, Image, Card } from "@heroui/react";
-import { Logo } from "@/components/icons";
+
 import { Link } from "react-router-dom";
 import { IconType } from "react-icons";
 

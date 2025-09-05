@@ -1,5 +1,5 @@
 import { Button, Image, Card, CardHeader, CardBody } from "@heroui/react";
-import { Logo } from "@/components/icons";
+
 import { Link } from "react-router-dom";
 
 interface Cartas {

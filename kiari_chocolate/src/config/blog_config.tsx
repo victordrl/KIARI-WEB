@@ -1,4 +1,8 @@
-import { RiArrowRightSLine } from "react-icons/ri";
+import {
+  RiArrowRightSLine,
+  RiFacebookBoxFill,
+  RiInstagramFill,
+} from "react-icons/ri";
 
 export const hero_1 = {
   bg_image: "default.png",
@@ -7,6 +11,19 @@ export const hero_1 = {
   btn: "Conocenos",
   href: "/noso",
   icon: <RiArrowRightSLine />,
+};
+
+export const baner_2_1 = {
+  bg_img: "default.png",
+  mini_titulo: "Redes",
+  titulo: "Visitanos en nuestras redes sociales",
+  text: "Mantente al dia con nuestras ultimas publicaciones.",
+  btn_1: "Facebook",
+  btn_2: "Instagram",
+  icon_1: <RiFacebookBoxFill />,
+  icon_2: <RiInstagramFill />,
+  href_1: "/https://www.facebook.com/kiarishophouse/",
+  href_2: "/https://www.instagram.com/kiarishophouse/",
 };
 
 export const triptico_3 = {
