@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import MiNavbar from "@/components/navbar";
 
-import { articulos } from "@/config/articulos_config";
+import { articulos, bnt_icon } from "@/config/articulos_config";
 import { triptico_3, hero_1 } from "@/config/blog_config";
 import Baner2 from "@/layouts/baner_2";
 import Hero1 from "@/layouts/hero_1";
@@ -27,7 +27,11 @@ export default function ArticuloPage() {
         titulo={articulos[1].titulo}
         text={articulos[1].resumen}
         href_1="/blog/articulo/1"
-        href_2="/blog"
+        href_2="/blog#recetas"
+        btn_text__1="Mas"
+        btn_text__2="Recetas"
+        icon_1={bnt_icon.icon_1}
+        icon_2={bnt_icon.icon_3}
       />
       <InfoImg
         bg_color="bg-default-100"
@@ -35,7 +39,11 @@ export default function ArticuloPage() {
         titulo={articulos[2].titulo}
         text={articulos[2].resumen}
         href_1="/blog/articulo/2"
-        href_2="/blog"
+        href_2="/blog#recetas"
+        btn_text__1="Mas"
+        btn_text__2="Recetas"
+        icon_1={bnt_icon.icon_1}
+        icon_2={bnt_icon.icon_3}
       />
       <ImgInfo
         bg_color=""
@@ -43,7 +51,11 @@ export default function ArticuloPage() {
         titulo={articulos[3].titulo}
         text={articulos[3].resumen}
         href_1="/blog/articulo/1"
-        href_2="/blog"
+        href_2="/blog#recetas"
+        btn_text__1="Mas"
+        btn_text__2="Recetas"
+        icon_1={bnt_icon.icon_1}
+        icon_2={bnt_icon.icon_3}
       />
       <Baner2 href_1="/prod" />
       <Triptico3

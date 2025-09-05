@@ -1,7 +1,7 @@
 import {
   baner_1,
   baner_2,
-  info_img,
+  info_img_1,
   info_img_2,
   inicio,
   triptico_1,
@@ -17,7 +17,6 @@ import Triptico2 from "@/layouts/triptico_2";
 import InfoImg2 from "@/layouts/info_img_2";
 import Testimonio1 from "@/layouts/testimonio_1";
 import Baner2 from "@/layouts/baner_2";
-import Triptico3 from "@/layouts/triptico_3";
 
 export default function IndexPage() {
   return (
@@ -50,12 +49,16 @@ export default function IndexPage() {
         btn_text={triptico_1.btn_text}
       />
       <InfoImg1
-        icon={info_img.icon}
-        img={info_img.img}
-        titulo={info_img.titulo}
-        text={info_img.text}
-        href_1={info_img.href_1}
-        href_2={info_img.href_2}
+        icon={info_img_1.icon}
+        img={info_img_1.img}
+        titulo={info_img_1.titulo}
+        text={info_img_1.text}
+        href_1={info_img_1.href_1}
+        href_2={info_img_1.href_2}
+        btn_text__1={info_img_1.btn_1}
+        btn_text__2={info_img_1.btn_2}
+        icon_1={info_img_1.icon_1}
+        icon_2={info_img_1.icon_2}
       />
       <Triptico2
         mini_titulo={triptico_2.mini_titulo}
@@ -70,13 +73,17 @@ export default function IndexPage() {
         icon_2={triptico_2.icon_2}
       />
       <InfoImg2
-        img={info_img.img}
+        img={info_img_2.img}
         minititulo={info_img_2.minititulo}
-        titulo={info_img.titulo}
-        text={info_img.text}
+        titulo={info_img_2.titulo}
+        text={info_img_2.text}
         contenido={info_img_2.contenido}
-        href_1={info_img.href_1}
-        href_2={info_img.href_2}
+        href_1={info_img_2.href_1}
+        href_2={info_img_2.href_2}
+        btn_text__1={info_img_2.btn_1}
+        btn_text__2={info_img_2.btn_2}
+        icon_1={info_img_2.icon_1}
+        icon_2={info_img_2.icon_2}
       />
       <Testimonio1 star={5} />
       <Baner2

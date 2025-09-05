@@ -1,7 +1,7 @@
 export const giftDefault = "https://i.gifer.com/fxoU.gif";
 
 import { PiBowlFoodFill } from "react-icons/pi";
-import { RiArrowRightSLine } from "react-icons/ri";
+import { RiArrowRightSLine, RiBox2Line } from "react-icons/ri";
 import { FaHeartbeat, FaUniversalAccess, FaHandsHelping } from "react-icons/fa";
 
 export const inicio = {
@@ -61,13 +61,17 @@ export const triptico_2 = {
   icon_2: <RiArrowRightSLine />,
 };
 
-export const info_img = {
+export const info_img_1 = {
   icon: PiBowlFoodFill,
   img: "default.png",
   titulo: "Facilitamos el consumo de pescado delicioso",
   text: "En KIARI, eliminamos piel, escamas y espinas, garantizando un producto listo para disfrutar. Esto no solo mejora la experiencia del consumidor, sino que también asegura que cada bocado sea puro placer.",
   href_1: "/",
   href_2: "/",
+  btn_1: "Mas",
+  btn_2: "Contactanos",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
 };
 
 export const triptico_1 = {
@@ -115,6 +119,10 @@ export const info_img_2 = {
         "Nuestro productos estan completamente libres de aditivos y conservantes.",
     },
   ],
+  btn_1: "Ordenar",
+  btn_2: "Mas",
+  icon_1: <RiBox2Line />,
+  icon_2: <RiArrowRightSLine />,
   href_1: "/",
   href_2: "/",
 };
@@ -125,7 +133,7 @@ export const baner_2 = {
   mini_titulo: "",
   titulo: "¡Disfruta del sabor del sábalo!",
   text: "Realiza tu pedido y descubre nuestros deliciosos productos.",
-  btn_1: "Mas",
+  btn_1: "Productos",
   btn_2: "Mas",
   icon_1: <RiArrowRightSLine />,
   icon_2: <RiArrowRightSLine />,

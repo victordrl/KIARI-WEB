@@ -1,8 +1,13 @@
-import { RiArrowRightSLine, RiBox2Line } from "react-icons/ri";
+import {
+  RiArrowRightSLine,
+  RiBox2Line,
+  RiListIndefinite,
+} from "react-icons/ri";
 
 export const bnt_icon = {
   icon_1: <RiArrowRightSLine className="size-6" />,
   icon_2: <RiBox2Line className="size-6" />,
+  icon_3: <RiListIndefinite className="size-6" />,
 };
 
 export const articulos = {

@@ -1,5 +1,4 @@
 import { Button, Image, Card } from "@heroui/react";
-import { Logo } from "@/components/icons";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -8,6 +7,10 @@ interface Props {
   bg_color?: string;
   titulo?: string;
   text?: string;
+  icon_1?: React.ReactNode;
+  icon_2?: React.ReactNode;
+  btn_text__1?: string;
+  btn_text__2?: string;
   href_1?: string;
   href_2?: string;
 }
@@ -20,6 +23,10 @@ export default function InfoImg({
   text = "Lore expndido",
   href_1 = "/",
   href_2 = "/",
+  icon_1,
+  icon_2,
+  btn_text__1,
+  btn_text__2,
 }: Props) {
   return (
     <section className="">
@@ -52,18 +59,18 @@ export default function InfoImg({
                 variant="solid"
                 as={Link}
                 to={href_1}
-                endContent={<Logo className="size-4" />}
+                endContent={icon_1}
               >
-                Mas
+                {btn_text__1}
               </Button>
               <Button
                 color="primary"
                 variant="light"
                 as={Link}
                 to={href_2}
-                endContent={<Logo className="size-4" />}
+                endContent={icon_2}
               >
-                Blog
+                {btn_text__2}
               </Button>
             </div>
           </div>

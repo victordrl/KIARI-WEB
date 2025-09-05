@@ -15,6 +15,10 @@ interface Props {
   bg_color?: string;
   titulo?: string;
   text?: string;
+  icon_1?: React.ReactNode;
+  icon_2?: React.ReactNode;
+  btn_text__1?: string;
+  btn_text__2?: string;
   href_1?: string;
   href_2?: string;
 }
@@ -32,6 +36,10 @@ export default function InfoImg2({
   text = "Lore expndido",
   href_1 = "/",
   href_2 = "/",
+  btn_text__1 = "Mas",
+  btn_text__2 = "Mas",
+  icon_1,
+  icon_2,
 }: Props) {
   return (
     <section className="">
@@ -68,9 +76,9 @@ export default function InfoImg2({
                 variant="solid"
                 as={Link}
                 href={href_1}
-                endContent={<Logo className="sm:size-5 size-4" />}
+                endContent={icon_1}
               >
-                Ordenar
+                {btn_text__1}
               </Button>
               <Button
                 size="lg"
@@ -78,9 +86,9 @@ export default function InfoImg2({
                 variant="light"
                 as={Link}
                 href={href_2}
-                endContent={<Logo className="sm:size-5 size-4" />}
+                endContent={icon_2}
               >
-                Mas
+                {btn_text__2}
               </Button>
             </div>
           </div>
