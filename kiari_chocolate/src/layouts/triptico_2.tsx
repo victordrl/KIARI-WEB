@@ -85,30 +85,6 @@ export default function Triptico2({
                     <p className="text-center text-default-500">{item.texto}</p>
                   </CardFooter>
                 </Card>
-                // <Card
-                //   key={index}
-                //   shadow="sm"
-                //   className={`md:w-1/${contenido.length} md:min-h-full`}
-                // >
-                //   <CardHeader>
-                //     <Image
-                //       isZoomed
-                //       alt={`img_triptico_${index}`}
-                //       className="w-full object-contain"
-                //       radius="sm"
-                //       shadow="lg"
-                //       src={item.img}
-                //     />
-                //   </CardHeader>
-                //   <CardBody>
-                //     <h3 className="subtitulo text-center lg:text-4xl md:text-3xl text-3xl">
-                //       {item.subtitulo}
-                //     </h3>
-                //   </CardBody>
-                //   <CardFooter className="flex flex-col gap-4">
-                //     <p className="parrafo text-center">{item.texto}</p>
-                //   </CardFooter>
-                // </Card>
               ))}
             </div>
             {/* botones */}
@@ -117,7 +93,7 @@ export default function Triptico2({
                 color="primary"
                 variant="ghost"
                 as={Link}
-                href={href_1}
+                to={href_1}
                 endContent={icon_1}
               >
                 {btn_text_1}
@@ -126,7 +102,7 @@ export default function Triptico2({
                 color="primary"
                 variant="light"
                 as={Link}
-                href={href_2}
+                to={href_2}
                 endContent={icon_2}
               >
                 {btn_text_2}

@@ -1,11 +1,5 @@
-import {
-  Link,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-} from "@heroui/react";
+import { Link } from "react-router-dom";
+import { Button, Card, CardBody, CardFooter, CardHeader } from "@heroui/react";
 
 interface TripticoProps {
   icon?: React.ReactNode;
@@ -80,7 +74,7 @@ export default function Triptico1({
                         color="primary"
                         variant="light"
                         as={Link}
-                        href={item.href}
+                        to={item.href}
                         endContent={icon}
                       >
                         {btn_text}
