@@ -1,14 +1,11 @@
-import { title } from "@/components/primitives";
-import DefaultLayout from "@/layouts/inicio";
+import Footer from "@/components/footer";
+import MiNavbar from "@/components/navbar";
 
 export default function NuggetsPage() {
   return (
-    <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>Nuggets</h1>
-        </div>
-      </section>
-    </DefaultLayout>
+    <>
+      <MiNavbar />
+      <Footer />
+    </>
   );
 }

@@ -17,21 +17,38 @@ interface Props {
   text?: string;
   id?: string;
   cantidad?: number;
+  external_link?: boolean;
 }
 
-export default function Triptico3({
+export default function Triptico4({
   children,
+  external_link = false,
   bg_color = "",
   mini_titulo = "",
   contenido = [
-    { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
-    { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
-    { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
+    {
+      img: "/default.png",
+      subtitulo: "Subtitulo",
+      texto: "hola que tal",
+      href: "/",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Subtitulo",
+      texto: "hola que tal",
+      href: "/",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Subtitulo",
+      texto: "hola que tal",
+      href: "/",
+    },
   ],
   titulo = "",
   text = "",
   id = "",
-  cantidad = 2,
+  cantidad = 3,
 }: Props) {
   return (
     <section id={id} className="flex justify-center h-fit w-full pt-10">
@@ -65,6 +82,8 @@ export default function Triptico3({
                     radius="sm"
                     as={Link}
                     to={item.href}
+                    target={external_link ? "_blank" : "_self"}
+                    rel={external_link ? "noopener noreferrer" : undefined}
                     className="cursor-pointer"
                   >
                     <CardBody className="overflow-visible p-0">
@@ -78,7 +97,9 @@ export default function Triptico3({
                       />
                     </CardBody>
                     <CardFooter className="text-small flex-col justify-between">
-                      <h4 className="subtitulo">{item.subtitulo}</h4>
+                      <h4 className="subtitulo text-center">
+                        {item.subtitulo}
+                      </h4>
                       <p className="text-default-500">{item.texto}</p>
                     </CardFooter>
                   </Card>

@@ -21,7 +21,7 @@ export default function Baner1({
   children,
   bg_imag,
   bg_color = "bg-base",
-  mini_titulo = "mini titulo",
+  mini_titulo = "",
   titulo = "Titular",
   text = "Lore relleno",
   btn_text_1 = "mas",
@@ -46,8 +46,8 @@ export default function Baner1({
         <div className="flex flex-col justify-between w-2/3 sm:ml-12 gap-4">
           <div className="flex flex-col justify-between gap-4">
             <span className="minititulo">{mini_titulo}</span>
-            <span className="titulo">{titulo}</span>
-            <p className="parrafo font-semibold">{text}</p>
+            <span className="titulo text-white">{titulo}</span>
+            <p className="parrafo text-white font-semibold">{text}</p>
           </div>
           <div className="flex gap-3 mt-8 ">
             <Button

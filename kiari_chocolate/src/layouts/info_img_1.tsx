@@ -27,8 +27,8 @@ export default function InfoImg1({
   text = "Lore expndido",
   href_1 = "/",
   href_2 = "/",
-  btn_text__1 = "Mas",
-  btn_text__2 = "Mas",
+  btn_text__1 = "",
+  btn_text__2 = "",
   icon_1,
   icon_2,
 }: Props) {
@@ -49,26 +49,30 @@ export default function InfoImg1({
             <h2 className="titulo my-4">{titulo}</h2>
             <p className="parrafo">{text}</p>
             {/* botones */}
-            <div className="flex gap-3 my-8">
-              <Button
-                color="primary"
-                variant="ghost"
-                as={Link}
-                href={href_1}
-                endContent={icon_1}
-              >
-                {btn_text__1}
-              </Button>
-              <Button
-                color="primary"
-                variant="light"
-                as={Link}
-                href={href_2}
-                endContent={icon_2}
-              >
-                {btn_text__2}
-              </Button>
-            </div>
+            {btn_text__1 && btn_text__2 ? (
+              <div className="flex gap-3 my-8">
+                <Button
+                  color="primary"
+                  variant="ghost"
+                  as={Link}
+                  to={href_1}
+                  endContent={icon_1}
+                >
+                  {btn_text__1}
+                </Button>
+                <Button
+                  color="primary"
+                  variant="light"
+                  as={Link}
+                  to={href_2}
+                  endContent={icon_2}
+                >
+                  {btn_text__2}
+                </Button>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <div className="min-w-fit min-h-fit my-auto">
             <Image
