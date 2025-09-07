@@ -79,7 +79,7 @@ export default function Triptico5({
             >
               {contenido.map((item, index) => {
                 return (
-                  <div className="lg:p-16 md:p-4 p-2">
+                  <div key={index} className="lg:p-16 md:p-4 p-2">
                     <Card
                       key={index}
                       isPressable

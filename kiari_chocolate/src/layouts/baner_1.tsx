@@ -54,7 +54,7 @@ export default function Baner1({
               color="primary"
               variant="faded"
               as={Link}
-              href={href_1}
+              to={href_1}
               endContent={icon_1}
             >
               {btn_text_1}
@@ -63,7 +63,7 @@ export default function Baner1({
               color="primary"
               variant="shadow"
               as={Link}
-              href={href_2}
+              to={href_2}
               endContent={icon_2}
             >
               {btn_text_2}

@@ -36,8 +36,8 @@ export default function Triptico2({
   mini_titulo = "minititulo",
   href_1 = "/",
   href_2 = "/",
-  btn_text_1 = "Mas",
-  btn_text_2 = "Mas",
+  btn_text_1 = "",
+  btn_text_2 = "",
   icon_1,
   icon_2,
 }: Props) {
@@ -88,26 +88,30 @@ export default function Triptico2({
               ))}
             </div>
             {/* botones */}
-            <div className="flex gap-3">
-              <Button
-                color="primary"
-                variant="ghost"
-                as={Link}
-                to={href_1}
-                endContent={icon_1}
-              >
-                {btn_text_1}
-              </Button>
-              <Button
-                color="primary"
-                variant="light"
-                as={Link}
-                to={href_2}
-                endContent={icon_2}
-              >
-                {btn_text_2}
-              </Button>
-            </div>
+            {btn_text_1 && btn_text_2 ? (
+              <div className="flex gap-3">
+                <Button
+                  color="primary"
+                  variant="ghost"
+                  as={Link}
+                  to={href_1}
+                  endContent={icon_1}
+                >
+                  {btn_text_1}
+                </Button>
+                <Button
+                  color="primary"
+                  variant="light"
+                  as={Link}
+                  to={href_2}
+                  endContent={icon_2}
+                >
+                  {btn_text_2}
+                </Button>
+              </div>
+            ) : (
+              ""
+            )}
           </>
         )}
       </div>
