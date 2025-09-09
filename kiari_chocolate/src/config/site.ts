@@ -38,13 +38,13 @@ export const siteConfig = {
       },
     ],
     info: [
-      {
-        kay: "testimonio",
-        label: "Testimonios",
-        href: "/k#testimonios",
-        mensaje: "Lo que dicen nuestros clientes",
-        icon: RiChat1Fill,
-      },
+      // {
+      //   kay: "testimonio",
+      //   label: "Testimonios",
+      //   href: "/#testimonios",
+      //   mensaje: "Lo que dicen nuestros clientes",
+      //   icon: RiChat1Fill,
+      // },
       {
         kay: "locales",
         label: "Locales",
@@ -95,7 +95,7 @@ export const siteConfig = {
     },
     {
       label: "Explora",
-      href: "/k",
+      href: "/",
     },
   ],
   navMenuItems: [
@@ -107,10 +107,10 @@ export const siteConfig = {
       label: "Recetas",
       href: "/blog#recetas",
     },
-    {
-      label: "Testimonios",
-      href: "/#testimonios",
-    },
+    // {
+    //   label: "Testimonios",
+    //   href: "/#testimonios",
+    // },
     {
       label: "Nosotros",
       href: "/noso",
@@ -131,7 +131,7 @@ export const siteConfig = {
   footerItem: [
     {
       label: "Inicio",
-      href: "/k",
+      href: "/",
     },
     {
       label: "Productos",
@@ -141,10 +141,10 @@ export const siteConfig = {
       label: "Nosotros",
       href: "/noso",
     },
-    {
-      label: "Testimonios",
-      href: "/k#testimonios",
-    },
+    // {
+    //   label: "Testimonios",
+    //   href: "/#testimonios",
+    // },
   ],
   links: {
     facebook: "https://www.facebook.com/kiarishophouse/",

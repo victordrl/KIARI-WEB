@@ -16,7 +16,7 @@ export default function Footer() {
           <Link
             className="flex flex-col items-center gap-1"
             color="foreground"
-            href="/k"
+            href="/"
           >
             <Logo className="size-14 md:size-20"></Logo>
             <span className="font-bold text-2xl md:text-4xl -mt-4">KIARI</span>

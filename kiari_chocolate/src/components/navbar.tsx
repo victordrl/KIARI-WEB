@@ -35,7 +35,7 @@ export default function MiNavbar() {
   //     endContent={
   //       <Kbd className="hidden lg:inline-block" keys={["command"]}>
   //         K
-  //       </Kbd>
+  //       </bd>
   //     }
   //     labelPlacement="outside"
   //     placeholder="Search..."
@@ -55,7 +55,7 @@ export default function MiNavbar() {
           <Link
             className="flex justify-start items-center gap-1"
             color="foreground"
-            href="/k"
+            href="/"
           >
             <Logo />
             <span className="font-bold text-orange-400">KIARI</span>
