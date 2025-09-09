@@ -7,7 +7,6 @@ import {
   RiBookReadFill,
   RiTruckFill,
   RiFileList3Fill,
-  RiChat1Fill,
 } from "react-icons/ri";
 
 export const siteConfig = {
