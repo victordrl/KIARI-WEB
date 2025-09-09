@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Card, CardBody, CardFooter, Image } from "@heroui/react";
 
 interface TripticoProps {
