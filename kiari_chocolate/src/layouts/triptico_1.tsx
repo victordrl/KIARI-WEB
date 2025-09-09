@@ -22,16 +22,16 @@ interface Props {
 export default function Triptico1({
   children,
   bg_color = "foreground",
-  mini_titulo = "minititulo",
-  btn_text = "Mas",
+  mini_titulo = "",
+  btn_text = "",
   icon,
   contenido = [
     { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
     { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
     { subtitulo: "Subtitulo", texto: "hola que tal", href: "/" },
   ],
-  titulo = "Titular",
-  text = "Lore expandido",
+  titulo = "",
+  text = "",
 }: Props) {
   return (
     <section className="flex justify-center min-h-screen w-full py-12">
@@ -67,19 +67,23 @@ export default function Triptico1({
                       <h4 className="subtitulo">{item.subtitulo}</h4>
                       <p className="text-default-500">{item.texto}</p>
                     </CardBody>
-                    <CardFooter className="justify-center">
-                      {/* botones */}
-                      <Button
-                        size="lg"
-                        color="primary"
-                        variant="light"
-                        as={Link}
-                        to={item.href}
-                        endContent={icon}
-                      >
-                        {btn_text}
-                      </Button>
-                    </CardFooter>
+                    {item.href ? (
+                      <CardFooter className="justify-center">
+                        {/* botones */}
+                        <Button
+                          size="lg"
+                          color="primary"
+                          variant="light"
+                          as={Link}
+                          to={item.href}
+                          endContent={icon}
+                        >
+                          {btn_text}
+                        </Button>
+                      </CardFooter>
+                    ) : (
+                      ""
+                    )}
                   </Card>
                 );
               })}

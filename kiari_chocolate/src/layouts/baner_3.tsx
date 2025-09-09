@@ -24,8 +24,8 @@ export default function Baner3({
   mini_titulo = "mini titulo",
   titulo = "Titular",
   text = "Lore relleno xxxxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxxxxxx xxxxxxxx xxxxxxxxxxxxx",
-  btn_text_1 = "mas",
-  btn_text_2 = "mas",
+  btn_text_1 = "",
+  btn_text_2 = "",
   icon_1,
   icon_2,
   href_1 = "#",
@@ -56,26 +56,30 @@ export default function Baner3({
             </div>
             <div className="h-full sm:w-7/12 sm:pt-8 m-4">
               <p className="parrafo font-semibold">{text}</p>
-              <div className="flex justify-end gap-3 mt-8 ">
-                <Button
-                  color="primary"
-                  variant="faded"
-                  as={Link}
-                  to={href_1}
-                  endContent={icon_1}
-                >
-                  {btn_text_1}
-                </Button>
-                <Button
-                  color="primary"
-                  variant="shadow"
-                  as={Link}
-                  to={href_2}
-                  endContent={icon_2}
-                >
-                  {btn_text_2}
-                </Button>
-              </div>
+              {btn_text_1 && btn_text_2 ? (
+                <div className="flex justify-end gap-3 mt-8 ">
+                  <Button
+                    color="primary"
+                    variant="faded"
+                    as={Link}
+                    to={href_1}
+                    endContent={icon_1}
+                  >
+                    {btn_text_1}
+                  </Button>
+                  <Button
+                    color="primary"
+                    variant="shadow"
+                    as={Link}
+                    to={href_2}
+                    endContent={icon_2}
+                  >
+                    {btn_text_2}
+                  </Button>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         )}
