@@ -20,7 +20,7 @@ function App() {
       <ScrollReset />
       <ScrollToHashElement />
       <Routes>
-        <Route element={<IndexPage />} path="/" />
+        <Route element={<IndexPage />} path="/k" />
         <Route element={<TestimoniosPage />} path="/test" />
         <Route element={<ProductosPage />} path="/prod" />
         <Route element={<ContactoPage />} path="/cont" />

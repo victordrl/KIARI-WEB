@@ -85,7 +85,7 @@ export default function IndexPage() {
         icon_1={info_img_2.icon_1}
         icon_2={info_img_2.icon_2}
       />
-      <Testimonio1 star={5} />
+      <Testimonio1 id="testimonios" star={5} />
       <Baner2
         bg_color={baner_2.bg_color}
         titulo={baner_2.titulo}

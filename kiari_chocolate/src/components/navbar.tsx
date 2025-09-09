@@ -55,7 +55,7 @@ export default function MiNavbar() {
           <Link
             className="flex justify-start items-center gap-1"
             color="foreground"
-            href="/"
+            href="/k"
           >
             <Logo />
             <span className="font-bold text-orange-400">KIARI</span>

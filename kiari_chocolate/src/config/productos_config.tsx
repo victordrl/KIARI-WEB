@@ -207,5 +207,154 @@ export const pag_p = {
     href_2: "/blog",
   },
 };
-export const pag_n = {};
-export const pag_m = {};
+export const pag_n = {
+  hero: {
+    titulo: "Nuggets de Sábalo",
+    min_tittulo: "Prácticos y Versátiles",
+    text: "Los Nuggets de KIARI son la opción perfecta para quienes buscan una comida rápida y deliciosa. Su versatilidad permite disfrutarlos en ensaladas, bocadillos o como plato principal, adaptándose a cualquier ocasión.",
+    btn_txt_1: "Contactanos",
+    btn_txt_2: "Más",
+    href_1: "/cont",
+    href_2: "/prod/m",
+  },
+  sec_1: {
+    img: "/default.png",
+    min_tittulo: "Deliciosos",
+    titulo: "Descubre los beneficios de nuestros Nuggets KIARI",
+    text: "Los Nuggets de KIARI son una opción perfecta para quienes buscan un sabor excepcional y calidad inigualable. Elaborados con pescado 100% natural, son ideales para disfrutar en cualquier ocasión.",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_2: {
+    img: "/default.png",
+    min_titulo: "Conveniencia",
+    titulo: "Descubre cómo cocinar y disfrutar los Nuggets",
+    text: "Sencillos pasos para una experiencia culinaria excepcional con nuestros Nuggets. Perfectos para cualquier ocasión, fáciles de preparar y deliciosos.",
+    contenido: [
+      {
+        subtitulo: "Pasos Fáciles",
+        texto: "Simplemente calienta el aceite y fríe los Nuggets hasta dorar.",
+      },
+      {
+        subtitulo: "Creatividad",
+        texto: "Combínalos con salsas, ensaladas o en un delicioso sándwich.",
+      },
+    ],
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_3: {
+    img: "/default.png",
+    mini_titulo: "",
+    titulo: "Características destacadas de nuestros productos",
+    text: "En KIARI, nos enorgullecemos de ofrecer pescado de la más alta calidad.",
+    contenido: [
+      {
+        icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Sabor Auténtico",
+        texto: "100% natural, garantizando un sabor auténtico y saludable.",
+      },
+      {
+        icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Fácil Preparación",
+        texto: "Listos para cocinar, ideales para cualquier ocasión.",
+      },
+      {
+        icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Versatilidad",
+        texto: "Se adaptan a ensaladas, bocadillos y platos principales.",
+      },
+    ],
+    icon: <RiArrowRightSLine />,
+    btn_text: "Más",
+  },
+  sec_4: {
+    img: "/default.png",
+    titulo: "¡Prueba nuestros deliciosos Nuggets!",
+    text: "Disfruta de la practicidad y el sabor de los Nuggets KIARI, ¡una experiencia culinaria rápida y deliciosa!",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+};
+
+export const pag_m = {
+  hero: {
+    titulo: "Medallones de Sábalo",
+    min_tittulo: "Pura Pulpa Cruda",
+    text: "Los Medallones de KIARI son una opción deliciosa y saludable para los amantes del pescado. Elaborados con pura pulpa cruda de sábalo, garantizan una experiencia culinaria inigualable.",
+    btn_txt_1: "Contactanos",
+    btn_txt_2: "Más",
+    href_1: "/cont",
+    href_2: "/prod/p",
+  },
+  sec_1: {
+    img: "/default.png",
+    min_tittulo: "Sabor",
+    titulo: "Descubre la exquisitez de nuestros Medallones",
+    text: "Disfruta de la pureza y calidad de nuestros medallones de pescado, elaborados con 100% pulpa cruda. Una opción saludable y deliciosa para cualquier ocasión.",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_2: {
+    img: "/default.png",
+    min_titulo: "Calidad Superior",
+    titulo: "Medallones de Sábalo: Pura Pulpa Cruda",
+    text: "Sin piel, escamas ni espinas, perfectos para disfrutar sin preocupaciones. Listos para cocinar y compartir en tus recetas favoritas.",
+    contenido: [
+      {
+        subtitulo: "Calidad Superior",
+        texto: "Elaborados con 100% pulpa cruda de sábalo.",
+      },
+      {
+        subtitulo: "Fácil Preparación",
+        texto: "Listos para cocinar en cualquier receta.",
+      },
+    ],
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_3: {
+    img: "/default.png",
+    mini_titulo: "",
+    titulo: "Beneficios de elegir Medallones KIARI",
+    text: "Una experiencia saludable, práctica y deliciosa.",
+    contenido: [
+      {
+        icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Saludables",
+        texto: "Ricos en proteínas y omega-3, ideales para tu dieta.",
+      },
+      {
+        icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Sin Complicaciones",
+        texto: "Sin piel, escamas ni espinas para tu comodidad.",
+      },
+      {
+        icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Preparación Rápida",
+        texto: "Perfectos para cualquier ocasión y receta.",
+      },
+    ],
+    icon: <RiArrowRightSLine />,
+    btn_text: "Más",
+  },
+  sec_4: {
+    img: "/default.png",
+    titulo: "¡Prueba nuestros Medallones!",
+    text: "Descubre la exquisitez y practicidad de los Medallones KIARI. ¡Una opción deliciosa para compartir en familia!",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+};

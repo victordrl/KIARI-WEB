@@ -41,7 +41,7 @@ export const siteConfig = {
       {
         kay: "testimonio",
         label: "Testimonios",
-        href: "/test",
+        href: "/k#testimonios",
         mensaje: "Lo que dicen nuestros clientes",
         icon: RiChat1Fill,
       },
@@ -95,7 +95,7 @@ export const siteConfig = {
     },
     {
       label: "Explora",
-      href: "/",
+      href: "/k",
     },
   ],
   navMenuItems: [
@@ -109,7 +109,7 @@ export const siteConfig = {
     },
     {
       label: "Testimonios",
-      href: "/test",
+      href: "/#testimonios",
     },
     {
       label: "Nosotros",
@@ -131,7 +131,7 @@ export const siteConfig = {
   footerItem: [
     {
       label: "Inicio",
-      href: "/",
+      href: "/k",
     },
     {
       label: "Productos",
@@ -143,7 +143,7 @@ export const siteConfig = {
     },
     {
       label: "Testimonios",
-      href: "/test",
+      href: "/k#testimonios",
     },
   ],
   links: {

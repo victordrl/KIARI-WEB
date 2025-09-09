@@ -10,10 +10,11 @@ interface Props {
   estado?: string;
   lugar?: string;
   img?: string;
+  id?: string;
   bg_color?: string;
 }
 
-export default function Testimonio1({ bg_color }: Props) {
+export default function Testimonio1({ bg_color, id }: Props) {
   const [testimonios, setTestimonios] = useState<Props[]>([]);
   const [index, setIndex] = useState(0);
 
@@ -40,7 +41,7 @@ export default function Testimonio1({ bg_color }: Props) {
   const { star, mensaje, nombre, estado, lugar, img } = testimonios[index];
 
   return (
-    <section className="w-full h-fit py-12">
+    <section id={id} className="w-full h-fit py-12">
       <div
         className={`container flex flex-col-reverse justify-center items-center sm:flex-row p-8 mx-auto ${bg_color}`}
       >
