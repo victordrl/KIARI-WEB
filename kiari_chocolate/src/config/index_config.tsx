@@ -5,7 +5,7 @@ import { RiArrowRightSLine, RiBox2Line } from "react-icons/ri";
 import { FaHeartbeat, FaUniversalAccess, FaHandsHelping } from "react-icons/fa";
 
 export const inicio = {
-  bg_img: giftDefault,
+  bg_img: "/kiari-1.png",
   titulo: "El mejor Tarpon del Venezuela",
   text: " En KIARI, ofrecemos pescado de alta calidad, 100% natural y libre de conservantes. Nuestros productos, como el pisillo, nuggets y medallones, son ideales para disfrutar de una experiencia gastronómica única.",
   href_1: "/",
