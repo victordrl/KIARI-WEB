@@ -13,39 +13,19 @@ import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
-import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import MenuDrawer from "./menu_drawer";
 import { Logo } from "@/components/icons";
 import {
   RiArrowRightSLine,
-  // RiTiktokFill,
+  RiTiktokFill,
   RiFacebookBoxFill,
   RiInstagramFill,
 } from "react-icons/ri";
 
-export default function MiNavbar() {
-  // const searchInput = (
-  //   <Input
-  //     aria-label="Search"
-  //     classNames={{
-  //       inputWrapper: "bg-default-100",
-  //       input: "text-sm",
-  //     }}
-  //     endContent={
-  //       <Kbd className="hidden lg:inline-block" keys={["command"]}>
-  //         K
-  //       </bd>
-  //     }
-  //     labelPlacement="outside"
-  //     placeholder="Search..."
-  //     startContent={
-  //       <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-  //     }
-  //     type="search"
-  //   />
-  // );
+import { siteConfig } from "@/config/site";
+import MenuDrawer from "./menu_drawer";
 
+export default function MiNavbar() {
   return (
     <HeroUINavbar isBordered isBlurred maxWidth="xl" position="sticky">
       {/* nav izquierda */}
@@ -58,7 +38,7 @@ export default function MiNavbar() {
             href="/"
           >
             <Logo />
-            <span className="font-bold text-orange-400">KIARI</span>
+            <span className="hidden sm:block font-bold">KIARI</span>
           </Link>
         </NavbarBrand>
 
@@ -68,6 +48,7 @@ export default function MiNavbar() {
             <NavbarItem key={item.href}>
               {index < siteConfig.navItems.length - 1 ? (
                 <Link
+                  isDisabled={item.state}
                   className={clsx(
                     linkStyles({ color: "foreground" }),
                     "data-[active=true]:text-primary data-[active=true]:font-medium"
@@ -105,6 +86,15 @@ export default function MiNavbar() {
           >
             <RiFacebookBoxFill className="text-default-500 size-6" />
           </Link>
+          <Link
+            className="px-2"
+            isExternal
+            href={siteConfig.links.facebook}
+            title="tiktok"
+            isDisabled={true}
+          >
+            <RiTiktokFill className="text-default-500 size-6" />
+          </Link>
           <ThemeSwitch className=" hidden sm:block" />
         </NavbarItem>
         {/* boton */}
@@ -113,11 +103,11 @@ export default function MiNavbar() {
             isExternal
             as={Link}
             className="text-sm font-semibold text-default-600 bg-default-100"
-            href="/cont"
+            href="/venta"
             endContent={<RiArrowRightSLine className="text-primary size-6" />}
             variant="flat"
           >
-            Contactar
+            Comprar
           </Button>
         </NavbarItem>
       </NavbarContent>

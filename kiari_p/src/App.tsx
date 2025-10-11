@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import IndexPage from "@/pages/index";
 import TestimoniosPage from "@/pages/testimonio";
 import ProductosPage from "@/pages/productos";
-import ContactoPage from "@/pages/contact";
+import VentaPage from "@/pages/venta";
 import NosotrosPage from "@/pages/nosotros";
 import BlogsPage from "@/pages/blog";
 import ArticulosPage from "@/pages/articulos";
@@ -23,7 +23,7 @@ function App() {
         <Route element={<IndexPage />} path="/" />
         <Route element={<TestimoniosPage />} path="/test" />
         <Route element={<ProductosPage />} path="/prod" />
-        <Route element={<ContactoPage />} path="/cont" />
+        <Route element={<VentaPage />} path="/venta" />
         <Route element={<NosotrosPage />} path="/noso" />
         <Route element={<BlogsPage />} path="/blog" />
         <Route element={<ArticulosPage />} path="/blog/articulo/:id" />

@@ -18,10 +18,9 @@ export default function MenuDrawer() {
         Explora <RiArrowDownSLine className="text-2xl" />
       </Link>
       <Drawer
-        backdrop="transparent"
+        backdrop="opaque"
         placement="top"
         className="top-16"
-        size="3xl"
         isOpen={isOpen}
         motionProps={{
           variants: {
@@ -44,9 +43,9 @@ export default function MenuDrawer() {
         onOpenChange={onOpenChange}
       >
         <DrawerContent>
-          <div className="flex md:flex-row flex-col py-4  mx-auto">
-            <div className=" md:w-1/3 m-2">
-              <DrawerHeader className="lg:text-lg text-sm font-semibold -mb-3">
+          <div className="flex flex-wrap">
+            <div className="">
+              <DrawerHeader className="min_title">
                 <span className="hidden md:block">Nuestros&nbsp;</span>
                 Productos
               </DrawerHeader>
@@ -54,30 +53,24 @@ export default function MenuDrawer() {
                 {siteConfig.exploraItems.prod.map((item) => (
                   <Button
                     key={item.kay}
+                    isDisabled={item.state}
                     as={Link}
                     radius="none"
                     color="default"
                     size="lg"
                     href={item.href}
                     variant="light"
-                    startContent={
-                      <item.icon className="text-default-500 size-5 min-w-5" />
-                    }
                     className="justify-start font-light text-sm"
                   >
-                    <div className="font-normal">
+                    <div className="min_subtitle">
                       {item.label}
                       <br />
-                      <span className="text-xs font-extralight">
-                        {item.mensaje}
-                      </span>
+                      <span className="min_msm">{item.mensaje}</span>
                     </div>
                   </Button>
                 ))}
               </DrawerBody>
-            </div>
-            <div className=" md:w-1/3 m-2">
-              <DrawerHeader className="lg:text-lg text-sm font-semibold -mb-3">
+              <DrawerHeader className="min_title">
                 <span className="hidden md:block">Mas&nbsp;</span>
                 Información
               </DrawerHeader>
@@ -85,30 +78,26 @@ export default function MenuDrawer() {
                 {siteConfig.exploraItems.info.map((item) => (
                   <Button
                     key={item.kay}
+                    isDisabled={item.state}
                     as={Link}
                     radius="none"
                     color="default"
                     size="lg"
                     href={item.href}
                     variant="light"
-                    startContent={
-                      <item.icon className="text-default-500  size-5 min-w-5" />
-                    }
                     className="justify-start font-light text-sm"
                   >
-                    <div className="font-normal">
+                    <div className="min_subtitle">
                       {item.label}
                       <br />
-                      <span className="text-xs font-extralight">
-                        {item.mensaje}
-                      </span>
+                      <span className="min_msm">{item.mensaje}</span>
                     </div>
                   </Button>
                 ))}
               </DrawerBody>
             </div>
-            <div className=" md:w-1/3 m-2">
-              <DrawerHeader className="lg:text-lg text-sm font-semibold -mb-3">
+            <div className="">
+              <DrawerHeader className="min_title">
                 <span className="hidden md:block">Articulos&nbsp;</span>
                 Destacados
               </DrawerHeader>
@@ -116,23 +105,19 @@ export default function MenuDrawer() {
                 {siteConfig.exploraItems.arti.map((item) => (
                   <Button
                     key={item.kay}
+                    isDisabled={item.state}
                     as={Link}
                     radius="none"
                     color="default"
                     size="lg"
                     href={item.href}
                     variant="light"
-                    startContent={
-                      <item.icon className="text-default-500  size-5 min-w-5" />
-                    }
                     className="justify-start font-light text-sm"
                   >
-                    <div className="font-normal">
+                    <div className="min_subtitle">
                       {item.label}
                       <br />
-                      <span className="text-xs font-extralight">
-                        {item.mensaje}
-                      </span>
+                      <span className="min_msm">{item.mensaje}</span>
                     </div>
                   </Button>
                 ))}

@@ -12,6 +12,7 @@ import {
 export const siteConfig = {
   name: "Kiari Shop House J&L",
   description: "Descubre la frescura del pescado KIARI",
+
   exploraItems: {
     prod: [
       {
@@ -19,21 +20,24 @@ export const siteConfig = {
         label: "Pisillo de Sabalo",
         href: "/prod/p",
         mensaje: "Delicioso y facil de preparar",
-        icon: FaFish,
+        state: false,
+        new: false,
       },
       {
         kay: "nuggests",
         label: "Nuggets de Sabalo",
         href: "/prod/n",
         mensaje: "Perfectos para cualquier ocacion",
-        icon: FaFish,
+        state: false,
+        new: false,
       },
       {
         kay: "nedallones",
         label: "Medallones de Sabalo",
         href: "/prod/m",
         mensaje: "Sabroso autentico en cada bocado",
-        icon: FaFish,
+        state: false,
+        new: false,
       },
     ],
     info: [
@@ -49,14 +53,16 @@ export const siteConfig = {
         label: "Locales",
         href: "/noso#locales",
         mensaje: "Encuentra nuestros prductos cerca de ti",
-        icon: RiTruckFill,
+        state: false,
+        new: false,
       },
       {
         kay: "blog",
         label: "Blog",
         href: "/blog",
         mensaje: "Consejos , novedades y mas",
-        icon: RiBookReadFill,
+        state: false,
+        new: false,
       },
     ],
     arti: [
@@ -65,85 +71,106 @@ export const siteConfig = {
         label: "Recetas",
         href: "/blog#recetas",
         mensaje: "Inspirate con deliciosas recetas",
-        icon: RiFileList3Fill,
+        state: false,
+        new: false,
       },
       {
         kay: "articulo_1",
         label: articulos[1].titulo_corto,
         mensaje: articulos[1].frace,
         href: "/blog/articulo/1",
-        icon: RiArticleFill,
+        state: false,
+        new: false,
       },
       {
         kay: "articulo_3",
         label: articulos[3].titulo_corto,
         mensaje: articulos[3].frace,
         href: "/blog/articulo/3",
-        icon: RiArticleFill,
+        state: false,
+        new: false,
       },
     ],
   },
+
   navItems: [
     {
       label: "Productos",
       href: "/prod",
+      state: true,
+      new: false,
     },
     {
       label: "Nosotros",
       href: "/noso",
+      state: true,
+      new: false,
     },
     {
       label: "Explora",
       href: "/",
+      state: true,
+      new: false,
     },
   ],
+
   navMenuItems: [
     {
       label: "Productos",
       href: "/prod",
+      state: true,
+      new: false,
     },
     {
       label: "Recetas",
       href: "/blog#recetas",
+      state: true,
+      new: false,
     },
-    // {
-    //   label: "Testimonios",
-    //   href: "/#testimonios",
-    // },
     {
       label: "Nosotros",
       href: "/noso",
+      state: true,
+      new: false,
     },
     {
       label: "Locales",
       href: "/noso#locales",
+      state: true,
+      new: false,
     },
     {
       label: "Blog",
       href: "/blog",
+      state: true,
+      new: false,
     },
     {
       label: "Contactanos",
       href: "cont",
+      state: true,
+      new: false,
     },
   ],
   footerItem: [
     {
       label: "Inicio",
       href: "/",
+      state: true,
+      new: false,
     },
     {
       label: "Productos",
       href: "/prod",
+      state: true,
+      new: false,
     },
     {
       label: "Nosotros",
       href: "/noso",
+      state: true,
+      new: false,
     },
-    // {
-    //   label: "Testimonios",
-    //   href: "/#testimonios",
-    // },
   ],
   links: {
     facebook: "https://www.facebook.com/kiarishophouse/",

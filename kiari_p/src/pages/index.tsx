@@ -17,11 +17,13 @@ import Triptico2 from "@/layouts/triptico_2";
 import InfoImg2 from "@/layouts/info_img_2";
 import Testimonio1 from "@/layouts/testimonio_1";
 import Baner2 from "@/layouts/baner_2";
+import Seccion_1 from "@/layouts/seccion_1";
 
 export default function IndexPage() {
   return (
     <div className="flex flex-col w-full min-h-screen">
       <MiNavbar />
+      <Seccion_1 />
       <Inicio
         bg_img={inicio.bg_img}
         titulo={inicio.titulo}

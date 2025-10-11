@@ -6,7 +6,11 @@ import { Divider } from "@heroui/react";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/icons";
 
-import { RiFacebookBoxFill, RiInstagramFill } from "react-icons/ri";
+import {
+  RiFacebookBoxFill,
+  RiInstagramFill,
+  RiTiktokFill,
+} from "react-icons/ri";
 
 export default function Footer() {
   return (
@@ -24,11 +28,12 @@ export default function Footer() {
             <p className="parrafo">KIARI SHOP HOUSE J&L</p>
           </Link>
         </div>
-        <div className="flex flex-col  ">
-          <div className="flex sm:flex-row w-fit flex-col items-center justify-between sm:-ml-20 sm:gap-7 gap-2">
+        <div className="flex flex-col">
+          <div className="flex sm:flex-row w-fit flex-col items-center justify-between  sm:gap-7 gap-2">
             {siteConfig.footerItem.map((item, index) => (
               <Link
                 key={index}
+                isDisabled={item.state}
                 className={clsx(
                   linkStyles({ color: "foreground" }),
                   "data-[active=true]:text-primary data-[active=true]:font-medium"
@@ -59,6 +64,16 @@ export default function Footer() {
           >
             <RiFacebookBoxFill className="text-default-700 size-6" />
             Facebook
+          </Link>
+          <Link
+            isDisabled={true}
+            className="font-mono text-default-600 px-2 gap-1"
+            isExternal
+            href={siteConfig.links.ig}
+            title="tiktok"
+          >
+            <RiTiktokFill className="text-default-700 size-6" />
+            Tiktok
           </Link>
         </div>
       </div>
