@@ -4,6 +4,52 @@
 
 /* Textos Normalizados */
 @layer components {
+  /**/
+  .seccion-sm {
+    @apply min-h-[45vh];
+  }
+  .seccion-md {
+    @apply min-h-[60vh];
+  }
+  .seccion-lg {
+    @apply min-h-[80vh];
+  }
+  .seccion-xl {
+    @apply min-h-[100vh];
+  }
+  /**/
+  .format-row {
+    @apply flex mx-auto gap-2;
+  }
+  .format-col {
+    @apply flex flex-col gap-2;
+  }
+  /**/
+  .orientacion-m {
+    @apply items-center justify-center text-center;
+  }
+  .orientacion-r {
+    @apply items-center justify-start;
+  }
+  .orientacion-l {
+    @apply items-center justify-end;
+  }
+  .btn_orientacion-m {
+    @apply items-center justify-center text-center;
+  }
+  .btn_orientacion-r {
+    @apply items-center justify-start;
+  }
+  .btn_orientacion-l {
+    @apply items-center justify-end;
+  }
+  /**/
+  .margen {
+    @apply lg:p-8 sm:p-2 p-1;
+  }
+  /**/
+
+  /**/
   .titulo {
     @apply md:text-5xl sm:text-4xl text-3xl text-foreground font-semibold;
   }
