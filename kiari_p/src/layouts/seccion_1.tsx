@@ -1,110 +1,116 @@
 import { Button } from "@heroui/react";
 import { Link } from "react-router-dom";
+import * as I from "@/types/inteerface";
 
-// props para rrellenar la interface
-
-interface Buttons {
-  label?: string;
-  icon?: React.ReactNode;
-  href: string;
-  variant: string;
-  color: string;
-  css?: string;
-}
-interface Contenido {
-  img?: string;
-  min_title?: string;
-  sub_title?: string;
-  main_text?: string;
-  sub_text?: string;
-  href?: string;
-  btn?: Buttons;
-}
-interface Props {
-  bg_img?: string;
-  css?: string;
-  btn?: Buttons[];
-  min_title?: string;
-  main_title?: string;
-  main_text?: string;
-  sub_text?: string;
-  contenido?: Contenido[];
-  cont_order?: boolean;
-  size_i?: number;
-  format_i?: number;
-  orientacion_i?: number;
-  btn_orientacion_i?: number;
-}
-
-const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
-const format = ["format-row", "format-col"];
-const orientacion = ["orientacion-r", "orientacion-m", "orientacion-l"];
-const btn_orientacion = [
-  "btn_orientacion-r",
-  "btn_orientacion-m",
-  "btn_orientacion-l",
-];
+// clases condicionales
+export const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
+export const format = ["format-row", "format-col", "format-mid"];
+export const order = ["order-l", "order-m", "order-r"];
+export const btn_order = ["btn_order-l", "btn_order-m", "btn_order-r"];
 
 export default function Seccion_1({
   bg_img,
   size_i = 0,
   css,
+  main_slogan,
+  sub_slogan,
   min_title,
   main_title,
-  main_text,
   sub_text,
-  btn,
+  main_text,
+  min_text,
+  btns,
   contenido,
+  img,
+  img_color = true,
   cont_order = true,
+  btn_position = true,
   format_i = 0,
-  btn_orientacion_i = 0,
-  orientacion_i = 0,
-}: Props) {
+  btn_order_i = 0,
+  order_i = 0,
+}: I.Props) {
   return (
+    //seccion principal
     <section
-      className={`flex items-center bg-cover bg-center bg-no-repeat w-full ${size[size_i]} ${css}`}
+      className={`flex items-center bg-cover bg-center bg-no-repeat w-full margen ${size[size_i]} ${css}`}
       style={{
         backgroundImage: bg_img ? `url(${bg_img})` : "",
         backgroundBlendMode: "overlay",
       }}
     >
-      <div className="flex flex-col mx-auto w-fit my-6">
+      {/* contenedor unico */}
+      <div className={`flex h-full mx-auto ${format[format_i]} flex-col`}>
+        {/* primera parte */}
         <div className={`container mx-auto ${format[format_i]}`}>
-          <div
-            className={`format-col gap-2 ${orientacion[orientacion_i]} margen`}
-          >
-            {min_title ? <span className="min_title">{min_title}</span> : ""}
-            {main_title ? <h1 className="maiin_title">{main_title}</h1> : ""}
-            {sub_text ? <p className="sub_text">{sub_text}</p> : ""}
-            {main_text && format_i == 1 ? (
-              <p className="main_text">{main_text}</p>
+          <div className={`format-col gap-2 ${order[order_i]} margen`}>
+            {/* información segun el formato */}
+            {min_title ? (
+              <span className="min-title w-full">{min_title}</span>
             ) : (
               ""
             )}
+            {main_title ? (
+              <h1 className="main-title w-full">{main_title}</h1>
+            ) : (
+              ""
+            )}
+            {main_slogan ? (
+              <h2 className="main-slogan w-full">{main_slogan}</h2>
+            ) : (
+              ""
+            )}
+            {format_i == 2 ? (
+              <>
+                {sub_slogan ? (
+                  <p className="sub-slogan w-full">{sub_slogan}</p>
+                ) : (
+                  ""
+                )}
+                {min_text ? <p className="min-text w-full">{min_text}</p> : ""}
+              </>
+            ) : (
+              ""
+            )}
+            {format_i == 1 ? (
+              <>
+                {sub_slogan ? (
+                  <p className="sub-slogan w-full">{sub_slogan}</p>
+                ) : (
+                  ""
+                )}
+                {min_text ? <p className="min-text w-full">{min_text}</p> : ""}
+                {main_text ? (
+                  <p className="main-text w-full">{main_text}</p>
+                ) : (
+                  ""
+                )}
+                {sub_text ? <p className="sub-text w-full">{sub_text}</p> : ""}
+              </>
+            ) : (
+              ""
+            )}
+            {/* sub contenido */}
             {cont_order ? (
-              <div className="format-row">
+              <div
+                className={`format-row w-full ${order_i == 0 ? "justify-start" : order_i == 2 ? "justify-end" : "justify-center"} sm:pt-4`}
+              >
                 {contenido
                   ? contenido.map((item, index) => {
                       return (
                         <div key={index} className="format-col justify-between">
                           <div>
                             {item.min_title ? (
-                              <span className="min_title">{min_title}</span>
+                              <span className="sub-text">{item.min_title}</span>
                             ) : (
                               ""
                             )}
                             {item.sub_title ? (
-                              <h1 className="maiin_title">{main_title}</h1>
-                            ) : (
-                              ""
-                            )}
-                            {item.sub_text ? (
-                              <p className="sub_text">{sub_text}</p>
+                              <h3 className="min-text">{item.sub_title}</h3>
                             ) : (
                               ""
                             )}
                             {item.main_text ? (
-                              <p className="main_text">{main_text}</p>
+                              <p className="main-text">{item.main_text}</p>
                             ) : (
                               ""
                             )}
@@ -115,8 +121,9 @@ export default function Seccion_1({
                                 key={index}
                                 as={Link}
                                 to={item.btn.href}
-                                size="sm"
-                                variant={(item.btn.variant as any) || "solid"}
+                                size={(item.btn.size as any) || "sm"}
+                                radius={(item.btn.radius as any) || "none"}
+                                variant={(item.btn.variant as any) || "faded"}
                                 color={(item.btn.color as any) || "primary"}
                                 endContent={item.btn.icon}
                                 className={item.btn.css}
@@ -135,14 +142,49 @@ export default function Seccion_1({
             ) : (
               ""
             )}
+            {/* botones adentro */}
+            {btn_position ? (
+              <div
+                className={`flex gap-3 w-full margen ${btn_order[btn_order_i]}`}
+              >
+                {btns
+                  ? btns.map((item, index) => {
+                      return (
+                        <Button
+                          key={index}
+                          as={Link}
+                          to={item.href}
+                          size={(item.size as any) || "md"}
+                          radius={(item.radius as any) || "none"}
+                          variant={(item.variant as any) || "faded"}
+                          color={(item.color as any) || "primary"}
+                          endContent={item.icon}
+                          className={item.css}
+                        >
+                          {item.label}
+                        </Button>
+                      );
+                    })
+                  : ""}
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           {main_text && format_i == 0 ? (
             <div
-              className={`format-col my-auto  ${orientacion[orientacion_i]} margen`}
+              className={`format-col w-full my-auto  ${order[order_i]} margen`}
             >
-              <p>{main_text}</p>
+              {sub_slogan ? (
+                <h2 className="sub-slogan w-full">{sub_slogan}</h2>
+              ) : (
+                ""
+              )}
+              {min_text ? <p className="min-text">{min_text}</p> : ""}
+              <p className="main-text">{main_text}</p>
+              {sub_text ? <p className="sub-text">{sub_text}</p> : ""}
               {!cont_order ? (
-                <div className="format-col">
+                <div className="format-col w-full">
                   {contenido
                     ? contenido.map((item, index) => {
                         return (
@@ -152,34 +194,30 @@ export default function Seccion_1({
                           >
                             <div>
                               {item.min_title ? (
-                                <span className="min_title">{min_title}</span>
+                                <span className="min-title">{min_title}</span>
                               ) : (
                                 ""
                               )}
                               {item.sub_title ? (
-                                <h1 className="maiin_title">{main_title}</h1>
-                              ) : (
-                                ""
-                              )}
-                              {item.sub_text ? (
-                                <p className="sub_text">{sub_text}</p>
+                                <h3 className="min-text">{item.sub_title}</h3>
                               ) : (
                                 ""
                               )}
                               {item.main_text ? (
-                                <p className="main_text">{main_text}</p>
+                                <p className="main-text">{item.main_text}</p>
                               ) : (
                                 ""
                               )}
                             </div>
                             {item.btn ? (
-                              <div className={`flex gap-2 w-full`}>
+                              <div>
                                 <Button
                                   key={index}
                                   as={Link}
                                   to={item.btn.href}
-                                  size="sm"
-                                  variant={(item.btn.variant as any) || "solid"}
+                                  size={(item.btn.size as any) || "sm"}
+                                  radius={(item.btn.radius as any) || "none"}
+                                  variant={(item.btn.variant as any) || "faded"}
                                   color={(item.btn.color as any) || "primary"}
                                   endContent={item.btn.icon}
                                   className={item.btn.css}
@@ -203,27 +241,83 @@ export default function Seccion_1({
             ""
           )}
         </div>
-        <div
-          className={`flex gap-2 w-full margen ${btn_orientacion[btn_orientacion_i]}`}
-        >
-          {btn
-            ? btn.map((item, index) => {
-                return (
-                  <Button
-                    key={index}
-                    as={Link}
-                    to={item.href}
-                    variant={(item.variant as any) || "solid"}
-                    color={(item.color as any) || "primary"}
-                    endContent={item.icon}
-                    className={item.css}
-                  >
-                    {item.label}
-                  </Button>
-                );
-              })
-            : ""}
+        {/* segunda parte */}
+        <div className={`${order[order_i]}`}>
+          {/* información segun el formato */}
+          {format_i == 2 ? (
+            <>
+              <div className="flex mx-auto w-full h-44 overflow-hidden justify-center items-center">
+                {img ? (
+                  <img
+                    className={`h-60 object-cover ${img_color ? "dark:invert" : ""}`}
+                    src={img}
+                    alt="imagen_componente"
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+              {/* botones adentro */}
+              {!btn_position ? (
+                <div
+                  className={`flex gap-3 w-full margen ${btn_order[btn_order_i]}`}
+                >
+                  {btns
+                    ? btns.map((item, index) => {
+                        return (
+                          <Button
+                            key={index}
+                            as={Link}
+                            to={item.href}
+                            size={(item.size as any) || "md"}
+                            radius={(item.radius as any) || "none"}
+                            variant={(item.variant as any) || "faded"}
+                            color={(item.color as any) || "primary"}
+                            endContent={item.icon}
+                            className={item.css}
+                          >
+                            {item.label}
+                          </Button>
+                        );
+                      })
+                    : ""}
+                </div>
+              ) : (
+                ""
+              )}
+              {main_text ? <p className="main-text">{main_text}</p> : ""}
+              {sub_text ? <p className="sub-text">{sub_text}</p> : ""}
+            </>
+          ) : (
+            ""
+          )}
         </div>
+        {/* botones afuera */}
+        {!btn_position && format_i != 2 ? (
+          <div className={`flex gap-3 w-full margen ${btn_order[btn_order_i]}`}>
+            {btns
+              ? btns.map((item, index) => {
+                  return (
+                    <Button
+                      key={index}
+                      as={Link}
+                      to={item.href}
+                      size={(item.size as any) || "md"}
+                      radius={(item.radius as any) || "none"}
+                      variant={(item.variant as any) || "faded"}
+                      color={(item.color as any) || "primary"}
+                      endContent={item.icon}
+                      className={item.css}
+                    >
+                      {item.label}
+                    </Button>
+                  );
+                })
+              : ""}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </section>
   );

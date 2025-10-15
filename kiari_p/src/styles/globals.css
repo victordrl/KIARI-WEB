@@ -6,49 +6,73 @@
 @layer components {
   /**/
   .seccion-sm {
-    @apply min-h-[45vh];
+    @apply min-h-[calc(45vh-64px)];
   }
   .seccion-md {
-    @apply min-h-[60vh];
+    @apply min-h-[calc(60vh-64px)];
   }
   .seccion-lg {
-    @apply min-h-[80vh];
+    @apply min-h-[calc(80vh-64px)];
   }
   .seccion-xl {
-    @apply min-h-[100vh];
+    @apply h-[calc(100vh-64px)];
   }
+
   /**/
   .format-row {
-    @apply flex mx-auto gap-2;
+    @apply flex mx-auto gap-2 justify-center;
   }
   .format-col {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 justify-center;
+  }
+  .format-mid {
+    @apply flex flex-col gap-2 justify-between;
   }
   /**/
-  .orientacion-m {
+  .order-m {
     @apply items-center justify-center text-center;
   }
-  .orientacion-r {
+  .order-l {
     @apply items-center justify-start;
   }
-  .orientacion-l {
-    @apply items-center justify-end;
+  .order-r {
+    @apply items-center justify-end text-right;
   }
-  .btn_orientacion-m {
+  .btn_order-m {
     @apply items-center justify-center text-center;
   }
-  .btn_orientacion-r {
+  .btn_order-l {
     @apply items-center justify-start;
   }
-  .btn_orientacion-l {
+  .btn_order-r {
     @apply items-center justify-end;
   }
   /**/
   .margen {
-    @apply lg:p-8 sm:p-2 p-1;
+    @apply lg:p-8 sm:p-4 p-3;
   }
   /**/
-
+  .min-title {
+    @apply md:text-sm text-xs lowercase font-aboreto tracking-widest font-extralight;
+  }
+  .main-title {
+    @apply xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-arya font-bold;
+  }
+  .min-text {
+    @apply xl:text-2xl lg:text-xl md:text-lg font-saira font-semibold;
+  }
+  .main-text {
+    @apply xl:text-xl lg:text-lg md:text-medium text-sm font-saira;
+  }
+  .sub-text {
+    @apply xl:text-lg lg:text-base md:text-sm text-xs font-saira font-light text-foreground/90;
+  }
+  .main-slogan {
+    @apply xl:text-9xl lg:text-7xl md:text-6xl text-5xl font-bodoni uppercase font-bold;
+  }
+  .sub-slogan {
+    @apply xl:text-5xl lg:text-4xl md:text-4xl text-3xl font-julius;
+  }
   /**/
   .titulo {
     @apply md:text-5xl sm:text-4xl text-3xl text-foreground font-semibold;
@@ -63,3 +87,252 @@
     @apply lg:text-xl md:text-medium text-sm text-foreground font-light;
   }
 }
+/* 
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.saira-condensed-thin {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.saira-condensed-extralight {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.saira-condensed-light {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.saira-condensed-regular {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.saira-condensed-medium {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.saira-condensed-semibold {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.saira-condensed-bold {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.saira-condensed-extrabold {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.saira-condensed-black {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.tinos-regular {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tinos-bold {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tinos-regular-italic {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tinos-bold-italic {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.italianno-regular {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.playfair-display-sc-regular {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playfair-display-sc-bold {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.playfair-display-sc-black {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.playfair-display-sc-regular-italic {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.playfair-display-sc-bold-italic {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.playfair-display-sc-black-italic {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+.bowlby-one-sc-regular {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.cinzel-decorative-regular {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cinzel-decorative-black {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.cutive-mono-regular {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.julius-sans-one-regular {
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.bona-nova-sc-regular {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bona-nova-sc-bold {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bona-nova-sc-regular-italic {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.rye-regular {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.aboreto-regular {
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.notable-regular {
+  font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.metal-mania-regular {
+  font-family: "Metal Mania", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.vina-sans-regular {
+  font-family: "Vina Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.megrim-regular {
+  font-family: "Megrim", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.ruthie-regular {
+  font-family: "Ruthie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.big-shoulders-inline {
+  font-family: "Big Shoulders Inline", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dorsa-regular {
+  font-family: "Dorsa", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.dorsa-regular {
+  font-family: "Dorsa", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.big-shoulders-stencil {
+  font-family: "Big Shoulders Stencil", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.public-sans {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.anaheim {
+  font-family: "Anaheim", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */

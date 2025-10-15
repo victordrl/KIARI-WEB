@@ -20,109 +20,38 @@ import Baner2 from "@/layouts/baner_2";
 import Seccion_1 from "@/layouts/seccion_1";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
-interface Buttons {
-  label?: string;
-  icon?: React.ReactNode;
-  href?: string;
-  variant?: string;
-  color?: string;
-  css?: string;
-}
-interface Contenido {
-  img?: string;
-  min_title?: string;
-  sub_title?: string;
-  main_text?: string;
-  sub_text?: string;
-  href?: string;
-  btn?: Buttons;
-}
-interface Props {
-  bg_img?: string;
-  css?: string;
-  btn?: Buttons[];
-  min_title?: string;
-  main_title?: string;
-  main_text?: string;
-  sub_text?: string;
-  contenido?: Contenido[];
-  size_i?: number;
-  format_i?: number;
-  orientacion_i?: number;
-  btn_orientacion_i?: number;
-}
+import * as I from "@/types/inteerface";
 
-const ejemploProvicional: Props = {
-  bg_img: "/img/kiari.png",
-  css: "",
-  btn: [
-    {
-      label: "Ver más",
-      icon: <MdOutlineNavigateNext />,
-      href: "/info",
-      variant: "solid",
-      color: "primary",
-    },
-    {
-      label: "Contacto",
-      icon: <MdOutlineNavigateNext />,
-      href: "/contact",
-      variant: "solid",
-      color: "primary",
-    },
-  ],
-  min_title: "Subtítulo ------ Provisional",
-  main_title: "Título ------ Provisional del Componente",
-  main_text:
-    "Este es un texto principal de ejemplo que describe brevemente el propósito del componente. Puede contener varias líneas y algo de formato si es necesario.",
-  sub_text:
-    "Texto secundario para ampliar información o agregar un detalle adicional. Ejemplo provisional.",
-  contenido: [
-    {
-      img: "/img/kiari.png",
-      min_title: "Mini título 1",
-      sub_title: "Subtítulo interno 1",
-      main_text: "Texto principal del bloque 1 — ejemplo provisional.",
-      sub_text:
-        "Texto complementario del bloque 1. Información adicional o descripción extendida.",
-      href: "/contenido/1",
-      btn: {
-        label: "Leer más",
-        icon: <MdOutlineNavigateNext />,
-        href: "/contenido/1",
-        variant: "ghost",
-        color: "",
-      },
-    },
-    {
-      img: "/images/default2.png",
-      min_title: "Mini título 2",
-      sub_title: "Subtítulo interno 2",
-      main_text: "Texto principal del bloque 2 — contenido provisional.",
-      sub_text:
-        "Texto complementario del bloque 2. Puede contener notas, información o enlaces.",
-      href: "/contenido/2",
-      btn: {
-        label: "Detalles",
-        icon: <MdOutlineNavigateNext />,
-        href: "/contenido/2",
-        variant: "solid",
-        color: "primary",
-      },
-    },
-    {
-      img: "/images/default3.png",
-      min_title: "Mini título 3",
-      sub_title: "Subtítulo interno 3",
-      main_text: "Texto principal del bloque 3 — ejemplo visual.",
-      sub_text: "Texto complementario breve para el bloque 3.",
-      href: "/contenido/3",
-    },
-  ],
+const ejemploProvicional: I.Props = {
+  bg_img: "/img/intro_pisillo_res.gif",
+  css: "text-white",
+  main_slogan: "natural",
+  sub_slogan: "Pescado de Mar",
+  min_title: "kiari",
+  // btns: [
+  //   {
+  //     label: "Contacto",
+  //     icon: <MdOutlineNavigateNext />,
+  //     href: "/contact",
+  //     variant: "faded",
+  //     color: "primary",
+  //   },
+  //   {
+  //     label: "Contacto",
+  //     icon: <MdOutlineNavigateNext />,
+  //     href: "/contact",
+  //     variant: "solid",
+  //     color: "primary",
+  //   },
+  // ],
+  img: "/img/logo_white.png",
+  img_color: false,
   size_i: 3,
-  format_i: 0,
-  orientacion_i: 0,
-  btn_orientacion_i: 2,
+  format_i: 2,
+  order_i: 1,
+  btn_order_i: 1,
+  cont_order: false,
+  btn_position: false,
 };
 
 export default function IndexPage() {
