@@ -22,29 +22,31 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/inteerface";
 
-const ejemploProvicional: I.Props = {
-  bg_img: "/img/intro_pisillo_res.gif",
-  css: "text-white",
-  main_slogan: "natural",
-  sub_slogan: "Pescado de Mar",
+const pisillo: I.Props = {
+  bg_img: "/img/pisillo.jpg",
+  css: "text-white bg-foreground-600 dark:bg-foreground-300",
+  main_slogan: "Pisillo",
+  sub_slogan: "La versatilidad del mar en tu plato",
   min_title: "kiari",
-  // btns: [
-  //   {
-  //     label: "Contacto",
-  //     icon: <MdOutlineNavigateNext />,
-  //     href: "/contact",
-  //     variant: "faded",
-  //     color: "primary",
-  //   },
-  //   {
-  //     label: "Contacto",
-  //     icon: <MdOutlineNavigateNext />,
-  //     href: "/contact",
-  //     variant: "solid",
-  //     color: "primary",
-  //   },
-  // ],
-  img: "/img/logo_white.png",
+  main_text:
+    "De la red a tu mesa, la comodidad de nuestro Pisillo de Pescado desespinado.",
+  btns: [
+    {
+      label: "Ordenar",
+      icon: <MdOutlineNavigateNext />,
+      href: "/prod/p",
+      variant: "faded",
+      color: "primary",
+    },
+    {
+      label: "Mas informacion",
+      icon: <MdOutlineNavigateNext />,
+      href: "/prod/p",
+      variant: "ghost",
+      color: "primary",
+    },
+  ],
+  // img: "/img/logo_white.png",
   img_color: false,
   size_i: 3,
   format_i: 2,
@@ -53,12 +55,79 @@ const ejemploProvicional: I.Props = {
   cont_order: false,
   btn_position: false,
 };
-
+const nugget: I.Props = {
+  bg_img: "/img/nuggets.png",
+  css: "text-white bg-foreground-600 dark:bg-foreground-300",
+  main_slogan: "Nuggets",
+  sub_slogan: "Comer sano también es divertido",
+  min_title: "kiari",
+  main_text:
+    "¿Antojo de algo rico y saludable? Nuestros Nuggets de Pescado son la elección perfecta.",
+  btns: [
+    {
+      label: "Ordenar",
+      icon: <MdOutlineNavigateNext />,
+      href: "/prod/n",
+      variant: "faded",
+      color: "primary",
+    },
+    {
+      label: "Mas informacion",
+      icon: <MdOutlineNavigateNext />,
+      href: "/prod/n",
+      variant: "ghost",
+      color: "primary",
+    },
+  ],
+  // img: "/img/logo_white.png",
+  img_color: false,
+  size_i: 3,
+  format_i: 2,
+  order_i: 1,
+  btn_order_i: 1,
+  cont_order: false,
+  btn_position: false,
+};
+const medallon: I.Props = {
+  bg_img: "/img/medallones.png",
+  css: "text-white bg-foreground-600 dark:bg-foreground-300 ",
+  main_slogan: "Medallones",
+  sub_slogan: "Pura Pulpa de Pescado",
+  min_title: "kiari",
+  main_text:
+    "Prepara hamburguesas, albóndigas o lo que imagines. Pura carne de pescado, lista para ti.",
+  btns: [
+    {
+      label: "Ordenar",
+      icon: <MdOutlineNavigateNext />,
+      href: "/prod/m",
+      variant: "faded",
+      color: "primary",
+    },
+    {
+      label: "Mas informacion",
+      icon: <MdOutlineNavigateNext />,
+      href: "/prod/m",
+      variant: "ghost",
+      color: "primary",
+    },
+  ],
+  // img: "/img/logo_white.png",
+  img_color: false,
+  size_i: 3,
+  format_i: 2,
+  order_i: 1,
+  btn_order_i: 1,
+  cont_order: false,
+  btn_position: false,
+};
 export default function IndexPage() {
   return (
     <div className="flex flex-col w-full min-h-screen">
       <MiNavbar />
-      <Seccion_1 {...ejemploProvicional} />
+      <Seccion_1 {...pisillo} />
+      <Seccion_1 {...nugget} />
+      <Seccion_1 {...medallon} />
       <Inicio
         bg_img={inicio.bg_img}
         titulo={inicio.titulo}
