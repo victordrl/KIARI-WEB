@@ -6,13 +6,13 @@
 @layer components {
   /**/
   .seccion-sm {
-    @apply min-h-[calc(45vh-64px)];
+    @apply h-[calc(45vh-64px)];
   }
   .seccion-md {
-    @apply min-h-[calc(60vh-64px)];
+    @apply h-[calc(60vh-64px)];
   }
   .seccion-lg {
-    @apply min-h-[calc(80vh-64px)];
+    @apply h-[calc(80vh-64px)];
   }
   .seccion-xl {
     @apply h-[calc(100vh-64px)];

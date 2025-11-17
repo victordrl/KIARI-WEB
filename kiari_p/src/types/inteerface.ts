@@ -33,6 +33,7 @@ export interface Props {
   cont_order?: boolean;
   btn_position?: boolean;
   img?: string;
+  btn_disable?: boolean;
   img_color?: boolean;
   size_i?: number;
   format_i?: number;

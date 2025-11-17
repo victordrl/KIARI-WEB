@@ -34,21 +34,22 @@ const pisillo: I.Props = {
     {
       label: "Ordenar",
       icon: <MdOutlineNavigateNext />,
-      href: "/prod/p",
+      href: "/contacto",
       variant: "faded",
       color: "primary",
     },
     {
       label: "Mas informacion",
       icon: <MdOutlineNavigateNext />,
-      href: "/prod/p",
+      href: "/pisillo",
       variant: "ghost",
       color: "primary",
     },
   ],
   // img: "/img/logo_white.png",
   img_color: false,
-  size_i: 3,
+  btn_disable: false,
+  size_i: 2,
   format_i: 2,
   order_i: 1,
   btn_order_i: 1,
@@ -60,27 +61,28 @@ const nugget: I.Props = {
   css: "text-white bg-foreground-600 dark:bg-foreground-300",
   main_slogan: "Nuggets",
   sub_slogan: "Comer sano también es divertido",
-  min_title: "kiari",
+  min_title: "Proximamente",
   main_text:
     "¿Antojo de algo rico y saludable? Nuestros Nuggets de Pescado son la elección perfecta.",
   btns: [
     {
       label: "Ordenar",
       icon: <MdOutlineNavigateNext />,
-      href: "/prod/n",
+      href: "/contacto",
       variant: "faded",
       color: "primary",
     },
     {
       label: "Mas informacion",
       icon: <MdOutlineNavigateNext />,
-      href: "/prod/n",
+      href: "/nuggets",
       variant: "ghost",
       color: "primary",
     },
   ],
   // img: "/img/logo_white.png",
   img_color: false,
+  btn_disable: true,
   size_i: 3,
   format_i: 2,
   order_i: 1,
@@ -93,27 +95,28 @@ const medallon: I.Props = {
   css: "text-white bg-foreground-600 dark:bg-foreground-300 ",
   main_slogan: "Medallones",
   sub_slogan: "Pura Pulpa de Pescado",
-  min_title: "kiari",
+  min_title: "Proximamente",
   main_text:
     "Prepara hamburguesas, albóndigas o lo que imagines. Pura carne de pescado, lista para ti.",
   btns: [
     {
       label: "Ordenar",
       icon: <MdOutlineNavigateNext />,
-      href: "/prod/m",
+      href: "/contacto",
       variant: "faded",
       color: "primary",
     },
     {
       label: "Mas informacion",
       icon: <MdOutlineNavigateNext />,
-      href: "/prod/m",
+      href: "/medallones",
       variant: "ghost",
       color: "primary",
     },
   ],
   // img: "/img/logo_white.png",
   img_color: false,
+  btn_disable: true,
   size_i: 3,
   format_i: 2,
   order_i: 1,
@@ -128,6 +131,7 @@ export default function IndexPage() {
       <Seccion_1 {...pisillo} />
       <Seccion_1 {...nugget} />
       <Seccion_1 {...medallon} />
+
       <Inicio
         bg_img={inicio.bg_img}
         titulo={inicio.titulo}

@@ -25,6 +25,7 @@ export default function Seccion_1({
   img_color = true,
   cont_order = true,
   btn_position = true,
+  btn_disable = false,
   format_i = 0,
   btn_order_i = 0,
   order_i = 0,
@@ -121,6 +122,7 @@ export default function Seccion_1({
                                 key={index}
                                 as={Link}
                                 to={item.btn.href}
+                                isDisabled={btn_disable}
                                 size={(item.btn.size as any) || "sm"}
                                 radius={(item.btn.radius as any) || "none"}
                                 variant={(item.btn.variant as any) || "faded"}
@@ -154,6 +156,7 @@ export default function Seccion_1({
                           key={index}
                           as={Link}
                           to={item.href}
+                          isDisabled={btn_disable}
                           size={(item.size as any) || "md"}
                           radius={(item.radius as any) || "none"}
                           variant={(item.variant as any) || "faded"}
@@ -215,6 +218,7 @@ export default function Seccion_1({
                                   key={index}
                                   as={Link}
                                   to={item.btn.href}
+                                  isDisabled={btn_disable}
                                   size={(item.btn.size as any) || "sm"}
                                   radius={(item.btn.radius as any) || "none"}
                                   variant={(item.btn.variant as any) || "faded"}
@@ -269,6 +273,7 @@ export default function Seccion_1({
                             key={index}
                             as={Link}
                             to={item.href}
+                            isDisabled={btn_disable}
                             size={(item.size as any) || "md"}
                             radius={(item.radius as any) || "none"}
                             variant={(item.variant as any) || "faded"}
@@ -302,6 +307,7 @@ export default function Seccion_1({
                       key={index}
                       as={Link}
                       to={item.href}
+                      isDisabled={btn_disable}
                       size={(item.size as any) || "md"}
                       radius={(item.radius as any) || "none"}
                       variant={(item.variant as any) || "faded"}

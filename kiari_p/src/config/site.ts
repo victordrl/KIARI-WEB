@@ -95,20 +95,20 @@ export const siteConfig = {
 
   navItems: [
     {
-      label: "Productos",
-      href: "/prod",
+      label: "Pisillo",
+      href: "/pisillo",
       state: true,
       new: false,
     },
     {
       label: "Nosotros",
-      href: "/noso",
+      href: "/nosotros",
       state: true,
       new: false,
     },
     {
-      label: "Explora",
-      href: "/",
+      label: "Blog",
+      href: "/blog",
       state: true,
       new: false,
     },
