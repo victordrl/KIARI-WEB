@@ -1,7 +1,6 @@
 import { TECarousel, TECarouselItem } from "tw-elements-react";
 import "animate.css";
 
-import { MdOutlineNavigateNext } from "react-icons/md";
 import * as I from "@/types/inteerface";
 import { Button } from "@heroui/react";
 import { Link } from "react-router-dom";
@@ -12,58 +11,11 @@ export const format = ["format-row", "format-col", "format-mid"];
 export const order = ["order-l", "order-m", "order-r"];
 export const btn_order = ["btn_order-l", "btn_order-m", "btn_order-r"];
 
-const carrusel: I.Props[] = [
-  {
-    bg_img: "/img/sabalo_3.jpg",
-    css: "text-white",
-    btns: [
-      {
-        label: "Leer mas",
-        icon: <MdOutlineNavigateNext />,
-        href: "/nosotros",
-        variant: "ghost",
-        color: "primary",
-      },
-    ],
-    min_title: "Mar",
-    main_title: "Frescura",
-    min_text:
-      "Desde el mar hasta la cocina de tu casa. Ofecemos la mejor experiencia de cocinar pescado.",
-    main_text: "",
-    img: "/img/logo_white.png",
-    btn_position: true,
-    btn_disable: false,
-    img_color: false,
-    order_i: 0,
-    btn_order_i: 0,
-  },
-  {
-    bg_img: "/img/sabalo_2.jpg",
-    css: "text-white",
-    btns: [
-      {
-        label: "Leer mas",
-        icon: <MdOutlineNavigateNext />,
-        href: "/nosotros",
-        variant: "ghost",
-        color: "primary",
-      },
-    ],
-    min_title: "Nutrición",
-    main_title: "Saludablemente delicioso",
-    min_text: `Naturalmente libre de espinas.Tu dosis diaria de omega-3, sin aditivos, sin complicaciones solo la bondad del pescado.`,
-    main_text: "",
-    img: "/img/logo_white.png",
-    sub_text: "",
-    btn_position: true,
-    btn_disable: false,
-    img_color: false,
-    order_i: 0,
-    btn_order_i: 0,
-  },
-];
-
-export default function CarouselWithIndicators(): JSX.Element {
+export default function CarouselWithIndicators({
+  carrusel,
+}: {
+  carrusel: I.Props[];
+}) {
   return (
     <section className={`w-full h-fit margen`}>
       <TECarousel showIndicators ride="carousel">

@@ -5,6 +5,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/inteerface";
 import Galeria_1 from "@/layouts/galeria_1";
+import Seccion_2 from "@/layouts/seccion_2";
 
 const pisillo: I.Props = {
   bg_img: "/img/pisillo.jpg",
@@ -109,14 +110,73 @@ const medallon: I.Props = {
   btn_position: false,
 };
 
+const carrusel: I.Props[] = [
+  {
+    bg_img: "/img/sabalo_3.jpg",
+    css: "text-white",
+    btns: [
+      {
+        label: "Leer mas",
+        icon: <MdOutlineNavigateNext />,
+        href: "/nosotros",
+        variant: "ghost",
+        color: "primary",
+      },
+    ],
+    min_title: "Mar",
+    main_title: "Frescura",
+    min_text:
+      "Desde el mar hasta la cocina de tu casa. Ofecemos la mejor experiencia de cocinar pescado.",
+    main_text: "",
+    img: "/img/logo_white.png",
+    btn_position: true,
+    btn_disable: false,
+    img_color: false,
+    order_i: 0,
+    btn_order_i: 0,
+  },
+  {
+    bg_img: "/img/sabalo_2.jpg",
+    css: "text-white",
+    btns: [
+      {
+        label: "Leer mas",
+        icon: <MdOutlineNavigateNext />,
+        href: "/nosotros",
+        variant: "ghost",
+        color: "primary",
+      },
+    ],
+    min_title: "Nutrición",
+    main_title: "Saludablemente delicioso",
+    min_text: `Naturalmente libre de espinas.Tu dosis diaria de omega-3, sin aditivos, sin complicaciones solo la bondad del pescado.`,
+    main_text: "",
+    img: "/img/logo_white.png",
+    sub_text: "",
+    btn_position: true,
+    btn_disable: false,
+    img_color: false,
+    order_i: 0,
+    btn_order_i: 0,
+  },
+];
+
 export default function IndexPage() {
   return (
     <div className="flex flex-col w-full min-h-screen">
       <MiNavbar />
       <Seccion_1 {...pisillo} />
-      <Seccion_1 {...nugget} />
+      <Galeria_1 carrusel={carrusel} />
       <Seccion_1 {...medallon} />
-      <Galeria_1 />
+      <Seccion_1 {...nugget} />
+      <Seccion_2
+        title="Nuestros Productos"
+        galleries={[
+          ["/default.png", "/default.png", "/default.png"],
+          ["/default.png", "/default.png"],
+          ["/default.png", "/default.png", "/default.png", "/default.png"],
+        ]}
+      />
       <Footer />
     </div>
   );
