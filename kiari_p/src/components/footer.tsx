@@ -14,7 +14,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-between items-center w-full bg-primary-400 dark:bg-primary-300">
+    <footer className="flex flex-col justify-between items-center w-full bg-blue-600 dark:bg-primary-300">
       <div className="flex md:flex-row flex-col justify-around items-center w-full p-2 md:gap-0 gap-5">
         <div className="gap-3 max-w-fit ">
           <Link
@@ -46,7 +46,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex md:flex-col flex-row justify-center gap-4 ">
+        <div className="flex md:flex-col justify-center gap-4 ">
           <Link
             className="font-mono text-default-600 px-2 gap-1"
             isExternal

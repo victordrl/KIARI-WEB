@@ -43,7 +43,7 @@ export default function Seccion_1({
       <div className={`flex h-full mx-auto ${format[format_i]} flex-col`}>
         {/* primera parte */}
         <div className={`container mx-auto ${format[format_i]}`}>
-          <div className={`format-col gap-2 ${order[order_i]} margen`}>
+          <div className={`format-col gap-2 ${order[order_i]} md:margen`}>
             {/* información segun el formato */}
             {min_title ? (
               <span className="min-title w-full">{min_title}</span>
@@ -253,7 +253,7 @@ export default function Seccion_1({
               <div className="flex mx-auto w-full h-44 overflow-hidden justify-center items-center">
                 {img ? (
                   <img
-                    className={`h-60 object-cover ${img_color ? "dark:invert" : ""}`}
+                    className={`logo-responsive object-cover ${img_color ? "dark:invert" : ""}`}
                     src={img}
                     alt="imagen_componente"
                   />

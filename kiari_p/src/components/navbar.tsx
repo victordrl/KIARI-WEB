@@ -23,7 +23,6 @@ import {
 } from "react-icons/ri";
 
 import { siteConfig } from "@/config/site";
-import MenuDrawer from "./menu_drawer";
 
 export default function MiNavbar() {
   return (
@@ -59,7 +58,17 @@ export default function MiNavbar() {
                   {item.label}
                 </Link>
               ) : (
-                <MenuDrawer />
+                <Link
+                  isDisabled={item.state}
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  )}
+                  color="secondary"
+                  href={item.href}
+                >
+                  {item.label}
+                </Link>
               )}
             </NavbarItem>
           ))}
@@ -95,10 +104,10 @@ export default function MiNavbar() {
           >
             <RiTiktokFill className="text-default-500 size-6" />
           </Link>
-          <ThemeSwitch className=" hidden sm:block" />
+          <ThemeSwitch className="md:!block hidden" />
         </NavbarItem>
         {/* boton */}
-        <NavbarItem className="hidden md:flex">
+        <NavbarItem className="hidden lg:block">
           <Button
             isExternal
             as={Link}
@@ -113,7 +122,7 @@ export default function MiNavbar() {
       </NavbarContent>
 
       {/* nav derecha sm */}
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className=" md:!hidden flex pl-4" justify="end">
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
