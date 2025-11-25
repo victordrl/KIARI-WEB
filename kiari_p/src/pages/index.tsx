@@ -5,7 +5,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/inteerface";
 import Galeria_1 from "@/layouts/galeria_1";
-import Seccion_2 from "@/layouts/seccion_2";
+import Galeria_2 from "@/layouts/galeria_2";
 
 const pisillo: I.Props = {
   bg_img: "/img/pisillo.jpg",
@@ -161,6 +161,37 @@ const carrusel: I.Props[] = [
   },
 ];
 
+const galeria: I.Props = {
+  main_title: "Titulo",
+  video: "/redes/v_2.mp4",
+  galleries: [
+    {
+      id: 1,
+      url: "/default.png",
+      size: "sm",
+      position: "top-[5vw] left-[20vw]",
+    },
+    {
+      id: 2,
+      url: "/default.png",
+      size: "md",
+      position: "top-[0vw] left-[35vw]",
+    },
+    {
+      id: 3,
+      url: "/default.png",
+      size: "lg",
+      position: "top-[25vw] left-[0vw]",
+    },
+    {
+      id: 4,
+      url: "/default.png",
+      size: "sm",
+      position: "top-[30vw] left-[50vw]",
+    },
+  ],
+};
+
 export default function IndexPage() {
   return (
     <div className="flex flex-col w-full min-h-screen">
@@ -169,14 +200,7 @@ export default function IndexPage() {
       <Galeria_1 carrusel={carrusel} />
       <Seccion_1 {...medallon} />
       <Seccion_1 {...nugget} />
-      <Seccion_2
-        title="Nuestros Productos"
-        galleries={[
-          ["/default.png", "/default.png", "/default.png"],
-          ["/default.png", "/default.png"],
-          ["/default.png", "/default.png", "/default.png", "/default.png"],
-        ]}
-      />
+      {/* <Galeria_2 {...galeria} /> */}
       <Footer />
     </div>
   );

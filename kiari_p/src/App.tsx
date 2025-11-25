@@ -4,8 +4,8 @@ import IndexPage from "@/pages/index";
 import NosotrosPage from "@/pages/nosotros";
 import BlogsPage from "@/pages/blog";
 import PisilloPage from "@/pages/pisillo";
-import { ScrollReset } from "./components/scrollr_reset";
-import ScrollToHashElement from "./components/scroll_hash";
+import { ScrollReset } from "./hooks/scrollr_reset";
+import ScrollToHashElement from "./hooks/scroll_hash";
 
 function App() {
   return (

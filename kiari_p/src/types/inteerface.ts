@@ -9,6 +9,13 @@ export interface Buttons {
   css?: string;
 }
 
+export interface GaleriaItem {
+  id: number;
+  url?: string;
+  size?: "sm" | "md" | "lg" | "xl";
+  position?: string; // clases tailwind para top/left/right/bottom
+}
+
 export interface Contenido {
   img?: string;
   min_title?: string;
@@ -33,6 +40,8 @@ export interface Props {
   cont_order?: boolean; //ordena star end contenido
   btn_position?: boolean; // botones dentro o fuera del contenedor
   img?: string; // imagen o svg extra de acompañamiento
+  video?: string;
+  galleries?: GaleriaItem[]; //lista de listas de imagenes
   btn_disable?: boolean; //habilitar botones
   img_color?: boolean; //invertir img o svg extra de acompañamiento
   size_i?: number; //largo de la seccion

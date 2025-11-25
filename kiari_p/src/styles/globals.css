@@ -219,3 +219,20 @@
     transform-origin: top;
   }
 }
+
+/* GSPA GALERIA ZOOM OUT */
+.size-sm {
+  @apply w-[5vw] h-[5vw];
+}
+
+.size-md {
+  @apply w-[10vw] h-[10vw];
+}
+
+.size-lg {
+  @apply w-[20vw] h-[20vw];
+}
+
+.size-xl {
+  @apply w-[30vw] h-[30vw];
+}
