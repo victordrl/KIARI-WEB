@@ -5,7 +5,8 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/inteerface";
 import Galeria_1 from "@/layouts/galeria_1";
-import Galeria_2 from "@/layouts/galeria_2";
+// import Galeria_2 from "@/layouts/galeria_2";
+import NutritionBars from "@/components/nutrition-bars";
 
 const pisillo: I.Props = {
   bg_img: "/img/pisillo.jpg",
@@ -161,36 +162,43 @@ const carrusel: I.Props[] = [
   },
 ];
 
-const galeria: I.Props = {
-  main_title: "Titulo",
-  video: "/redes/v_2.mp4",
-  galleries: [
-    {
-      id: 1,
-      url: "/default.png",
-      size: "sm",
-      position: "top-[5vw] left-[20vw]",
-    },
-    {
-      id: 2,
-      url: "/default.png",
-      size: "md",
-      position: "top-[0vw] left-[35vw]",
-    },
-    {
-      id: 3,
-      url: "/default.png",
-      size: "lg",
-      position: "top-[25vw] left-[0vw]",
-    },
-    {
-      id: 4,
-      url: "/default.png",
-      size: "sm",
-      position: "top-[30vw] left-[50vw]",
-    },
-  ],
-};
+// const galeria: I.Props = {
+//   main_title: "Titulo",
+//   video: "/redes/v_2.mp4",
+//   galleries: [
+//     {
+//       id: 1,
+//       url: "/default.png",
+//       size: "sm",
+//       position: "top-[5vw] left-[20vw]",
+//     },
+//     {
+//       id: 2,
+//       url: "/default.png",
+//       size: "md",
+//       position: "top-[0vw] left-[35vw]",
+//     },
+//     {
+//       id: 3,
+//       url: "/default.png",
+//       size: "lg",
+//       position: "top-[25vw] left-[0vw]",
+//     },
+//     {
+//       id: 4,
+//       url: "/default.png",
+//       size: "sm",
+//       position: "top-[30vw] left-[50vw]",
+//     },
+//   ],
+// };
+
+const nutritionalData = [
+  { minititulo: "PROT", subtitulo: "21.7g", fill: 4.1 },
+  { minititulo: "CARB", subtitulo: "0g", fill: 0.2 },
+  { minititulo: "FAT", subtitulo: "17.7g", fill: 3.0 },
+  { minititulo: "CAL", subtitulo: "252", fill: 2.5 },
+];
 
 export default function IndexPage() {
   return (
@@ -201,6 +209,7 @@ export default function IndexPage() {
       <Seccion_1 {...medallon} />
       <Seccion_1 {...nugget} />
       {/* <Galeria_2 {...galeria} /> */}
+      <NutritionBars title="Info Nutricional" items={nutritionalData} />
       <Footer />
     </div>
   );

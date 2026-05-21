@@ -1,0 +1,3921 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+.npmrc
+eslint.config.mjs
+favicon.ico
+index.html
+LICENSE
+package.json
+postcss.config.js
+public/amazon_mark.jpg
+public/data/testimonios.json
+public/default.png
+public/img/caja_pisillo.png
+public/img/kiari.png
+public/img/logo_black.png
+public/img/logo_white.png
+public/img/medallones.png
+public/img/nuggets.png
+public/img/pisillo.jpg
+public/img/sabalo_1.jpg
+public/img/sabalo_2.jpg
+public/img/sabalo_3.jpg
+public/lacaribenia_mark.jpg
+public/llovizna_mark.jpg
+public/pekin_mark.jpg
+public/redes/cartel_pisillo.png
+public/redes/i_1.jpg
+public/redes/i_10.jpg
+public/redes/i_11.jpg
+public/redes/i_2.jpg
+public/redes/i_3.jpg
+public/redes/i_4.jpg
+public/redes/i_5.jpg
+public/redes/i_6.jpg
+public/redes/i_7.jpg
+public/redes/i_8.jpg
+public/redes/i_9.jpg
+public/redes/intro_pisillo.gif
+public/redes/pisillo-1.jpg
+public/redes/v_1.mp4
+public/redes/v_2.mp4
+public/redes/v_3.mp4
+public/video/intro_pisillo.mp4
+README.md
+src/App.tsx
+src/components/footer.tsx
+src/components/icons.tsx
+src/components/navbar.tsx
+src/components/theme-switch.tsx
+src/config/articulos_config.tsx
+src/config/blog_config.tsx
+src/config/index_config.tsx
+src/config/nosotros_config.tsx
+src/config/productos_config.tsx
+src/config/recetas_confi.tsx
+src/config/site.ts
+src/gsap/useGsapHorizontalScroll.tsx
+src/gsap/useGsapPinSection.tsx
+src/hooks/galeria_zoom_out.tsx
+src/hooks/primitives.ts
+src/hooks/scroll_hash.tsx
+src/hooks/scrollr_reset.tsx
+src/layouts/form.tsx
+src/layouts/galeria_1.tsx
+src/layouts/galeria_2.tsx
+src/layouts/seccion_1.tsx
+src/main.tsx
+src/pages/blog.tsx
+src/pages/index.tsx
+src/pages/nosotros.tsx
+src/pages/pisillo.tsx
+src/provider.tsx
+src/styles/globals.css
+src/types/index.ts
+src/types/inteerface.ts
+src/vite-env.d.ts
+tailwind.config.js
+tsconfig.json
+tsconfig.node.json
+vercel.json
+vite.config.ts
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+bun.lockb
+</file>
+
+<file path=".npmrc">
+package-lock=true
+</file>
+
+<file path="eslint.config.mjs">
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+import { defineConfig, globalIgnores } from "eslint/config";
+import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
+import react from "eslint-plugin-react";
+import unusedImports from "eslint-plugin-unused-imports";
+import _import from "eslint-plugin-import";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import jsxA11Y from "eslint-plugin-jsx-a11y";
+import prettier from "eslint-plugin-prettier";
+import globals from "globals";
+import tsParser from "@typescript-eslint/parser";
+import js from "@eslint/js";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
+});
+
+export default defineConfig([
+  globalIgnores([
+    ".now/*",
+    "**/*.css",
+    "**/.changeset",
+    "**/dist",
+    "esm/*",
+    "public/*",
+    "tests/*",
+    "scripts/*",
+    "**/*.config.js",
+    "**/.DS_Store",
+    "**/node_modules",
+    "**/coverage",
+    "**/.next",
+    "**/build",
+    "!**/.commitlintrc.cjs",
+    "!**/.lintstagedrc.cjs",
+    "!**/jest.config.js",
+    "!**/plopfile.js",
+    "!**/react-shim.js",
+    "!**/tsup.config.ts",
+  ]),
+  {
+    extends: fixupConfigRules(
+      compat.extends(
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+      ),
+    ),
+
+    plugins: {
+      react: fixupPluginRules(react),
+      "unused-imports": unusedImports,
+      import: fixupPluginRules(_import),
+      "@typescript-eslint": typescriptEslint,
+      "jsx-a11y": fixupPluginRules(jsxA11Y),
+      prettier: fixupPluginRules(prettier),
+    },
+
+    languageOptions: {
+      globals: {
+        ...Object.fromEntries(
+          Object.entries(globals.browser).map(([key]) => [key, "off"]),
+        ),
+        ...globals.node,
+      },
+
+      parser: tsParser,
+      ecmaVersion: 12,
+      sourceType: "module",
+
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+
+
+    files: ["**/*.ts", "**/*.tsx"],
+
+    rules: {
+      "no-console": "warn",
+      "react/prop-types": "off",
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "jsx-a11y/click-events-have-key-events": "warn",
+      "jsx-a11y/interactive-supports-focus": "warn",
+      "prettier/prettier": "warn",
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "warn",
+
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          args: "after-used",
+          ignoreRestSiblings: false,
+          argsIgnorePattern: "^_.*?$",
+        },
+      ],
+
+      "import/order": [
+        "warn",
+        {
+          groups: [
+            "type",
+            "builtin",
+            "object",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+          ],
+
+          pathGroups: [
+            {
+              pattern: "~/**",
+              group: "external",
+              position: "after",
+            },
+          ],
+
+          "newlines-between": "always",
+        },
+      ],
+
+      "react/self-closing-comp": "warn",
+
+      "react/jsx-sort-props": [
+        "warn",
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          noSortAlphabetically: false,
+          reservedFirst: true,
+        },
+      ],
+
+      "padding-line-between-statements": [
+        "warn",
+        {
+          blankLine: "always",
+          prev: "*",
+          next: "return",
+        },
+        {
+          blankLine: "always",
+          prev: ["const", "let", "var"],
+          next: "*",
+        },
+        {
+          blankLine: "any",
+          prev: ["const", "let", "var"],
+          next: ["const", "let", "var"],
+        },
+      ],
+    },
+  },
+]);
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiari Shop House J&L</title>
+    <meta key="title" content="Kiari Shop House J&L" property="og:title" />
+    <!-- <meta
+      content="Make beautiful websites regardless of your design experience."
+      property="og:description"
+    />
+    <meta
+      content="Make beautiful websites regardless of your design experience."
+      name="description"
+    />
+    <meta
+      key="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anaheim:wght@400..800&family=Anton&family=Arya:wght@400;700&family=Bebas+Neue&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bowlby+One+SC&family=Cinzel+Decorative:wght@400;700;900&family=Cutive+Mono&family=Dorsa&family=Italianno&family=Julius+Sans+One&family=Megrim&family=Metal+Mania&family=Notable&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ruthie&family=Rye&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Syncopate:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Vina+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="LICENSE">
+MIT License
+
+Copyright (c) 2024 Next UI
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</file>
+
+<file path="package.json">
+{
+  "name": "vite-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint --fix",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heroui/react": "^2.8.3",
+    "@heroui/theme": "2.4.17",
+    "@heroui/use-theme": "2.1.9",
+    "@material-tailwind/react": "^2.1.10",
+    "@react-aria/visually-hidden": "3.8.25",
+    "@react-types/shared": "3.30.0",
+    "animate.css": "^4.1.1",
+    "clsx": "2.1.1",
+    "framer-motion": "11.15.0",
+    "gsap": "^3.13.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "6.23.0",
+    "tailwind-variants": "0.3.0",
+    "tailwindcss": "3.4.16",
+    "tw-elements-react": "^1.0.0-alpha-end"
+  },
+  "devDependencies": {
+    "@eslint/compat": "1.2.8",
+    "@eslint/eslintrc": "3.3.1",
+    "@eslint/js": "9.25.1",
+    "@types/node": "20.5.7",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@types/react-transition-group": "^4.4.12",
+    "@typescript-eslint/eslint-plugin": "8.31.1",
+    "@typescript-eslint/parser": "8.31.1",
+    "@vitejs/plugin-react": "4.4.1",
+    "autoprefixer": "10.4.21",
+    "eslint": "9.25.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-unused-imports": "4.1.4",
+    "globals": "16.0.0",
+    "postcss": "8.5.3",
+    "prettier": "3.5.3",
+    "typescript": "5.6.3",
+    "vite": "5.2.0",
+    "vite-tsconfig-paths": "4.3.2"
+  }
+}
+</file>
+
+<file path="postcss.config.js">
+export default {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  };
+</file>
+
+<file path="public/data/testimonios.json">
+{
+  "tes_1": {
+    "star": 4.5,
+    "mensaje": "Expectacular para rellenar arepas, muy sabroso y rendidor",
+    "nombre": "Karla Rodrígues",
+    "estado": "Cliente satisfecho",
+    "lugar": "La caribeña",
+    "img": "default.png"
+  },
+  "tes_2": {
+    "star": 5,
+    "mensaje": "El mejor pescado que he probado, fresco y de excelente calidad.",
+    "nombre": "Luis Fernández",
+    "estado": "Cliente frecuente",
+    "lugar": "Mercado de Mariscos",
+    "img": "default.png"
+  },
+  "tes_3": {
+    "star": 4,
+    "mensaje": "Muy bueno para compartir en familia, todos quedaron encantados.",
+    "nombre": "Ana Gómez",
+    "estado": "Cliente satisfecha",
+    "lugar": "Restaurante El Sabor",
+    "img": "default.png"
+  },
+  "tes_4": {
+    "star": 4.5,
+    "mensaje": "La atención y el sabor son insuperables. ¡Recomendado 100%!",
+    "nombre": "Carlos Méndez",
+    "estado": "Cliente feliz",
+    "lugar": "La Costa Grill",
+    "img": "default.png"
+  }
+}
+</file>
+
+<file path="README.md">
+# 🌊 Kiari Shop House J&L - Portal Web Premium
+
+¡Bienvenido al repositorio oficial de **Kiari Shop House J&L**! Este es un portal web dinámico y de altísima fidelidad visual desarrollado para ofrecer la mejor experiencia en la visualización, información y comercialización de productos marinos selectos (como nuestro producto estrella, el *Pisillo*). 
+
+Este documento proporciona un análisis exhaustivo y profesional de la **arquitectura**, **estructura de directorios**, **flujo de datos**, y **tecnologías y librerías** utilizadas para dar vida a este increíble proyecto.
+
+---
+
+## 🏛️ 1. Arquitectura General y Filosofía de Diseño
+
+El proyecto está diseñado bajo una arquitectura de **Aplicación de Página Única (SPA)** construida sobre **React 18** y compilada con **Vite** para garantizar tiempos de respuesta instantáneos y un desarrollo ultrarrápido respaldado por **TypeScript**.
+
+La arquitectura interna sigue la filosofía **"Content-Driven UI" (Interfaz de Usuario Basada en Contenido)**. Esto significa que los componentes visuales son altamente modulares y genéricos, y su apariencia, textos, botones, imágenes y comportamiento se inyectan a través de objetos de configuración fuertemente tipados. De este modo, los desarrolladores o editores pueden cambiar el contenido de todo el sitio web simplemente editando archivos JSON/TypeScript en la carpeta `/config`, sin necesidad de alterar el código JSX de presentación.
+
+---
+
+## 📂 2. Estructura y Organización del Proyecto
+
+El código fuente del proyecto se organiza bajo la carpeta `/src` con una separación clara de responsabilidades:
+
+```bash
+kiari_p/
+├── public/                 # Recursos estáticos públicos (imágenes de productos, videos, logos)
+└── src/
+    ├── main.tsx            # Punto de entrada de la aplicación. Inicializa el DOM, BrowserRouter y estilos globales.
+    ├── App.tsx             # Enrutador principal, controladores de scroll y distribución de páginas.
+    ├── provider.tsx        # Contenedor de proveedores globales (ej. HeroUIProvider para tematización).
+    ├── components/         # Componentes visuales atómicos reutilizables en cualquier sección.
+    │   ├── navbar.tsx      # Barra de navegación sticky responsiva con menú móvil, links sociales y switch de tema.
+    │   ├── footer.tsx      # Pie de página estructurado con información corporativa y créditos dinámicos.
+    │   ├── theme-switch.tsx# Switcher interactivo de tema Claro / Oscuro con animaciones.
+    │   └── icons.tsx       # Librería centralizada de assets vectoriales (SVG) de alto rendimiento.
+    ├── config/             # Configuración desacoplada y data simulada de la aplicación (Content-Driven).
+    │   ├── site.ts         # Metadatos del sitio, ítems de navegación, enlaces a redes sociales.
+    │   ├── index_config.tsx# Estructura del contenido principal de la Landing Page.
+    │   ├── productos_config.tsx # Configuración detallada de la oferta de productos.
+    │   └── ... (recetas, nosotros, artículos)
+    ├── layouts/            # Plantillas estructuradas de maquetación que componen las páginas.
+    │   ├── seccion_1.tsx   # Componente maestro multiformato para banners de producto e información.
+    │   ├── galeria_1.tsx   # Carrusel interactivo premium integrado con animaciones de entrada.
+    │   └── galeria_2.tsx   # Sección interactiva tipo Rejilla Parallax accionada por Scroll y Zoom Out.
+    ├── gsap/               # Helpers y Custom Hooks especializados para animaciones de GSAP.
+    │   ├── useGsapHorizontalScroll.tsx # Animación de scroll horizontal scrubbable.
+    │   └── useGsapPinSection.tsx       # Hook para fijar (pin) secciones durante el scroll.
+    ├── hooks/              # Custom Hooks generales de React.
+    │   ├── galeria_zoom_out.tsx # Control de línea de tiempo GSAP para la rejilla interactiva de Galeria_2.
+    │   ├── scrollr_reset.tsx    # Resetea el scroll a la parte superior (0,0) en cada cambio de ruta.
+    │   ├── scroll_hash.tsx     # Soporte nativo para scroll suave a IDs específicos mediante Hash (#).
+    │   └── primitives.ts       # Definición de variantes y estilos adaptativos mediante Tailwind Variants.
+    ├── styles/             # Hojas de estilo globales de la aplicación.
+    │   └── globals.css     # Estilos base, clases utilitarias extendidas, normalización tipográfica y animaciones keyframe.
+    └── types/              # Tipados estáticos y contratos TypeScript del proyecto.
+        ├── index.ts        # Tipos comunes de componentes.
+        └── inteerface.ts   # Contratos para Props, Botones, Galerías y Contenidos (Nota: nombre de archivo con typo heredado "inteerface").
+```
+
+---
+
+## 📦 3. Análisis de Librerías y Stack Tecnológico
+
+Las dependencias de este proyecto están meticulosamente seleccionadas para brindar rendimiento, interactividad fluida y una estética premium:
+
+### ⚙️ Core y Compilación
+*   **React (v18.3.1) & React-DOM (v18.3.1)**: Biblioteca líder para la construcción de interfaces de usuario interactivas basadas en componentes.
+*   **TypeScript (v5.6.3)**: Proporciona tipado estático robusto, previniendo errores en tiempo de desarrollo y garantizando que los objetos de `/config` coincidan exactamente con las propiedades visuales.
+*   **Vite (v5.2.0)**: Empaquetador ultra-rápido de última generación para un tiempo de carga instantáneo del servidor de desarrollo (HMR) y construcciones óptimas de producción.
+
+### 🎨 Diseño, Estilos y UI
+*   **Tailwind CSS (v3.4.16)**: Framework CSS orientado a utilidades para un diseño ágil, responsivo y mantenible directamente en las clases de los componentes.
+*   **HeroUI (v2.8.3 / anteriormente NextUI)**: Colección de componentes de UI pulidos, accesibles y estéticamente soberbios (Navbar, Button, Divider, etc.). Se integra perfectamente con el switcher de tema (oscuro/claro).
+*   **Tailwind Variants (v0.3.0)**: Permite crear estilos con múltiples variantes complejas y combinatorias de forma limpia y legible (usado en `primitives.ts` para tipografía).
+*   **tw-elements-react (v1.0.0-alpha-end)**: Extensión para Tailwind que proporciona componentes interactivos avanzados. Aquí impulsa el **Carrusel principal** en `galeria_1.tsx`.
+*   **@material-tailwind/react (v2.1.10)**: Proporciona componentes pre-diseñados adicionales basados en Material Design adaptados para Tailwind.
+*   **animate.css (v4.1.1)**: Biblioteca de animaciones CSS listas para usar, ideal para transiciones fluidas de elementos en los slides del carrusel.
+
+### 🎬 Animación y Scroll Experience
+*   **GSAP (GreenSock Animation Platform v3.13.0) & ScrollTrigger**: El motor de animación estándar de la industria. Se utiliza para crear efectos altamente inmersivos al hacer scroll (como fijar pantallas, mover elementos horizontalmente y el impresionante efecto de zoom-out de imágenes).
+*   **Framer Motion (v11.15.0)**: Motor de animación fluido para React utilizado internamente por HeroUI para desplegar modales, menús y switchers con físicas realistas y fluidas.
+
+### 🧭 Enrutamiento e Iconografía
+*   **React Router DOM (v6.23.0)**: Sistema estándar para el manejo del enrutamiento del lado del cliente, permitiendo navegar entre inicio, nosotros, blog e información del producto sin refrescar el navegador.
+*   **React Icons (v5.5.0)**: Librería unificada que nos da acceso a miles de iconos vectoriales SVG de alta definición (como `RiInstagramFill`, `RiFacebookBoxFill`, `MdOutlineNavigateNext`).
+
+---
+
+## ✨ 4. Componentes y Mecanismos Clave Analizados
+
+### 🏗️ A. `Seccion_1.tsx` — El Bloque Adaptativo Maestro
+Este componente de maquetación en `/layouts` es una obra de arte modular. Acepta propiedades del tipo `I.Props` y genera secciones enteras del sitio adaptando su estructura dinámicamente mediante índices numéricos:
+*   `size_i`: Controla la altura de la sección (`seccion-sm` ~45vh, `seccion-md` ~60vh, `seccion-lg` ~80vh, `seccion-xl` 100vh).
+*   `format_i`: Organiza el flujo del contenido (`0` para columnas, `1` para filas clásicas, `2` para diseños mixtos de alto impacto).
+*   `order_i` & `btn_order_i`: Alinean dinámicamente textos y botones a la izquierda (`order-l`), centro (`order-m`) o derecha (`order-r`).
+*   `btn_position`: Permite renderizar botones de llamado a la acción (CTA) de forma interna o externa al contenedor de texto principal.
+
+### 🎞️ B. `Galeria_2.tsx` con `useGridZoomOut.tsx` — La Experiencia Parallax
+Esta sección implementa un efecto visual premium impulsado por GSAP ScrollTrigger:
+1.  **Fijación del Scroll (Pinning)**: Fija la pantalla del usuario en un área interactiva que abarca varias pantallas de scroll (`h-[400vh]`).
+2.  **Zoom Out Tridimensional**: Una rejilla de imágenes de productos inicia con un escalado gigante (`scale: 3.3`), ocultando los bordes y bloqueando la visibilidad del centro.
+3.  **Revelación de Video**: A medida que el usuario hace scroll hacia abajo, la escala se reduce suavemente a `1.0`. Las imágenes secundarias se abren en abanico y se desvanecen revelando un **reproductor de video central** que se activa y expande dinámicamente. ¡Un efecto de nivel cinematográfico!
+
+### 🎠 C. `CarouselWithIndicators` (`galeria_1.tsx`) — El Banner Emocional
+El carrusel implementado combina lo mejor de tres mundos:
+*   La lógica estructurada de slides proporcionada por `tw-elements-react`.
+*   El efecto dramático **Kenburns** (un zoom lento y continuo en la imagen de fondo hacia la parte superior, definido mediante animaciones CSS en `globals.css`).
+*   El retraso y fluidez en la entrada de textos usando clases de `animate.css`.
+
+### 🧭 D. Sincronización y Control de Scroll (`App.tsx`)
+Dado que se trata de una SPA con enrutamiento de cliente, la navegación por defecto puede dejar la ventana en posiciones de scroll no deseadas. Para solucionar esto, el proyecto incorpora dos controladores sumamente limpios:
+1.  **`ScrollReset`**: Resetea instantáneamente las coordenadas del scroll a `(0, 0)` en cada cambio de ruta.
+2.  **`ScrollToHashElement`**: Analiza la URL del navegador y, si detecta un fragmento de hash (ej. `#contacto`), realiza un desplazamiento suave (`behavior: "smooth"`) hasta el ID correspondiente.
+
+---
+
+## 🎨 5. Sistema de Diseño Tipográfico y CSS Layering
+
+En `globals.css`, el proyecto establece un sistema de capas tipográficas altamente estético y armonizado a través de fuentes personalizadas con gran personalidad:
+*   **`font-bodoni`**: Tipografía Serif elegante y audaz, utilizada en slogans principales (`main-slogan`).
+*   **`font-julius`**: Tipografía Sans Serif minimalista, estilizada y moderna, ideal para subtítulos y slogans secundarios (`sub-slogan`).
+*   **`font-aboreto`**: Fuente de gran espaciado y finura, usada para micro-títulos y tags de productos (`min-title`).
+*   **`font-arya`**: Tipografía Sans Serif geométrica de gran presencia y peso, ideal para títulos destacados (`main-title`).
+*   **`font-saira`**: Fuente altamente legible y versátil, reservada para textos informativos y cuerpos de párrafo corporativos (`min-text`, `main-text`, `sub-text`).
+
+Este conjunto tipográfico se combina con una paleta de colores vibrantes configurada para soportar de manera nativa tanto **Modo Claro** como **Modo Oscuro** a través del tokenizador de HeroUI.
+
+---
+
+## 🚀 6. Guía de Ejecución y Scripts Disponibles
+
+El proyecto ya cuenta con una configuración óptima para desarrollo y compilación.
+
+### Requisitos Previos
+Tener instalado Node.js (versión 18 o superior recomendada) y un gestor de paquetes como `npm`, `pnpm` o `yarn`.
+
+### Comandos de Terminal
+
+*   **Instalación de Dependencias**:
+    ```bash
+    npm install
+    ```
+    *(Nota: Si usas `pnpm`, asegúrate de que el archivo `.npmrc` incluya `public-hoist-pattern[]=*@heroui/*` y corre `pnpm install`)*.
+
+*   **Iniciar el Servidor de Desarrollo**:
+    ```bash
+    npm run dev
+    ```
+    Inicia Vite en modo local (generalmente en `http://localhost:5173`) con Recarga Rápida en Caliente (HMR).
+
+*   **Compilar para Producción**:
+    ```bash
+    npm run build
+    ```
+    Valida el tipado TypeScript (`tsc`) y genera un bundle ultracompacto y optimizado en la carpeta `/dist`, listo para ser desplegado en plataformas como Vercel o Netlify.
+
+*   **Ejecutar Linter**:
+    ```bash
+    npm run lint
+    ```
+    Analiza el código y corrige automáticamente discrepancias de estilo y sintaxis basándose en la configuración de ESLint.
+
+---
+
+*Análisis y reporte de arquitectura elaborado con dedicación y rigurosidad técnica para potenciar el desarrollo de **Kiari Shop House J&L**.* 🌊🐟
+</file>
+
+<file path="src/App.tsx">
+import { Route, Routes } from "react-router-dom";
+
+import IndexPage from "@/pages/index";
+import NosotrosPage from "@/pages/nosotros";
+import BlogsPage from "@/pages/blog";
+import PisilloPage from "@/pages/pisillo";
+import { ScrollReset } from "./hooks/scrollr_reset";
+import ScrollToHashElement from "./hooks/scroll_hash";
+
+function App() {
+  return (
+    <>
+      <ScrollReset />
+      <ScrollToHashElement />
+      <Routes>
+        <Route element={<IndexPage />} path="/" />
+        <Route element={<NosotrosPage />} path="/nosotros" />
+        <Route element={<PisilloPage />} path="/pisillo" />
+        <Route element={<BlogsPage />} path="/blog" />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
+</file>
+
+<file path="src/components/footer.tsx">
+import { Link } from "@heroui/link";
+import { link as linkStyles } from "@heroui/theme";
+import clsx from "clsx";
+
+import { Divider } from "@heroui/react";
+import { siteConfig } from "@/config/site";
+import { Logo } from "@/components/icons";
+
+import {
+  RiFacebookBoxFill,
+  RiInstagramFill,
+  RiTiktokFill,
+} from "react-icons/ri";
+
+export default function Footer() {
+  return (
+    <footer className="flex flex-col justify-between items-center w-full bg-blue-600 dark:bg-primary-300">
+      <div className="flex md:flex-row flex-col justify-around items-center w-full p-2 md:gap-0 gap-5">
+        <div className="gap-3 max-w-fit ">
+          <Link
+            className="flex flex-col items-center gap-1"
+            color="foreground"
+            href="/"
+          >
+            <Logo className="size-14 md:size-20"></Logo>
+            <span className="font-bold text-2xl md:text-4xl -mt-4">KIARI</span>
+
+            <p className="parrafo">KIARI SHOP HOUSE J&L</p>
+          </Link>
+        </div>
+        <div className="flex flex-col">
+          <div className="flex sm:flex-row w-fit flex-col items-center justify-between  sm:gap-7 gap-2">
+            {siteConfig.footerItem.map((item, index) => (
+              <Link
+                key={index}
+                isDisabled={item.state}
+                className={clsx(
+                  linkStyles({ color: "foreground" }),
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                )}
+                color="foreground"
+                href={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="flex md:flex-col justify-center gap-4 ">
+          <Link
+            className="font-mono text-default-600 px-2 gap-1"
+            isExternal
+            href={siteConfig.links.ig}
+            title="instagram"
+          >
+            <RiInstagramFill className="text-default-700 size-6" />
+            Instagram
+          </Link>
+          <Link
+            className="font-mono text-default-600 px-2 gap-1"
+            isExternal
+            href={siteConfig.links.facebook}
+            title="facebook"
+          >
+            <RiFacebookBoxFill className="text-default-700 size-6" />
+            Facebook
+          </Link>
+          <Link
+            isDisabled={true}
+            className="font-mono text-default-600 px-2 gap-1"
+            isExternal
+            href={siteConfig.links.ig}
+            title="tiktok"
+          >
+            <RiTiktokFill className="text-default-700 size-6" />
+            Tiktok
+          </Link>
+        </div>
+      </div>
+      <Divider className="w-[40%]" />
+      <p className="text-center text-sm text-default-50-500 p-3">
+        © 2025 Kiari Shop House J&amp;L. Todos los derechos reservados.
+        <br />
+        Hecho por <span className="font-bold">Pilon</span>{" "}
+        <Link className="text-xs font-mono text-default-900">
+          https://victordrl.github.io/
+        </Link>{" "}
+        en React · UI potenciado con HeroUI.
+      </p>
+    </footer>
+  );
+}
+</file>
+
+<file path="src/components/icons.tsx">
+import * as React from "react";
+
+import { IconSvgProps } from "@/types";
+
+export const Logo: React.FC<IconSvgProps> = ({
+  size = 36,
+  height,
+  ...props
+}) => (
+  <svg
+    fill="none"
+    height={size || height}
+    viewBox="0 0 32 32"
+    width={size || height}
+    {...props}
+  >
+    <path
+      clipRule="evenodd"
+      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+      fill="currentColor"
+      fillRule="evenodd"
+    />
+  </svg>
+);
+
+export const DiscordIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path
+        d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1 14.66 14.66 0 0 0-4.58 0 10.14 10.14 0 0 0-.53-1.1 16 16 0 0 0-4.13 1.3 17.33 17.33 0 0 0-3 11.59 16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83 3.39 3.39 0 0 0 .42-.33 11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84 12.41 12.41 0 0 0 1.08 1.78 16.44 16.44 0 0 0 5.06-2.59 17.22 17.22 0 0 0-3-11.59 16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.93 1.93 0 0 1 1.8 2 1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.92 1.92 0 0 1 1.8 2 1.92 1.92 0 0 1-1.8 2z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const TwitterIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path
+        d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const GithubIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+        fill="currentColor"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const MoonFilledIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height={size || height}
+    role="presentation"
+    viewBox="0 0 24 24"
+    width={size || width}
+    {...props}
+  >
+    <path
+      d="M21.53 15.93c-.16-.27-.61-.69-1.73-.49a8.46 8.46 0 01-1.88.13 8.409 8.409 0 01-5.91-2.82 8.068 8.068 0 01-1.44-8.66c.44-1.01.13-1.54-.09-1.76s-.77-.55-1.83-.11a10.318 10.318 0 00-6.32 10.21 10.475 10.475 0 007.04 8.99 10 10 0 002.89.55c.16.01.32.02.48.02a10.5 10.5 0 008.47-4.27c.67-.93.49-1.519.32-1.79z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export const SunFilledIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height={size || height}
+    role="presentation"
+    viewBox="0 0 24 24"
+    width={size || width}
+    {...props}
+  >
+    <g fill="currentColor">
+      <path d="M19 12a7 7 0 11-7-7 7 7 0 017 7z" />
+      <path d="M12 22.96a.969.969 0 01-1-.96v-.08a1 1 0 012 0 1.038 1.038 0 01-1 1.04zm7.14-2.82a1.024 1.024 0 01-.71-.29l-.13-.13a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.984.984 0 01-.7.29zm-14.28 0a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a1 1 0 01-.7.29zM22 13h-.08a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zM2.08 13H2a1 1 0 010-2 1.038 1.038 0 011.04 1 .969.969 0 01-.96 1zm16.93-7.01a1.024 1.024 0 01-.71-.29 1 1 0 010-1.41l.13-.13a1 1 0 011.41 1.41l-.13.13a.984.984 0 01-.7.29zm-14.02 0a1.024 1.024 0 01-.71-.29l-.13-.14a1 1 0 011.41-1.41l.13.13a1 1 0 010 1.41.97.97 0 01-.7.3zM12 3.04a.969.969 0 01-1-.96V2a1 1 0 012 0 1.038 1.038 0 01-1 1.04z" />
+    </g>
+  </svg>
+);
+
+export const HeartFilledIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    height={size || height}
+    role="presentation"
+    viewBox="0 0 24 24"
+    width={size || width}
+    {...props}
+  >
+    <path
+      d="M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z"
+      fill="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+    />
+  </svg>
+);
+
+export const SearchIcon = (props: IconSvgProps) => (
+  <svg
+    aria-hidden="true"
+    fill="none"
+    focusable="false"
+    height="1em"
+    role="presentation"
+    viewBox="0 0 24 24"
+    width="1em"
+    {...props}
+  >
+    <path
+      d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    />
+    <path
+      d="M22 22L20 20"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    />
+  </svg>
+);
+</file>
+
+<file path="src/components/navbar.tsx">
+import {
+  Navbar as HeroUINavbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@heroui/navbar";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
+
+import { link as linkStyles } from "@heroui/theme";
+import clsx from "clsx";
+
+import { ThemeSwitch } from "@/components/theme-switch";
+import { Logo } from "@/components/icons";
+import {
+  RiArrowRightSLine,
+  RiTiktokFill,
+  RiFacebookBoxFill,
+  RiInstagramFill,
+} from "react-icons/ri";
+
+import { siteConfig } from "@/config/site";
+
+export default function MiNavbar() {
+  return (
+    <HeroUINavbar isBordered isBlurred maxWidth="xl" position="sticky">
+      {/* nav izquierda */}
+      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+        {/* logo y titulo */}
+        <NavbarBrand className="gap-3 max-w-fit">
+          <Link
+            className="flex justify-start items-center gap-1"
+            color="foreground"
+            href="/"
+          >
+            <Logo />
+            <span className="hidden sm:block font-bold">KIARI</span>
+          </Link>
+        </NavbarBrand>
+
+        {/* nav lista de items paginas */}
+        <div className="hidden sm:flex gap-4 justify-start ml-2">
+          {siteConfig.navItems.map((item, index) => (
+            <NavbarItem key={item.href}>
+              {index < siteConfig.navItems.length - 1 ? (
+                <Link
+                  isDisabled={item.state}
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  )}
+                  color="foreground"
+                  href={item.href}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <Link
+                  isDisabled={item.state}
+                  className={clsx(
+                    linkStyles({ color: "foreground" }),
+                    "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  )}
+                  color="secondary"
+                  href={item.href}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </NavbarItem>
+          ))}
+        </div>
+      </NavbarContent>
+
+      {/* nav derecha */}
+      <NavbarContent className=" sm:flex basis-1/5 sm:basis-full" justify="end">
+        {/* iconos */}
+        <NavbarItem className="px-4 sm:flex">
+          <Link
+            className="px-2"
+            isExternal
+            href={siteConfig.links.ig}
+            title="instagram"
+          >
+            <RiInstagramFill className="text-default-500 size-6" />
+          </Link>
+          <Link
+            className="px-2"
+            isExternal
+            href={siteConfig.links.facebook}
+            title="facebook"
+          >
+            <RiFacebookBoxFill className="text-default-500 size-6" />
+          </Link>
+          <Link
+            className="px-2"
+            isExternal
+            href={siteConfig.links.facebook}
+            title="tiktok"
+            isDisabled={true}
+          >
+            <RiTiktokFill className="text-default-500 size-6" />
+          </Link>
+          <ThemeSwitch className="md:!block hidden" />
+        </NavbarItem>
+        {/* boton */}
+        <NavbarItem className="hidden lg:block">
+          <Button
+            isExternal
+            as={Link}
+            className="text-sm font-semibold text-default-600 bg-default-100"
+            href="/venta"
+            endContent={<RiArrowRightSLine className="text-primary size-6" />}
+            variant="flat"
+          >
+            Comprar
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+
+      {/* nav derecha sm */}
+      <NavbarContent className=" md:!hidden flex pl-4" justify="end">
+        <ThemeSwitch />
+        <NavbarMenuToggle />
+      </NavbarContent>
+
+      {/* menu hamburgesa */}
+      <NavbarMenu>
+        <div className="mx-4 mt-2 flex flex-col gap-2">
+          {siteConfig.navMenuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                color={
+                  index === 0 || index === 6
+                    ? "primary"
+                    : index === siteConfig.navMenuItems.length - 1
+                      ? "secondary"
+                      : "foreground"
+                }
+                href={item.href}
+                size="lg"
+              >
+                {item.label}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </div>
+      </NavbarMenu>
+    </HeroUINavbar>
+  );
+}
+</file>
+
+<file path="src/components/theme-switch.tsx">
+import { FC, useState, useEffect } from "react";
+import { VisuallyHidden } from "@react-aria/visually-hidden";
+import { SwitchProps, useSwitch } from "@heroui/switch";
+import clsx from "clsx";
+import { useTheme } from "@heroui/use-theme";
+
+import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+
+export interface ThemeSwitchProps {
+  className?: string;
+  classNames?: SwitchProps["classNames"];
+}
+
+export const ThemeSwitch: FC<ThemeSwitchProps> = ({
+  className,
+  classNames,
+}) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  const { theme, setTheme } = useTheme();
+
+  const {
+    Component,
+    slots,
+    isSelected,
+    getBaseProps,
+    getInputProps,
+    getWrapperProps,
+  } = useSwitch({
+    isSelected: theme === "light",
+    onChange: () => setTheme(theme === "light" ? "dark" : "light"),
+  });
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, [isMounted]);
+
+  // Prevent Hydration Mismatch
+  if (!isMounted) return <div className="w-6 h-6" />;
+
+  return (
+    <Component
+      aria-label={isSelected ? "Switch to dark mode" : "Switch to light mode"}
+      {...getBaseProps({
+        className: clsx(
+          "px-px transition-opacity hover:opacity-80 cursor-pointer",
+          className,
+          classNames?.base,
+        ),
+      })}
+    >
+      <VisuallyHidden>
+        <input {...getInputProps()} />
+      </VisuallyHidden>
+      <div
+        {...getWrapperProps()}
+        className={slots.wrapper({
+          class: clsx(
+            [
+              "w-auto h-auto",
+              "bg-transparent",
+              "rounded-lg",
+              "flex items-center justify-center",
+              "group-data-[selected=true]:bg-transparent",
+              "!text-default-500",
+              "pt-px",
+              "px-0",
+              "mx-0",
+            ],
+            classNames?.wrapper,
+          ),
+        })}
+      >
+        {isSelected ? (
+          <MoonFilledIcon size={22} />
+        ) : (
+          <SunFilledIcon size={22} />
+        )}
+      </div>
+    </Component>
+  );
+};
+</file>
+
+<file path="src/config/articulos_config.tsx">
+import {
+  RiArrowRightSLine,
+  RiBox2Line,
+  RiListIndefinite,
+} from "react-icons/ri";
+
+export const bnt_icon = {
+  icon_1: <RiArrowRightSLine className="size-6" />,
+  icon_2: <RiBox2Line className="size-6" />,
+  icon_3: <RiListIndefinite className="size-6" />,
+};
+
+export const articulos = {
+  "1": {
+    hreft_1: "/prod",
+    hreft_2: "/blog/articulo/2",
+    titulo_corto: "Sábalo",
+    titulo: "Todo sobre el Sábalo",
+    frace: "nuevo",
+    chip: {
+      a: "Sábalo fresco",
+      b: "Comida saludable",
+      c: "Productos KIARI",
+      d: "Recetas fáciles",
+    },
+    intro:
+      "El Sábalo (Megalops atlanticus), también conocido como tarpon, es un pescado marino apreciado en la gastronomía venezolana. Su carne firme y sabrosa lo hace ideal para platos tradicionales como el pisillo de sábalo. A continuación, conoce más sobre sus características y beneficios nutricionales.",
+    resumen:
+      "El sábalo es un pez marino muy valorado en Venezuela por su sabor y aporte nutricional. Su carne rica en proteínas y omega-3 es ideal para preparaciones como el pisillo, ofreciendo beneficios para la salud cardiovascular y muscular.",
+    img: {
+      i1: "/default.png",
+      i2: "/default.png",
+      i3: "/default.png",
+      i4: "/default.png",
+    },
+    texto: {
+      p1: {
+        subtitulo: "Características del Sábalo",
+        texto:
+          "El sábalo es un pez robusto que puede alcanzar varios metros de longitud. Su carne es muy valorada: aporta proteínas de alta calidad y grasas insaturadas beneficiosas para el organismo. Además, contiene vitaminas y minerales esenciales similares a otras especies de pescado blanco.",
+      },
+      p2: {
+        subtitulo: "Preparaciones tradicionales",
+        texto:
+          "En la cocina venezolana, el sábalo se consume fresco o en preparaciones como el pisillo de sábalo. El pisillo es un guiso de pescado previamente salado y desmenuzado, ideal para empanadas, arepas o guisos orientales. Kiari ofrece estas elaboraciones artesanales sin piel ni espinas, facilitando tu preparación casera.",
+      },
+      p3: {
+        subtitulo: "Cómo conservar su frescura",
+        texto:
+          "Mantener el pescado fresco maximiza sus nutrientes. Un pescado recién capturado conserva mejor sus propiedades nutricionales: omega-3, proteínas de alta calidad, fósforo y vitaminas del grupo B. Por eso, es importante adquirir sábalo bien refrigerado y manipularlo correctamente para aprovechar al máximo su valor alimenticio.",
+      },
+      p4: {
+        subtitulo: "Beneficios para la salud",
+        texto:
+          "El consumo regular de sábalo fresco aporta beneficios a la salud cardiovascular y muscular. A diferencia de la carne roja, su contenido de grasa saludable favorece niveles bajos de colesterol. Con Kiari, comer pescado es fácil y delicioso: sus presentaciones garantizan un producto práctico, sabroso y apto para toda la familia.",
+      },
+    },
+    referecias: {
+      resf1: {
+        Lugar: `Food and Agriculture Organization of the United Nations (FAO). 
+        "Tarpon (Megalops atlanticus) – Species Fact Sheets".`,
+        ruta: "https://www.fao.org/fishery/en/species/2931",
+      },
+      resf2: {
+        Lugar: `Ministerio del Poder Popular de Pesca y Acuicultura (Venezuela). 
+      "Consumo y aprovechamiento del sábalo en la gastronomía venezolana".`,
+        ruta: "https://www.mppa.gob.ve",
+      },
+    },
+    conclucion: `El pescado es un alimento esencial en la dieta de muchas culturas 
+    y el sábalo se destaca por su versatilidad y sabor. En KIARI,
+    transformamos este delicioso pescado en productos fáciles de
+    consumir, ideales para toda la familia.
+    Con nuestras innovadoras presentaciones, como el pisillo, los nuggets
+    y los medallones, garantizamos que disfrutar de pescado nunca ha sido
+    tan sencillo. Cada producto es 100% natural, sin conservantes, y está
+    diseñado para facilitar su preparación y consumo. 
+    Imagen de nuestros productos: El pisillo es perfecto para quienes
+    buscan una opción rápida y nutritiva, mientras que los nuggets son
+    ideales para un almuerzo divertido y saludable. 
+    Por otro lado, los medallones ofrecen una experiencia gourmet en casa,
+    permitiendo que cada bocado sea una delicia. "La calidad del pescado es
+    insuperable, y el sabor es realmente fresco. ¡Mis hijos lo adoran!" - Testimonio de cliente. 
+    En KIARI, nos preocupamos por ofrecer un producto que no solo sea delicioso,
+    sino también seguro. Eliminamos piel, escamas y espinas, asegurando que cada
+    bocado sea placentero. Imagen de un plato preparado con nuestros productos. 
+    Además, nuestros productos son perfectos para cualquier ocasión, desde una cena
+    rápida hasta una reunión familiar. Con KIARI, puedes disfrutar de la frescura
+    del mar en la comodidad de tu hogar. 
+    Conclusión: Si buscas una opción saludable y deliciosa para tus comidas,
+    no busques más. KIARI te ofrece la mejor calidad en pescado, transformado
+    en productos que encantarán a todos. ¡Descubre la diferencia de KIARI y
+    dale un gusto a tu paladar!`,
+  },
+  "2": {
+    hreft_1: "/prod",
+    hreft_2: "/blog/articulo/3",
+    titulo_corto: "Calidad",
+    titulo: "Cómo elegir pescado de calidad",
+    frace: "nuevo",
+    chip: {
+      a: "Sábalo fresco",
+      b: "Comida saludable",
+      c: "Productos KIARI",
+      d: "Recetas fáciles",
+    },
+    intro:
+      "Elegir un pescado fresco y de buena calidad es clave para garantizar sabor y salud. Un pescado en mal estado puede causar problemas digestivos, mientras que uno fresco conserva nutrientes esenciales. Estos consejos te ayudarán a reconocerlo en la pescadería.",
+    resumen:
+      "Un pescado fresco se reconoce por ojos brillantes, branquias rojas, piel firme y olor suave a mar. Comprar en lugares confiables como Kiari asegura frescura, trazabilidad y un producto saludable para tu mesa.",
+    img: {
+      i1: "/default.png",
+      i2: "/default.png",
+      i3: "/default.png",
+      i4: "/default.png",
+    },
+    texto: {
+      p1: {
+        subtitulo: "Ojos y branquias",
+        texto:
+          "Observa sus ojos y branquias: los ojos deben ser redondos, brillantes y saltones, nunca hundidos u opacos. Las branquias deben tener un color rojo intenso, parecido al vino tinto, lo que indica buena frescura.",
+      },
+      p2: {
+        subtitulo: "Piel, carne y olor",
+        texto:
+          'Fíjate en la piel y la carne: la piel del pescado debe lucir un brillo metálico y estar firme al tacto. Al presionar la carne ligeramente con el dedo, esta debe volver a su forma original; si queda hundida, el pescado ha perdido frescura. Además, el pescado fresco huele suave a mar o a agua salada, nunca a amoníaco ni a olor intenso a "pescadería".',
+      },
+      p3: {
+        subtitulo: "Integridad del cuerpo y etiquetado",
+        texto:
+          "Revisa la integridad del cuerpo: un pescado fresco mantiene cola y aletas enteras y no debe tener el vientre hinchado. También es buena práctica comprobar que tenga etiqueta clara con fecha de captura, zona y método de pesca, señal de transparencia en su procedencia.",
+      },
+      p4: {
+        subtitulo: "Compra en lugares confiables",
+        texto:
+          "Finalmente, compra en lugares de confianza: Kiari, por ejemplo, garantiza trazabilidad y frescura en cada producto. Evita precios sospechosamente bajos (podrían ocultar fallas de calidad) y opta por pescaderías reconocidas. Con estos pasos, disfrutarás siempre de un pescado sabroso y saludable.",
+      },
+    },
+    referecias: {
+      resf1: {
+        Lugar: `Food and Agriculture Organization of the United Nations (FAO). 
+        "Tarpon (Megalops atlanticus) – Species Fact Sheets".`,
+        ruta: "https://www.fao.org/fishery/en/species/2931",
+      },
+      resf2: {
+        Lugar: `Ministerio del Poder Popular de Pesca y Acuicultura (Venezuela). 
+      "Consumo y aprovechamiento del sábalo en la gastronomía venezolana".`,
+        ruta: "https://www.mppa.gob.ve",
+      },
+    },
+    conclucion: `El pescado es un alimento esencial en la dieta de muchas culturas 
+    y el sábalo se destaca por su versatilidad y sabor. En KIARI,
+    transformamos este delicioso pescado en productos fáciles de
+    consumir, ideales para toda la familia.
+    Con nuestras innovadoras presentaciones, como el pisillo, los nuggets
+    y los medallones, garantizamos que disfrutar de pescado nunca ha sido
+    tan sencillo. Cada producto es 100% natural, sin conservantes, y está
+    diseñado para facilitar su preparación y consumo. 
+    Imagen de nuestros productos: El pisillo es perfecto para quienes
+    buscan una opción rápida y nutritiva, mientras que los nuggets son
+    ideales para un almuerzo divertido y saludable. 
+    Por otro lado, los medallones ofrecen una experiencia gourmet en casa,
+    permitiendo que cada bocado sea una delicia. "La calidad del pescado es
+    insuperable, y el sabor es realmente fresco. ¡Mis hijos lo adoran!" - Testimonio de cliente. 
+    En KIARI, nos preocupamos por ofrecer un producto que no solo sea delicioso,
+    sino también seguro. Eliminamos piel, escamas y espinas, asegurando que cada
+    bocado sea placentero. Imagen de un plato preparado con nuestros productos. 
+    Además, nuestros productos son perfectos para cualquier ocasión, desde una cena
+    rápida hasta una reunión familiar. Con KIARI, puedes disfrutar de la frescura
+    del mar en la comodidad de tu hogar. 
+    Conclusión: Si buscas una opción saludable y deliciosa para tus comidas,
+    no busques más. KIARI te ofrece la mejor calidad en pescado, transformado
+    en productos que encantarán a todos. ¡Descubre la diferencia de KIARI y
+    dale un gusto a tu paladar!`,
+  },
+  "3": {
+    hreft_1: "/prod",
+    hreft_2: "/blog/articulo/1",
+    titulo_corto: "Beneficios",
+    titulo: "Beneficios del pescado fresco",
+    frace: "nuevo",
+    chip: {
+      a: "Sábalo fresco",
+      b: "Comida saludable",
+      c: "Productos KIARI",
+      d: "Recetas fáciles",
+    },
+    intro:
+      "Incluir pescado fresco en la dieta aporta numerosos beneficios para la salud. Su alto contenido de proteínas, vitaminas y minerales lo convierte en un alimento completo y nutritivo. Descubre a continuación cómo tu organismo se beneficia al consumir pescado fresco con regularidad.",
+    resumen:
+      "El pescado fresco es un alimento completo: rico en proteínas de calidad, omega-3, vitaminas y minerales. Su consumo regular fortalece el corazón, los huesos y el sistema nervioso, mejorando la concentración y la salud general.",
+    img: {
+      i1: "/default.png",
+      i2: "/default.png",
+      i3: "/default.png",
+      i4: "/default.png",
+    },
+    texto: {
+      p1: {
+        subtitulo: "Proteínas de alta calidad",
+        texto:
+          "El pescado fresco es una fuente excelente de proteínas de alta calidad, cruciales para la reparación muscular y el crecimiento celular. A diferencia de algunos cortes de carne roja, aporta menos grasa saturada, lo cual ayuda a mantener un peso saludable y una dieta balanceada.",
+      },
+      p2: {
+        subtitulo: "Ácidos grasos Omega-3",
+        texto:
+          "Además, el pescado contiene ácidos grasos Omega-3, que protegen el corazón y reducen la inflamación. La American Heart Association recomienda al menos dos porciones semanales de pescado rico en Omega-3. Estos nutrientes ayudan a disminuir la acumulación de placa en las arterias y el riesgo de enfermedades cardiovasculares.",
+      },
+      p3: {
+        subtitulo: "Vitaminas y minerales",
+        texto:
+          "También aporta vitaminas y minerales esenciales: por ejemplo, vitaminas A, D y del complejo B, así como minerales como calcio, potasio, yodo y hierro. Estos nutrientes apoyan la salud visual, fortalecen los huesos y regulan funciones vitales como el sistema nervioso y la formación de glóbulos rojos.",
+      },
+      p4: {
+        subtitulo: "Mejora general de la salud",
+        texto:
+          "Por último, incluir pescado fresco en tus comidas mejora la función cerebral y facilita la digestión. Nutrientes como el zinc, el fósforo y la vitamina B12 favorecen la concentración y el aprendizaje. Además, su carne tierna se digiere con facilidad, ideal para toda la familia. Con Kiari, disfrutar de estos beneficios es sencillo: productos listos para cocinar y llenos de sabor.",
+      },
+    },
+    referecias: {
+      resf1: {
+        Lugar: `Food and Agriculture Organization of the United Nations (FAO). 
+        "Tarpon (Megalops atlanticus) – Species Fact Sheets".`,
+        ruta: "https://www.fao.org/fishery/en/species/2931",
+      },
+      resf2: {
+        Lugar: `Ministerio del Poder Popular de Pesca y Acuicultura (Venezuela). 
+      "Consumo y aprovechamiento del sábalo en la gastronomía venezolana".`,
+        ruta: "https://www.mppa.gob.ve",
+      },
+    },
+    conclucion: `El pescado es un alimento esencial en la dieta de muchas culturas 
+    y el sábalo se destaca por su versatilidad y sabor. En KIARI,
+    transformamos este delicioso pescado en productos fáciles de
+    consumir, ideales para toda la familia.
+    Con nuestras innovadoras presentaciones, como el pisillo, los nuggets
+    y los medallones, garantizamos que disfrutar de pescado nunca ha sido
+    tan sencillo. Cada producto es 100% natural, sin conservantes, y está
+    diseñado para facilitar su preparación y consumo. 
+    Imagen de nuestros productos: El pisillo es perfecto para quienes
+    buscan una opción rápida y nutritiva, mientras que los nuggets son
+    ideales para un almuerzo divertido y saludable. 
+    Por otro lado, los medallones ofrecen una experiencia gourmet en casa,
+    permitiendo que cada bocado sea una delicia. "La calidad del pescado es
+    insuperable, y el sabor es realmente fresco. ¡Mis hijos lo adoran!" - Testimonio de cliente. 
+    En KIARI, nos preocupamos por ofrecer un producto que no solo sea delicioso,
+    sino también seguro. Eliminamos piel, escamas y espinas, asegurando que cada
+    bocado sea placentero. Imagen de un plato preparado con nuestros productos. 
+    Además, nuestros productos son perfectos para cualquier ocasión, desde una cena
+    rápida hasta una reunión familiar. Con KIARI, puedes disfrutar de la frescura
+    del mar en la comodidad de tu hogar. 
+    Conclusión: Si buscas una opción saludable y deliciosa para tus comidas,
+    no busques más. KIARI te ofrece la mejor calidad en pescado, transformado
+    en productos que encantarán a todos. ¡Descubre la diferencia de KIARI y
+    dale un gusto a tu paladar!`,
+  },
+};
+</file>
+
+<file path="src/config/blog_config.tsx">
+import {
+  RiArrowRightSLine,
+  RiFacebookBoxFill,
+  RiInstagramFill,
+} from "react-icons/ri";
+
+export const hero_1 = {
+  bg_image: "default.png",
+  titulo: "Sábalo: Frescura, Calidad, Recetas y Beneficios para tu Mesa",
+  texto: "",
+  btn: "Conocenos",
+  href: "/noso",
+  icon: <RiArrowRightSLine />,
+};
+
+export const baner_2_1 = {
+  bg_img: "default.png",
+  mini_titulo: "Redes",
+  titulo: "Visitanos en nuestras redes sociales",
+  text: "Mantente al dia con nuestras ultimas publicaciones.",
+  btn_1: "Facebook",
+  btn_2: "Instagram",
+  icon_1: <RiFacebookBoxFill />,
+  icon_2: <RiInstagramFill />,
+  href_1: "/https://www.facebook.com/kiarishophouse/",
+  href_2: "/https://www.instagram.com/kiarishophouse/",
+};
+
+export const triptico_3 = {
+  mini_titulo: "Recetas",
+  titulo: "Disfrutas Nuestras recetas",
+  text: "En KIARI, nos especializamos en la transformación del sábalo, ofreciendo productos de alta calidad. Nuestro proceso asegura que cada bocado sea delicioso y libre de impurezas.",
+  contenido: [
+    {
+      img: "/default.png",
+      subtitulo: "Pisillo salteado",
+      texto: "perfecto para una reina pepiada.",
+      href: "/blog/receta/1",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Hamburgesas",
+      texto: "Prueba un sabor diferente con Kiari.",
+      href: "/blog/receta/2",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Seviche",
+      texto: "No te puedes olvidar de probarlo.",
+      href: "/blog/receta/3",
+    },
+  ],
+};
+</file>
+
+<file path="src/config/index_config.tsx">
+export const giftDefault = "https://i.gifer.com/fxoU.gif";
+
+import { PiBowlFoodFill } from "react-icons/pi";
+import { RiArrowRightSLine, RiBox2Line } from "react-icons/ri";
+import { FaHeartbeat, FaUniversalAccess, FaHandsHelping } from "react-icons/fa";
+
+export const inicio = {
+  bg_img: "/kiari-1.png",
+  titulo: "El mejor Tarpon del Venezuela",
+  text: " En KIARI, ofrecemos pescado de alta calidad, 100% natural y libre de conservantes. Nuestros productos, como el pisillo, nuggets y medallones, son ideales para disfrutar de una experiencia gastronómica única.",
+  href_1: "/",
+  href_2: "/",
+};
+
+export const baner_1 = {
+  bg_img: "default.png",
+  mini_titulo: "Sabor",
+  titulo: "Bienvenido a KIARI",
+  text: "Transformamos el pescado en una experiencia deliciosa y saludable para todos.",
+  btn_1: "Mas",
+  btn_2: "Mas",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
+  href_1: "/",
+  href_2: "/",
+};
+
+export const triptico_2 = {
+  mini_titulo: "Produtos",
+  titulo:
+    "Descubre nuestras innovadoras presentaciones de pescado para disfrutar en cualquier ocasión",
+  text: "",
+  contenido: [
+    {
+      img: "default.png",
+      href: "/prod/n",
+      subtitulo: "Nuggets",
+      texto:
+        "Nuggets la forma más práctica y secilla de disfrutar el sabor del sábalo.",
+    },
+    {
+      img: "default.png",
+      href: "/prod/p",
+      subtitulo: "Pisillo",
+      texto:
+        "Presentaciones únicas que transforman tu experiencia con el pescado.",
+    },
+    {
+      img: "default.png",
+      href: "/prod/m",
+      subtitulo: "Medallones",
+      texto:
+        "hamburguesas de pura pulpa al natural para los amantes del pescado.",
+    },
+  ],
+  href_1: "/prod",
+  href_2: "/cont",
+  btn_text_1: "Mas",
+  btn_text_2: "Contactanos",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
+};
+
+export const info_img_1 = {
+  icon: PiBowlFoodFill,
+  img: "default.png",
+  titulo: "Facilitamos el consumo de pescado delicioso",
+  text: "En KIARI, eliminamos piel, escamas y espinas, garantizando un producto listo para disfrutar. Esto no solo mejora la experiencia del consumidor, sino que también asegura que cada bocado sea puro placer.",
+  href_1: "/",
+  href_2: "/",
+  btn_1: "Mas",
+  btn_2: "Contactanos",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
+};
+
+export const triptico_1 = {
+  mini_titulo: "Servicios",
+  titulo: "Transformación y Procesamiento del Sábalo",
+  text: "En KIARI, nos especializamos en la transformación del sábalo, ofreciendo productos de alta calidad. Nuestro proceso asegura que cada bocado sea delicioso y libre de impurezas.",
+  contenido: [
+    {
+      icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
+      subtitulo: "Productos Innovadores y Saludables",
+      texto: "Ofrecemos pisillo, nuggets y medallones, todos 100% naturales.",
+      href: "/",
+    },
+    {
+      icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
+      subtitulo: "Compromiso con la Calidad y Sostenibilidad",
+      texto: "Nuestros productos son elaborados sin conservantes artificiales.",
+      href: "/",
+    },
+    {
+      icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
+      subtitulo: "Fácil Acceso a Nuestros Productos",
+      texto: "Contáctanos para realizar tus pedidos de manera sencilla.",
+      href: "/",
+    },
+  ],
+  icon: <RiArrowRightSLine />,
+  btn_text: "Mas",
+};
+
+export const info_img_2 = {
+  minititulo: "Natural",
+  img: "default.png",
+  titulo: "Descubre los Beneficios de KIARI",
+  text: "Los productos de KIARI son 100% naturales y de alta calidad. Disfruta de un sabor auténtico sin conservantes artificiales.",
+  contenido: [
+    {
+      subtitulo: "Calidad Superior",
+      texto:
+        "Disfruta de pescado fresco y delicioso, ideal para toda la familia.",
+    },
+    {
+      subtitulo: "Sin Conservantes",
+      texto:
+        "Nuestro productos estan completamente libres de aditivos y conservantes.",
+    },
+  ],
+  btn_1: "Ordenar",
+  btn_2: "Mas",
+  icon_1: <RiBox2Line />,
+  icon_2: <RiArrowRightSLine />,
+  href_1: "/",
+  href_2: "/",
+};
+
+export const baner_2 = {
+  bg_img: "",
+  bg_color: "secondary",
+  mini_titulo: "",
+  titulo: "¡Disfruta del sabor del sábalo!",
+  text: "Realiza tu pedido y descubre nuestros deliciosos productos.",
+  btn_1: "Productos",
+  btn_2: "Mas",
+  icon_1: <RiArrowRightSLine />,
+  icon_2: <RiArrowRightSLine />,
+  href_1: "/",
+  href_2: "/",
+};
+</file>
+
+<file path="src/config/nosotros_config.tsx">
+import { PiBowlFoodFill } from "react-icons/pi";
+import {
+  RiArrowRightSLine,
+  RiBox2Line,
+  RiListIndefinite,
+  RiTeamFill,
+} from "react-icons/ri";
+
+export const bnt_icon = {
+  icon_1: <RiArrowRightSLine className="size-6" />,
+  icon_2: <RiBox2Line className="size-6" />,
+  icon_3: <RiListIndefinite className="size-6" />,
+  icon_4: <RiTeamFill className="size-6" />,
+};
+
+export const hero = {
+  titulo: "Bienvenido a KIARI",
+  texto:
+    "Transformamos el pescado en una experiencia deliciosa y saludable para todos.",
+};
+
+export const img_info_1 = {
+  mini_titulo: "Historia",
+  titulo: "La Evolución de KIARI: Un Viaje Saboroso",
+  text: "KIARI nació con la misión de transformar el consumo de pescado en Venezuela, ofreciendo productos innovadores y de alta calidad. Desde nuestros inicios, hemos evolucionado para satisfacer las necesidades de nuestros clientes, manteniendo siempre un compromiso con la naturalidad y el sabor.",
+  img: "/default.png",
+  btn_1: "Equipo",
+  btn_2: "Contactanos",
+  href_1: "/noso#equipo",
+  href_2: "/cont",
+};
+
+export const triptico_1 = {
+  titulo: "Encuentranos en los mercados mas cercanos a ti",
+  mini_titulo: "Super Markets",
+  texto: "Estaremos disponibles en los siguientes bodegones y super mercados",
+  contenido: [
+    {
+      img: "/pekin_mark.jpg",
+      subtitulo: "Hipermercado Pekin",
+      texto: "instagram",
+      href: "https://www.instagram.com/hipermercadopekin/",
+    },
+    {
+      img: "/llovizna_mark.jpg",
+      subtitulo: "La Llovizna",
+      texto: "instagram",
+      href: "https://www.instagram.com/lalloviznamarket/",
+    },
+    {
+      img: "/lacaribenia_mark.jpg",
+      subtitulo: "La Caribeña",
+      texto: "instagram",
+      href: "https://www.instagram.com/lacaribenabodegon/",
+    },
+    {
+      img: "/amazon_mark.jpg",
+      subtitulo: "Amazon supermarket",
+      texto: "instagram",
+      href: "https://www.instagram.com/amazon_supermarkett/",
+    },
+  ],
+};
+
+export const map = {
+  mini_titulo: "",
+  titulo: "Ubicación",
+  texto: "Descubre dónde estamos",
+};
+
+export const triptico_2 = {
+  titulo: "Nuestro equipo",
+  mini_titulo: "Equipo",
+  texto: "Conoce a las personas apasionadas detrás de KIARI.",
+  contenido: [
+    {
+      img: "/default.png",
+      subtitulo: "Gustavo Rojas",
+      texto: "Administrado",
+      href: "",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Lucila Lopez",
+      texto: "CIO y Marketing",
+      href: "",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Victor Rojas",
+      texto: "Sistemas y Procesos",
+    },
+    {
+      img: "/default.png",
+      subtitulo: "Javier Rojas",
+      texto: "Vendedor",
+      href: "",
+    },
+  ],
+};
+
+export const info_img_2 = {
+  icon: PiBowlFoodFill,
+  img: "default.png",
+  titulo: "Benefios de elegir Kiari para tus necesidades de pescado de calidad",
+  text: "Trabajar con KIARI significa acceder a productos de pescado 100% naturales, elaborados sin conservantes. Además, ofrecemos soluciones prácticas y deliciosas que satisfacen tanto a consumidores como a inversionistas interesados en un mercado en crecimiento.",
+};
+
+export const baner = {
+  bg_imag: "/default.png",
+  titulo: "¡Haz tu pedido hoy!",
+  text: "Contáctanos para descubrir la frescura y calidad de nuestros productos de pescado.",
+  btn_text_1: "Productos",
+  btn_text_2: "Contactanos",
+  href_1: "/prod",
+  href_2: "/cont",
+  icon_1: bnt_icon.icon_2,
+  icon_2: bnt_icon.icon_1,
+};
+</file>
+
+<file path="src/config/productos_config.tsx">
+import { FaHandsHelping, FaHeartbeat, FaUniversalAccess } from "react-icons/fa";
+import {
+  RiTeamFill,
+  RiArrowRightSLine,
+  RiBox2Line,
+  RiListIndefinite,
+} from "react-icons/ri";
+
+export const bnt_icon = {
+  icon_1: <RiArrowRightSLine className="size-6" />,
+  icon_2: <RiBox2Line className="size-6" />,
+  icon_3: <RiListIndefinite className="size-6" />,
+  icon_4: <RiTeamFill className="size-6" />,
+};
+
+export const hero = {
+  titulo: "Productos a KIARI",
+  texto:
+    "Descubre la frescura y calidad de nuestros productos de pescado 100% naturales.",
+};
+export const triptico = {
+  mini_titulo: "Produtos",
+  titulo: "Descubre las innovadoras presentaciones de pescado de KIARI",
+  text: "",
+  contenido: [
+    {
+      img: "default.png",
+      href: "/prod/n",
+      subtitulo: "Nuggets",
+      texto:
+        "Nuggets la forma más práctica y secilla de disfrutar el sabor del sábalo.",
+    },
+    {
+      img: "default.png",
+      href: "/prod/p",
+      subtitulo: "Pisillo",
+      texto:
+        "Presentaciones únicas que transforman tu experiencia con el pescado.",
+    },
+    {
+      img: "default.png",
+      href: "/prod/m",
+      subtitulo: "Medallones",
+      texto:
+        "hamburguesas de pura pulpa al natural para los amantes del pescado.",
+    },
+  ],
+};
+
+export const baner = {
+  bg_imag: "/default.png",
+  titulo: "¡Haz tu pedido hoy!",
+  text: "Contáctanos para descubrir la frescura y calidad de nuestros productos de pescado.",
+  btn_text_1: "Productos",
+  btn_text_2: "Contactanos",
+  href_1: "/prod",
+  href_2: "/cont",
+  icon_1: bnt_icon.icon_2,
+  icon_2: bnt_icon.icon_1,
+};
+
+export const nuggets = {
+  mini: "Nuggets",
+  titulo: "Nuggets de Pescado: Sabor y Versatilidad",
+  resumen:
+    "Los Nuggets de KIARI son la opción perfecta para quienes buscan una alternativa deliciosa y saludable. Hechos con pescado 100% natural, son ideales para cualquier ocasión.",
+  caracteristicas: {
+    1: "Fáciles de preparar y perfectos para toda la familia.",
+    2: "Sin conservantes, solo sabor auténtico del mar.",
+    3: "Versátiles: perfectos para almuerzos, cenas o snacks.",
+  },
+  btn_text_1: "Blog",
+  btn_text_2: "Mas",
+  href_1: "/blog",
+  href_2: "/prod/p",
+};
+export const pisillo = {
+  mini: "Pisillo",
+  titulo: "Descubre el Pisillo: la forma más deliciosa de disfrutar el sábalo.",
+  resumen:
+    "El Pisillo es un producto innovador que combina sabor y comodidad. Con pescado precocido y desmenuzado, es ideal para cualquier comida.",
+  caracteristicas: {
+    1: "Fácil de preparar y listo para disfrutar.",
+    2: "100% natural, sin conservantes ni aditivos.",
+    3: "Perfecto para recetas rápidas y saludables.",
+  },
+  btn_text_1: "Blog",
+  btn_text_2: "Mas",
+  href_1: "/blog",
+  href_2: "/prod/n",
+};
+export const medallones = {
+  mini: "Medallones",
+  titulo: "Medallones de Sábalo: Sabor y calidad en cada bocado",
+  resumen:
+    "Los medallones de sábalo son una opción deliciosa y saludable para disfrutar del pescado. Elaborados con pura pulpa cruda, garantizan frescura y calidad en cada comida.",
+  caracteristicas: {
+    1: "Fácil de preparar y listo para disfrutar.",
+    2: "100% natural, sin conservantes ni aditivos.",
+    3: "Perfecto para recetas rápidas y saludables.",
+  },
+  btn_text_1: "Blog",
+  btn_text_2: "Mas",
+  href_1: "/blog",
+  href_2: "/prod/m",
+};
+export const info_img_2 = {
+  minititulo: "Delicioso",
+  img: "default.png",
+  titulo: "Descubre los beneficios de nuestros productos KIARI",
+  text: "Los productos de KIARI ofrecen una experiencia culinaria excepcional. Con su sabor único y calidad inigualable, son la opción perfecta para disfrutar del pescado.",
+  contenido: [
+    {
+      subtitulo: "Conveniencia",
+      texto: "Fáciles de preparar y listos para disfrutar.",
+    },
+    {
+      subtitulo: "Sabor",
+      texto: "Sabor suave que encanta a todos los paladares.",
+    },
+  ],
+  btn_1: "Blog",
+  btn_2: "Contactanos",
+  icon_1: <RiBox2Line />,
+  icon_2: <RiArrowRightSLine />,
+  href_1: "/blog",
+  href_2: "/cont",
+};
+
+export const pag_p = {
+  hero: {
+    titulo: "Descubre el Pisillo",
+    min_tittulo: "Delicioso",
+    text: "El Pisillo de KIARI es la opción perfecta para quienes buscan disfrutar del pescado de manera sencilla y sabrosa. Con su carne desmenuzada y lista para consumir, es ideal para cualquier comida.",
+    btn_txt_1: "Contactanos",
+    btn_txt_2: "Mas",
+    href_1: "/cont",
+    href_2: "/prod/n",
+  },
+  sec_1: {
+    img: "/default.png",
+    min_tittulo: "Delicioso",
+    titulo: "Descubre el Sabor del Pisillo de Sábalo",
+    text: "El Pisillo de sábalo es una opción perfecta para quienes buscan comodidad y sabor en la cocina. Este pescado precocido y desmenuzado se adapta a múltiples recetas, brindando un toque especial a tus platillos.",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_2: {
+    img: "/default.png",
+    min_titulo: "Conveniencia",
+    titulo: "Descubre los beneficios del Pisillo",
+    text: "El Pisillo de KIARI es la opción perfecta para quienes buscan un pescado delicioso y fácil de preparar. Su sabor suave y su calidad natural lo convierten en una elección ideal para cualquier comida.",
+    contenido: [
+      {
+        subtitulo: "Sabor Único",
+        texto: "Disfruta de un sabor fresco y auténtico en cada bocado.",
+      },
+      {
+        subtitulo: "Alta Calidad",
+        texto:
+          "100% natural, sin conservantes, ideal para una alimentación saludable.",
+      },
+    ],
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_3: {
+    img: "/default.png",
+    mini_titulo: "",
+    titulo: "Descubre cómo preparar el delicioso Pisillo en tu cocina",
+    text: "",
+    contenido: [
+      {
+        icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Ideas creativas para disfrutar del Pisillo en tus comidas",
+        texto:
+          "El Pisillo es una opción versátil y deliciosa para tus platillos.",
+      },
+      {
+        icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
+        subtitulo:
+          "Recetas sencillas para incorporar el Pisillo en tu menú diario",
+        texto:
+          "Desde tacos hasta ensaladas, el Pisillo se adapta a cualquier ocasión.",
+      },
+      {
+        icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Beneficios de incluir Pisillo en tu dieta diaria",
+        texto:
+          "Rico en proteínas y omega-3, el Pisillo es una elección saludable.",
+      },
+    ],
+    icon: <RiArrowRightSLine />,
+    btn_text: "Mas",
+  },
+  sec_4: {
+    img: "/default.png",
+    titulo: "¡Prueba nuestro delicioso Pisillo!",
+    text: "Disfruta de la comodidad y el sabor del Pisillo, ¡un producto que transforma tu experiencia culinaria!",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+};
+export const pag_n = {
+  hero: {
+    titulo: "Nuggets de Sábalo",
+    min_tittulo: "Prácticos y Versátiles",
+    text: "Los Nuggets de KIARI son la opción perfecta para quienes buscan una comida rápida y deliciosa. Su versatilidad permite disfrutarlos en ensaladas, bocadillos o como plato principal, adaptándose a cualquier ocasión.",
+    btn_txt_1: "Contactanos",
+    btn_txt_2: "Más",
+    href_1: "/cont",
+    href_2: "/prod/m",
+  },
+  sec_1: {
+    img: "/default.png",
+    min_tittulo: "Deliciosos",
+    titulo: "Descubre los beneficios de nuestros Nuggets KIARI",
+    text: "Los Nuggets de KIARI son una opción perfecta para quienes buscan un sabor excepcional y calidad inigualable. Elaborados con pescado 100% natural, son ideales para disfrutar en cualquier ocasión.",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_2: {
+    img: "/default.png",
+    min_titulo: "Conveniencia",
+    titulo: "Descubre cómo cocinar y disfrutar los Nuggets",
+    text: "Sencillos pasos para una experiencia culinaria excepcional con nuestros Nuggets. Perfectos para cualquier ocasión, fáciles de preparar y deliciosos.",
+    contenido: [
+      {
+        subtitulo: "Pasos Fáciles",
+        texto: "Simplemente calienta el aceite y fríe los Nuggets hasta dorar.",
+      },
+      {
+        subtitulo: "Creatividad",
+        texto: "Combínalos con salsas, ensaladas o en un delicioso sándwich.",
+      },
+    ],
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_3: {
+    img: "/default.png",
+    mini_titulo: "",
+    titulo: "Características destacadas de nuestros productos",
+    text: "En KIARI, nos enorgullecemos de ofrecer pescado de la más alta calidad.",
+    contenido: [
+      {
+        icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Sabor Auténtico",
+        texto: "100% natural, garantizando un sabor auténtico y saludable.",
+      },
+      {
+        icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Fácil Preparación",
+        texto: "Listos para cocinar, ideales para cualquier ocasión.",
+      },
+      {
+        icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Versatilidad",
+        texto: "Se adaptan a ensaladas, bocadillos y platos principales.",
+      },
+    ],
+    icon: <RiArrowRightSLine />,
+    btn_text: "Más",
+  },
+  sec_4: {
+    img: "/default.png",
+    titulo: "¡Prueba nuestros deliciosos Nuggets!",
+    text: "Disfruta de la practicidad y el sabor de los Nuggets KIARI, ¡una experiencia culinaria rápida y deliciosa!",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+};
+
+export const pag_m = {
+  hero: {
+    titulo: "Medallones de Sábalo",
+    min_tittulo: "Pura Pulpa Cruda",
+    text: "Los Medallones de KIARI son una opción deliciosa y saludable para los amantes del pescado. Elaborados con pura pulpa cruda de sábalo, garantizan una experiencia culinaria inigualable.",
+    btn_txt_1: "Contactanos",
+    btn_txt_2: "Más",
+    href_1: "/cont",
+    href_2: "/prod/p",
+  },
+  sec_1: {
+    img: "/default.png",
+    min_tittulo: "Sabor",
+    titulo: "Descubre la exquisitez de nuestros Medallones",
+    text: "Disfruta de la pureza y calidad de nuestros medallones de pescado, elaborados con 100% pulpa cruda. Una opción saludable y deliciosa para cualquier ocasión.",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_2: {
+    img: "/default.png",
+    min_titulo: "Calidad Superior",
+    titulo: "Medallones de Sábalo: Pura Pulpa Cruda",
+    text: "Sin piel, escamas ni espinas, perfectos para disfrutar sin preocupaciones. Listos para cocinar y compartir en tus recetas favoritas.",
+    contenido: [
+      {
+        subtitulo: "Calidad Superior",
+        texto: "Elaborados con 100% pulpa cruda de sábalo.",
+      },
+      {
+        subtitulo: "Fácil Preparación",
+        texto: "Listos para cocinar en cualquier receta.",
+      },
+    ],
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+  sec_3: {
+    img: "/default.png",
+    mini_titulo: "",
+    titulo: "Beneficios de elegir Medallones KIARI",
+    text: "Una experiencia saludable, práctica y deliciosa.",
+    contenido: [
+      {
+        icon: <FaHeartbeat className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Saludables",
+        texto: "Ricos en proteínas y omega-3, ideales para tu dieta.",
+      },
+      {
+        icon: <FaHandsHelping className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Sin Complicaciones",
+        texto: "Sin piel, escamas ni espinas para tu comodidad.",
+      },
+      {
+        icon: <FaUniversalAccess className="size-32 mb-4 text-secondary" />,
+        subtitulo: "Preparación Rápida",
+        texto: "Perfectos para cualquier ocasión y receta.",
+      },
+    ],
+    icon: <RiArrowRightSLine />,
+    btn_text: "Más",
+  },
+  sec_4: {
+    img: "/default.png",
+    titulo: "¡Prueba nuestros Medallones!",
+    text: "Descubre la exquisitez y practicidad de los Medallones KIARI. ¡Una opción deliciosa para compartir en familia!",
+    btn_text_1: "Contactanos",
+    btn_text_2: "Blog",
+    href_1: "/cont",
+    href_2: "/blog",
+  },
+};
+</file>
+
+<file path="src/config/recetas_confi.tsx">
+export const recetas = {
+  "1": {
+    titulo: "Pisillo de sábalo",
+    presentacion: "Plato unico para disfrutar una tarde.",
+    descripcion:
+      "El pisillo de sábalo es un plato típico venezolano, lleno de sabor y tradición. Se prepara con pescado desmenuzado y sofrito criollo, ideal para empanadas, arepas o acompañar con arroz.",
+    imagen: "/default.png",
+    ingredientes: [
+      "500 g de sábalo salado",
+      "1 cebolla grande",
+      "2 dientes de ajo",
+      "1 pimentón rojo",
+      "Aceite vegetal",
+      "Sal y pimienta al gusto",
+    ],
+    pasos: [
+      {
+        subtitulo: "Desalar el pescado",
+        descripcion:
+          "Coloca el sábalo en agua durante varias horas, cambiando el agua varias veces para reducir la sal.",
+      },
+      {
+        subtitulo: "Preparar el sofrito",
+        descripcion:
+          "En una sartén, sofríe la cebolla, el ajo y el pimentón hasta que estén dorados y aromáticos.",
+      },
+      {
+        subtitulo: "Incorporar el pescado",
+        descripcion:
+          "Desmenuza el pescado desalado y agrégalo al sofrito. Cocina por 10 minutos y ajusta la sazón.",
+      },
+    ],
+  },
+
+  "2": {
+    titulo: "Sábalo salteado",
+    presentacion: "Plato unico para disfrutar una tarde.",
+    descripcion:
+      "Un plato rápido y nutritivo que resalta el sabor fresco del sábalo con vegetales.",
+    imagen: "/default.png",
+    ingredientes: [
+      "400 g de filete de sábalo fresco",
+      "1 pimentón verde",
+      "1 cebolla morada",
+      "2 cucharadas de salsa de soya",
+      "Aceite de oliva",
+      "Sal y pimienta al gusto",
+    ],
+    pasos: [
+      {
+        subtitulo: "Preparar los ingredientes",
+        descripcion:
+          "Corta el pescado en cubos y los vegetales en tiras delgadas.",
+      },
+      {
+        subtitulo: "Saltear los vegetales",
+        descripcion:
+          "En un wok o sartén grande, calienta aceite de oliva y saltea la cebolla y el pimentón.",
+      },
+      {
+        subtitulo: "Agregar el pescado",
+        descripcion:
+          "Añade el sábalo en cubos y cocina a fuego alto por 5 minutos. Agrega salsa de soya y mezcla bien.",
+      },
+    ],
+  },
+
+  "3": {
+    titulo: "Ceviche de sábalo",
+    presentacion: "Plato unico para disfrutar una tarde.",
+    descripcion:
+      "El ceviche de sábalo es una preparación fresca y ligera, ideal para los días calurosos.",
+    imagen: "/default.png",
+    ingredientes: [
+      "300 g de sábalo fresco",
+      "Jugo de 4 limones",
+      "1 cebolla morada en julianas",
+      "1 ají picante (opcional)",
+      "Cilantro fresco picado",
+      "Sal al gusto",
+    ],
+    pasos: [
+      {
+        subtitulo: "Marinar el pescado",
+        descripcion:
+          "Corta el pescado en cubos pequeños y cúbrelos con jugo de limón. Deja reposar 20 minutos.",
+      },
+      {
+        subtitulo: "Agregar los vegetales",
+        descripcion:
+          "Añade la cebolla, el ají y el cilantro al pescado marinado.",
+      },
+      {
+        subtitulo: "Rectificar la sazón",
+        descripcion: "Agrega sal al gusto y sirve inmediatamente bien frío.",
+      },
+    ],
+  },
+
+  "4": {
+    titulo: "Hamburguesa de sábalo",
+    presentacion: "Plato unico para disfrutar una tarde.",
+    descripcion:
+      "Una opción diferente y saludable para disfrutar el pescado en forma de hamburguesa.",
+    imagen: "/default.png",
+    ingredientes: [
+      "400 g de filete de sábalo molido",
+      "1 huevo",
+      "1/2 taza de pan rallado",
+      "1 diente de ajo picado",
+      "Pan de hamburguesa",
+      "Lechuga, tomate y aderezos al gusto",
+    ],
+    pasos: [
+      {
+        subtitulo: "Preparar la mezcla",
+        descripcion:
+          "Mezcla el pescado molido con el huevo, pan rallado, ajo y sal hasta formar una masa homogénea.",
+      },
+      {
+        subtitulo: "Formar y cocinar las hamburguesas",
+        descripcion:
+          "Forma medallones y cocínalos en sartén o parrilla hasta que estén dorados por ambos lados.",
+      },
+      {
+        subtitulo: "Armar la hamburguesa",
+        descripcion:
+          "Coloca el medallón en el pan junto con lechuga, tomate y tus aderezos favoritos.",
+      },
+    ],
+  },
+};
+</file>
+
+<file path="src/config/site.ts">
+export type SiteConfig = typeof siteConfig;
+
+export const siteConfig = {
+  name: "Kiari Shop House J&L",
+  description: "Descubre la frescura del pescado KIARI",
+
+  navItems: [
+    {
+      label: "Pisillo",
+      href: "/pisillo",
+      state: false,
+      new: false,
+    },
+    {
+      label: "Nosotros",
+      href: "/nosotros",
+      state: false,
+      new: false,
+    },
+    {
+      label: "Blog",
+      href: "/blog",
+      state: false,
+      new: false,
+    },
+  ],
+
+  navMenuItems: [
+    {
+      label: "Pisillo",
+      href: "/pisillo",
+      state: true,
+      new: false,
+    },
+    {
+      label: "Recetas",
+      href: "/blog",
+      state: true,
+      new: false,
+    },
+    {
+      label: "Nosotros",
+      href: "/nosotros",
+      state: true,
+      new: false,
+    },
+    {
+      label: "Locales",
+      href: "/nosotros",
+      state: true,
+      new: false,
+    },
+    {
+      label: "Blog",
+      href: "/blog",
+      state: true,
+      new: false,
+    },
+  ],
+
+  footerItem: [
+    {
+      label: "Inicio",
+      href: "/",
+      state: true,
+      new: false,
+    },
+    {
+      label: "Productos",
+      href: "/prod",
+      state: true,
+      new: false,
+    },
+    {
+      label: "Nosotros",
+      href: "/noso",
+      state: true,
+      new: false,
+    },
+  ],
+
+  links: {
+    facebook: "https://www.facebook.com/kiarishophouse/",
+    ig: "https://www.instagram.com/kiarishophouse/",
+    tiktok: "https://www.tiktok.com/@kiarichocolate",
+  },
+};
+</file>
+
+<file path="src/gsap/useGsapHorizontalScroll.tsx">
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+export function useGsapHorizontalScroll(selector: string) {
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sections = gsap.utils.toArray<HTMLElement>(selector);
+
+    const ctx = gsap.context(() => {
+      sections.forEach((section, index) => {
+        const wrapper = section.querySelector(".wrapper") as HTMLElement;
+        if (!wrapper) return;
+
+        const scrollWidth = wrapper.scrollWidth;
+        const viewportWidth = section.offsetWidth;
+
+        const fromX = index % 2 === 0 ? -scrollWidth : viewportWidth;
+        const toX = index % 2 === 0 ? 0 : -(scrollWidth - viewportWidth);
+
+        gsap.fromTo(
+          wrapper,
+          { x: fromX },
+          {
+            x: toX,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              scrub: 0.5,
+            },
+          }
+        );
+      });
+    });
+
+    return () => ctx.revert();
+  }, [selector]);
+}
+</file>
+
+<file path="src/gsap/useGsapPinSection.tsx">
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export function useGsapPinSection(selector: string, extraScroll = 2000) {
+  useLayoutEffect(() => {
+    const section = document.querySelector(selector);
+    if (!section) return;
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: `+=${extraScroll}`, // cuánto dura el pin
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, [selector, extraScroll]);
+}
+</file>
+
+<file path="src/hooks/galeria_zoom_out.tsx">
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export const useGridZoomOut = () => {
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".galeria-container",
+          start: "top top",
+          end: () => window.innerHeight * 4,
+          scrub: true,
+          pin: ".galeria-grid",
+          anticipatePin: 1,
+        },
+      });
+
+      tl.set(".grid-item", { autoAlpha: 0 })
+        .to(".grid-item", { autoAlpha: 1, duration: 0.1 }, 0.001)
+        .from(".grid-layer", { scale: 3.3, ease: "none" });
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+</file>
+
+<file path="src/hooks/primitives.ts">
+import { tv } from "tailwind-variants";
+
+export const title = tv({
+  base: "tracking-tight inline font-semibold",
+  variants: {
+    color: {
+      violet: "from-[#FF1CF7] to-[#b249f8]",
+      yellow: "from-[#FF705B] to-[#FFB457]",
+      blue: "from-[#5EA2EF] to-[#0072F5]",
+      cyan: "from-[#00b7fa] to-[#01cfea]",
+      green: "from-[#6FEE8D] to-[#17c964]",
+      pink: "from-[#FF72E1] to-[#F54C7A]",
+      foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
+    },
+    size: {
+      sm: "text-3xl lg:text-4xl",
+      md: "text-[2.3rem] lg:text-5xl leading-9",
+      lg: "text-4xl lg:text-6xl",
+    },
+    fullWidth: {
+      true: "w-full block",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+  compoundVariants: [
+    {
+      color: [
+        "violet",
+        "yellow",
+        "blue",
+        "cyan",
+        "green",
+        "pink",
+        "foreground",
+      ],
+      class: "bg-clip-text text-transparent bg-gradient-to-b",
+    },
+  ],
+});
+
+export const subtitle = tv({
+  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full",
+  variants: {
+    fullWidth: {
+      true: "!w-full",
+    },
+  },
+  defaultVariants: {
+    fullWidth: true,
+  },
+});
+</file>
+
+<file path="src/hooks/scroll_hash.tsx">
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function ScrollToHashElement() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" }); // smooth scroll
+      }
+    }
+  }, [hash]);
+
+  return null;
+}
+</file>
+
+<file path="src/hooks/scrollr_reset.tsx">
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export function ScrollReset() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+</file>
+
+<file path="src/layouts/form.tsx">
+import { Button, Card, Input, Textarea } from "@heroui/react";
+import { RiMailFill, RiPhoneFill } from "react-icons/ri";
+import { useState } from "react";
+
+interface Props {
+  bg_img?: string;
+  bg_color?: string;
+}
+
+export default function ContactForm({
+  bg_img = "/default.png",
+  bg_color = "bg-default-700",
+}: Props) {
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    try {
+      const response = await fetch("https://formspree.io/f/xrbarpnz", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset(); // limpiar inputs
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
+  return (
+    <main
+      className="h-screen flex items-center justify-center p-4 bg-cover bg-center"
+      style={bg_img ? { backgroundImage: `url(${bg_img})` } : {}}
+    >
+      <Card
+        isBlurred
+        shadow="sm"
+        className={`mx-auto sm:min-w-96 w-full max-w-md rounded-lg p-6 shadow-md ${bg_color}`}
+      >
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <h1 className="text-2xl font-extrabold text-center text-orange-400">
+            KIARI
+          </h1>
+
+          <Input name="name" isClearable isRequired placeholder="Nombre" />
+          <Input name="asunto" isClearable isRequired placeholder="Asunto" />
+          <Textarea
+            name="message"
+            isRequired
+            placeholder="Escribe tu mensaje..."
+          />
+
+          <div className="flex flex-col items-center space-y-2 text-white">
+            <h2 className="text-lg font-semibold">Contacto</h2>
+            <div className="flex items-center gap-2">
+              <RiPhoneFill className="size-5" />
+              <p className="text-sm">+58 0414 9884153</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <RiMailFill className="size-5" />
+              <p className="text-sm">victor.rojas17.09@gmail.com</p>
+            </div>
+          </div>
+
+          <Button
+            type="submit"
+            variant="solid"
+            radius="sm"
+            color="primary"
+            className="w-full"
+          >
+            Enviar
+          </Button>
+
+          {status === "success" && (
+            <p className="text-green-400 text-center">
+              Mensaje enviado con éxito
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-red-400 text-center">Ocurrió un error </p>
+          )}
+        </form>
+      </Card>
+    </main>
+  );
+}
+</file>
+
+<file path="src/layouts/galeria_1.tsx">
+import { TECarousel, TECarouselItem } from "tw-elements-react";
+import "animate.css";
+
+import * as I from "@/types/inteerface";
+import { Button } from "@heroui/react";
+import { Link } from "react-router-dom";
+
+// clases condicionales
+export const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
+export const format = ["format-row", "format-col", "format-mid"];
+export const order = ["order-l", "order-m", "order-r"];
+export const btn_order = ["btn_order-l", "btn_order-m", "btn_order-r"];
+
+export default function CarouselWithIndicators({
+  carrusel,
+}: {
+  carrusel: I.Props[];
+}) {
+  return (
+    <section className={`w-full h-fit margen`}>
+      <TECarousel showIndicators ride="carousel">
+        <div className=" w-full sm:h-[80vh] h-[65vh] mx-auto overflow-hidden after:clear-both after:block after:content-['']">
+          {carrusel.map((panel, index) => (
+            <TECarouselItem
+              key={index}
+              itemID={index + 1}
+              className="relative float-left hidden w-full h-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none -mr-[100%] "
+            >
+              <div
+                className={`relative h-full w-full animate__animated animate__zoomIn ${panel.css || ""}`}
+              >
+                {/* Background image */}
+                {panel.bg_img && (
+                  <img
+                    src={panel.bg_img}
+                    data-twe-animation-init
+                    data-twe-animation-start="onHover"
+                    data-twe-animation="[zoom-in_1s_ease-in-out]"
+                    className="absolute kenburns-top inset-0 h-full w-full object-cover object-left "
+                  />
+                )}
+
+                {/* Overlay de contenido */}
+                <div
+                  className={`absolute flex justify-between inset-0 p-4  sm:flex-row flex-col bg-black/20 `}
+                >
+                  {/* TITULOS */}
+                  <div
+                    className={`flex flex-col w-3/5 ${panel.btn_position ? "" : "justify-around"} p-2`}
+                  >
+                    <div
+                      className={`${order[panel.order_i!]} lg:mt-24 md:mt-18 sm:mt-10`}
+                    >
+                      {panel.min_title && (
+                        <span className="min-title">{panel.min_title}</span>
+                      )}
+                      {panel.main_title && (
+                        <h1 className="main-title pb-4">{panel.main_title}</h1>
+                      )}
+                      {panel.main_slogan && (
+                        <h1 className="main-slogan">{panel.main_slogan}</h1>
+                      )}
+                      {panel.sub_slogan && (
+                        <h2 className="sub-slogan pb-4">{panel.sub_slogan}</h2>
+                      )}
+
+                      {/* TEXTOS */}
+                      {panel.min_text && (
+                        <p className="min-text">{panel.min_text}</p>
+                      )}
+                      {panel.main_text && (
+                        <p className="main-text">{panel.main_text}</p>
+                      )}
+                    </div>
+                    {/* BOTONES */}
+                    <div
+                      className={`flex gap-4 mt-4 ${btn_order[panel.btn_order_i!]}`}
+                    >
+                      {panel.btns
+                        ? panel.btns.map((item, index) => {
+                            return (
+                              <Button
+                                key={index}
+                                as={Link}
+                                to={item.href}
+                                isDisabled={panel.btn_disable}
+                                size={(item.size as any) || "md"}
+                                radius={(item.radius as any) || "none"}
+                                variant={(item.variant as any) || "faded"}
+                                color={(item.color as any) || "primary"}
+                                endContent={item.icon}
+                                className={item.css}
+                              >
+                                {item.label}
+                              </Button>
+                            );
+                          })
+                        : ""}
+                    </div>
+                  </div>
+                  <div className={`flex flex-col justify-end items-center`}>
+                    {panel.img && (
+                      <img
+                        src={panel.img}
+                        alt="img_logo"
+                        className={`logo-responsive ${panel.img_color ? "dark:invert" : ""}`}
+                      ></img>
+                    )}
+                    {panel.sub_text && (
+                      <p className="sub-text mb-4">{panel.sub_text}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </TECarouselItem>
+          ))}
+        </div>
+      </TECarousel>
+    </section>
+  );
+}
+</file>
+
+<file path="src/layouts/galeria_2.tsx">
+import { useGridZoomOut } from "@/hooks/galeria_zoom_out";
+import * as I from "@/types/inteerface";
+
+export default function Galeria_2(prop: I.Props) {
+  useGridZoomOut();
+
+  return (
+    <section className="galeria-container w-screen h-[400vh] relative">
+      {/* GRID PRINCIPAL */}
+      <div className="galeria-grid absolute top-0 left-0 w-[70vw] h-[60vw] mx-[15vw]">
+        {/* Items (alrededor del central) */}
+        {prop.galleries?.map((item) => (
+          <div key={item.id} className={`grid-layer absolute ${item.position}`}>
+            <div
+              className={`grid-item size-${item.size} absolute bg-cover bg-center`}
+              style={{ backgroundImage: `url(${item.url})` }}
+            />
+          </div>
+        ))}
+
+        {/* Pieza central (video) */}
+        <div className="grid-layer absolute inset-0 flex items-center justify-center">
+          <div className="grid-item size-xl opacity-0 center-block">
+            <video
+              src={prop.video}
+              className="w-full h-full object-cover rounded-xl"
+              autoPlay
+              muted
+              loop
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/layouts/seccion_1.tsx">
+import { Button } from "@heroui/react";
+import { Link } from "react-router-dom";
+import * as I from "@/types/inteerface";
+
+// clases condicionales
+export const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
+export const format = ["format-row", "format-col", "format-mid"];
+export const order = ["order-l", "order-m", "order-r"];
+export const btn_order = ["btn_order-l", "btn_order-m", "btn_order-r"];
+
+export default function Seccion_1({
+  bg_img,
+  size_i = 0,
+  css,
+  main_slogan,
+  sub_slogan,
+  min_title,
+  main_title,
+  sub_text,
+  main_text,
+  min_text,
+  btns,
+  contenido,
+  img,
+  img_color = true,
+  cont_order = true,
+  btn_position = true,
+  btn_disable = false,
+  format_i = 0,
+  btn_order_i = 0,
+  order_i = 0,
+}: I.Props) {
+  return (
+    //seccion principal
+    <section
+      className={`flex items-center bg-cover bg-center bg-no-repeat w-full margen ${size[size_i]} ${css}`}
+      style={{
+        backgroundImage: bg_img ? `url(${bg_img})` : "",
+        backgroundBlendMode: "overlay",
+      }}
+    >
+      {/* contenedor unico */}
+      <div className={`flex h-full mx-auto ${format[format_i]} flex-col`}>
+        {/* primera parte */}
+        <div className={`container mx-auto ${format[format_i]}`}>
+          <div className={`format-col gap-2 ${order[order_i]} md:margen`}>
+            {/* información segun el formato */}
+            {min_title ? (
+              <span className="min-title w-full">{min_title}</span>
+            ) : (
+              ""
+            )}
+            {main_title ? (
+              <h1 className="main-title w-full">{main_title}</h1>
+            ) : (
+              ""
+            )}
+            {main_slogan ? (
+              <h2 className="main-slogan w-full">{main_slogan}</h2>
+            ) : (
+              ""
+            )}
+            {format_i == 2 ? (
+              <>
+                {sub_slogan ? (
+                  <p className="sub-slogan w-full">{sub_slogan}</p>
+                ) : (
+                  ""
+                )}
+                {min_text ? <p className="min-text w-full">{min_text}</p> : ""}
+              </>
+            ) : (
+              ""
+            )}
+            {format_i == 1 ? (
+              <>
+                {sub_slogan ? (
+                  <p className="sub-slogan w-full">{sub_slogan}</p>
+                ) : (
+                  ""
+                )}
+                {min_text ? <p className="min-text w-full">{min_text}</p> : ""}
+                {main_text ? (
+                  <p className="main-text w-full">{main_text}</p>
+                ) : (
+                  ""
+                )}
+                {sub_text ? <p className="sub-text w-full">{sub_text}</p> : ""}
+              </>
+            ) : (
+              ""
+            )}
+            {/* sub contenido */}
+            {cont_order ? (
+              <div
+                className={`format-row w-full ${order_i == 0 ? "justify-start" : order_i == 2 ? "justify-end" : "justify-center"} sm:pt-4`}
+              >
+                {contenido
+                  ? contenido.map((item, index) => {
+                      return (
+                        <div key={index} className="format-col justify-between">
+                          <div>
+                            {item.min_title ? (
+                              <span className="sub-text">{item.min_title}</span>
+                            ) : (
+                              ""
+                            )}
+                            {item.sub_title ? (
+                              <h3 className="min-text">{item.sub_title}</h3>
+                            ) : (
+                              ""
+                            )}
+                            {item.main_text ? (
+                              <p className="main-text">{item.main_text}</p>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                          {item.btn ? (
+                            <div className={`flex gap-2 w-full`}>
+                              <Button
+                                key={index}
+                                as={Link}
+                                to={item.btn.href}
+                                isDisabled={btn_disable}
+                                size={(item.btn.size as any) || "sm"}
+                                radius={(item.btn.radius as any) || "none"}
+                                variant={(item.btn.variant as any) || "faded"}
+                                color={(item.btn.color as any) || "primary"}
+                                endContent={item.btn.icon}
+                                className={item.btn.css}
+                              >
+                                {item.btn.label}
+                              </Button>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                        </div>
+                      );
+                    })
+                  : ""}
+              </div>
+            ) : (
+              ""
+            )}
+            {/* botones adentro */}
+            {btn_position ? (
+              <div
+                className={`flex gap-3 w-full margen ${btn_order[btn_order_i]}`}
+              >
+                {btns
+                  ? btns.map((item, index) => {
+                      return (
+                        <Button
+                          key={index}
+                          as={Link}
+                          to={item.href}
+                          isDisabled={btn_disable}
+                          size={(item.size as any) || "md"}
+                          radius={(item.radius as any) || "none"}
+                          variant={(item.variant as any) || "faded"}
+                          color={(item.color as any) || "primary"}
+                          endContent={item.icon}
+                          className={item.css}
+                        >
+                          {item.label}
+                        </Button>
+                      );
+                    })
+                  : ""}
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          {main_text && format_i == 0 ? (
+            <div
+              className={`format-col w-full my-auto  ${order[order_i]} margen`}
+            >
+              {sub_slogan ? (
+                <h2 className="sub-slogan w-full">{sub_slogan}</h2>
+              ) : (
+                ""
+              )}
+              {min_text ? <p className="min-text">{min_text}</p> : ""}
+              <p className="main-text">{main_text}</p>
+              {sub_text ? <p className="sub-text">{sub_text}</p> : ""}
+              {!cont_order ? (
+                <div className="format-col w-full">
+                  {contenido
+                    ? contenido.map((item, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className="format-col justify-between"
+                          >
+                            <div>
+                              {item.min_title ? (
+                                <span className="min-title">{min_title}</span>
+                              ) : (
+                                ""
+                              )}
+                              {item.sub_title ? (
+                                <h3 className="min-text">{item.sub_title}</h3>
+                              ) : (
+                                ""
+                              )}
+                              {item.main_text ? (
+                                <p className="main-text">{item.main_text}</p>
+                              ) : (
+                                ""
+                              )}
+                            </div>
+                            {item.btn ? (
+                              <div>
+                                <Button
+                                  key={index}
+                                  as={Link}
+                                  to={item.btn.href}
+                                  isDisabled={btn_disable}
+                                  size={(item.btn.size as any) || "sm"}
+                                  radius={(item.btn.radius as any) || "none"}
+                                  variant={(item.btn.variant as any) || "faded"}
+                                  color={(item.btn.color as any) || "primary"}
+                                  endContent={item.btn.icon}
+                                  className={item.btn.css}
+                                >
+                                  {item.btn.label}
+                                </Button>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                        );
+                      })
+                    : ""}
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+        {/* segunda parte */}
+        <div className={`${order[order_i]}`}>
+          {/* información segun el formato */}
+          {format_i == 2 ? (
+            <>
+              <div className="flex mx-auto w-full h-44 overflow-hidden justify-center items-center">
+                {img ? (
+                  <img
+                    className={`logo-responsive object-cover ${img_color ? "dark:invert" : ""}`}
+                    src={img}
+                    alt="imagen_componente"
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+              {/* botones adentro */}
+              {!btn_position ? (
+                <div
+                  className={`flex gap-3 w-full margen ${btn_order[btn_order_i]}`}
+                >
+                  {btns
+                    ? btns.map((item, index) => {
+                        return (
+                          <Button
+                            key={index}
+                            as={Link}
+                            to={item.href}
+                            isDisabled={btn_disable}
+                            size={(item.size as any) || "md"}
+                            radius={(item.radius as any) || "none"}
+                            variant={(item.variant as any) || "faded"}
+                            color={(item.color as any) || "primary"}
+                            endContent={item.icon}
+                            className={item.css}
+                          >
+                            {item.label}
+                          </Button>
+                        );
+                      })
+                    : ""}
+                </div>
+              ) : (
+                ""
+              )}
+              {main_text ? <p className="main-text">{main_text}</p> : ""}
+              {sub_text ? <p className="sub-text">{sub_text}</p> : ""}
+            </>
+          ) : (
+            ""
+          )}
+        </div>
+        {/* botones afuera */}
+        {!btn_position && format_i != 2 ? (
+          <div className={`flex gap-3 w-full margen ${btn_order[btn_order_i]}`}>
+            {btns
+              ? btns.map((item, index) => {
+                  return (
+                    <Button
+                      key={index}
+                      as={Link}
+                      to={item.href}
+                      isDisabled={btn_disable}
+                      size={(item.size as any) || "md"}
+                      radius={(item.radius as any) || "none"}
+                      variant={(item.variant as any) || "faded"}
+                      color={(item.color as any) || "primary"}
+                      endContent={item.icon}
+                      className={item.css}
+                    >
+                      {item.label}
+                    </Button>
+                  );
+                })
+              : ""}
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/main.tsx">
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./App.tsx";
+import { Provider } from "./provider.tsx";
+import "@/styles/globals.css";
+import "tw-elements-react/dist/css/tw-elements-react.min.css";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
+</file>
+
+<file path="src/pages/blog.tsx">
+import Footer from "@/components/footer";
+import MiNavbar from "@/components/navbar";
+
+export default function ArticuloPage() {
+  return (
+    <>
+      <MiNavbar />
+      <Footer />
+    </>
+  );
+}
+</file>
+
+<file path="src/pages/index.tsx">
+import MiNavbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import Seccion_1 from "@/layouts/seccion_1";
+import { MdOutlineNavigateNext } from "react-icons/md";
+
+import * as I from "@/types/inteerface";
+import Galeria_1 from "@/layouts/galeria_1";
+import Galeria_2 from "@/layouts/galeria_2";
+
+const pisillo: I.Props = {
+  bg_img: "/img/pisillo.jpg",
+  css: "text-white bg-foreground-600 dark:bg-foreground-300",
+  main_slogan: "Pisillo",
+  sub_slogan: "La versatilidad del mar en tu plato",
+  min_title: "kiari",
+  main_text:
+    "De la red a tu mesa, la comodidad de nuestro Pisillo de Pescado desespinado.",
+  btns: [
+    {
+      label: "Ordenar",
+      icon: <MdOutlineNavigateNext />,
+      href: "/contacto",
+      variant: "faded",
+      color: "primary",
+    },
+    {
+      label: "Mas informacion",
+      icon: <MdOutlineNavigateNext />,
+      href: "/pisillo",
+      variant: "ghost",
+      color: "primary",
+    },
+  ],
+  // img: "/img/logo_white.png",
+  img_color: false,
+  btn_disable: false,
+  size_i: 3,
+  format_i: 2,
+  order_i: 1,
+  btn_order_i: 1,
+  cont_order: false,
+  btn_position: false,
+};
+const nugget: I.Props = {
+  bg_img: "/img/nuggets.png",
+  css: "text-white bg-foreground-600 dark:bg-foreground-300",
+  main_slogan: "Nuggets",
+  sub_slogan: "Comer sano también es divertido",
+  min_title: "Proximamente",
+  main_text:
+    "¿Antojo de algo rico y saludable? Nuestros Nuggets de Pescado son la elección perfecta.",
+  btns: [
+    {
+      label: "Ordenar",
+      icon: <MdOutlineNavigateNext />,
+      href: "/contacto",
+      variant: "faded",
+      color: "primary",
+    },
+    {
+      label: "Mas informacion",
+      icon: <MdOutlineNavigateNext />,
+      href: "/nuggets",
+      variant: "ghost",
+      color: "primary",
+    },
+  ],
+  // img: "/img/logo_white.png",
+  img_color: false,
+  btn_disable: true,
+  size_i: 3,
+  format_i: 2,
+  order_i: 1,
+  btn_order_i: 1,
+  cont_order: false,
+  btn_position: false,
+};
+const medallon: I.Props = {
+  bg_img: "/img/medallones.png",
+  css: "text-white bg-foreground-600 dark:bg-foreground-300 ",
+  main_slogan: "Medallones",
+  sub_slogan: "Pura Pulpa de Pescado",
+  min_title: "Proximamente",
+  main_text:
+    "Prepara hamburguesas, albóndigas o lo que imagines. Pura carne de pescado, lista para ti.",
+  btns: [
+    {
+      label: "Ordenar",
+      icon: <MdOutlineNavigateNext />,
+      href: "/contacto",
+      variant: "faded",
+      color: "primary",
+    },
+    {
+      label: "Mas informacion",
+      icon: <MdOutlineNavigateNext />,
+      href: "/medallones",
+      variant: "ghost",
+      color: "primary",
+    },
+  ],
+  // img: "/img/logo_white.png",
+  img_color: false,
+  btn_disable: true,
+  size_i: 3,
+  format_i: 2,
+  order_i: 1,
+  btn_order_i: 1,
+  cont_order: false,
+  btn_position: false,
+};
+
+const carrusel: I.Props[] = [
+  {
+    bg_img: "/img/sabalo_3.jpg",
+    css: "text-white",
+    btns: [
+      {
+        label: "Leer mas",
+        icon: <MdOutlineNavigateNext />,
+        href: "/nosotros",
+        variant: "ghost",
+        color: "primary",
+      },
+    ],
+    min_title: "Mar",
+    main_title: "Frescura",
+    min_text:
+      "Desde el mar hasta la cocina de tu casa. Ofecemos la mejor experiencia de cocinar pescado.",
+    main_text: "",
+    img: "/img/logo_white.png",
+    btn_position: true,
+    btn_disable: false,
+    img_color: false,
+    order_i: 0,
+    btn_order_i: 0,
+  },
+  {
+    bg_img: "/img/sabalo_2.jpg",
+    css: "text-white",
+    btns: [
+      {
+        label: "Leer mas",
+        icon: <MdOutlineNavigateNext />,
+        href: "/nosotros",
+        variant: "ghost",
+        color: "primary",
+      },
+    ],
+    min_title: "Nutrición",
+    main_title: "Saludablemente delicioso",
+    min_text: `Naturalmente libre de espinas.Tu dosis diaria de omega-3, sin aditivos, sin complicaciones solo la bondad del pescado.`,
+    main_text: "",
+    img: "/img/logo_white.png",
+    sub_text: "",
+    btn_position: true,
+    btn_disable: false,
+    img_color: false,
+    order_i: 0,
+    btn_order_i: 0,
+  },
+];
+
+const galeria: I.Props = {
+  main_title: "Titulo",
+  video: "/redes/v_2.mp4",
+  galleries: [
+    {
+      id: 1,
+      url: "/default.png",
+      size: "sm",
+      position: "top-[5vw] left-[20vw]",
+    },
+    {
+      id: 2,
+      url: "/default.png",
+      size: "md",
+      position: "top-[0vw] left-[35vw]",
+    },
+    {
+      id: 3,
+      url: "/default.png",
+      size: "lg",
+      position: "top-[25vw] left-[0vw]",
+    },
+    {
+      id: 4,
+      url: "/default.png",
+      size: "sm",
+      position: "top-[30vw] left-[50vw]",
+    },
+  ],
+};
+
+export default function IndexPage() {
+  return (
+    <div className="flex flex-col w-full min-h-screen">
+      <MiNavbar />
+      <Seccion_1 {...pisillo} />
+      <Galeria_1 carrusel={carrusel} />
+      <Seccion_1 {...medallon} />
+      <Seccion_1 {...nugget} />
+      {/* <Galeria_2 {...galeria} /> */}
+      <Footer />
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/nosotros.tsx">
+import Footer from "@/components/footer";
+import MiNavbar from "@/components/navbar";
+
+export default function NosotrosPage() {
+  return (
+    <>
+      <MiNavbar />
+      <Footer />
+    </>
+  );
+}
+</file>
+
+<file path="src/pages/pisillo.tsx">
+import Footer from "@/components/footer";
+import MiNavbar from "@/components/navbar";
+
+export default function PisilloPage() {
+  return (
+    <>
+      <MiNavbar />
+      <Footer />
+    </>
+  );
+}
+</file>
+
+<file path="src/provider.tsx">
+import type { NavigateOptions } from "react-router-dom";
+
+import { HeroUIProvider } from "@heroui/system";
+import { useHref, useNavigate } from "react-router-dom";
+
+declare module "@react-types/shared" {
+  interface RouterConfig {
+    routerOptions: NavigateOptions;
+  }
+}
+
+export function Provider({ children }: { children: React.ReactNode }) {
+  const navigate = useNavigate();
+
+  return (
+    <HeroUIProvider navigate={navigate} useHref={useHref}>
+      {children}
+    </HeroUIProvider>
+  );
+}
+</file>
+
+<file path="src/styles/globals.css">
+@import "tw-elements-react/dist/css/tw-elements-react.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Textos Normalizados */
+@layer components {
+  /**/
+  .seccion-sm {
+    @apply h-[calc(45vh-64px)];
+  }
+  .seccion-md {
+    @apply h-[calc(60vh-64px)];
+  }
+  .seccion-lg {
+    @apply h-[calc(80vh-64px)];
+  }
+  .seccion-xl {
+    @apply h-[calc(100vh-64px)];
+  }
+
+  /**/
+  .format-row {
+    @apply flex mx-auto gap-2 justify-center;
+  }
+  .format-col {
+    @apply flex flex-col gap-2 justify-center;
+  }
+  .format-mid {
+    @apply flex flex-col gap-2 justify-between;
+  }
+  /**/
+  .order-m {
+    @apply items-center justify-center text-center;
+  }
+  .order-l {
+    @apply items-center justify-start;
+  }
+  .order-r {
+    @apply items-center justify-end text-right;
+  }
+  .btn_order-m {
+    @apply items-center justify-center text-center;
+  }
+  .btn_order-l {
+    @apply items-center justify-start;
+  }
+  .btn_order-r {
+    @apply items-center justify-end;
+  }
+  /**/
+  .margen {
+    @apply lg:p-12 md:p-8 p-5;
+  }
+  .logo-responsive {
+    @apply lg:h-52 md:h-40 sm:h-32 h-24;
+  }
+  /**/
+  .min-title {
+    @apply md:text-sm text-xs lowercase font-aboreto tracking-widest font-extralight;
+  }
+  .main-title {
+    @apply xl:text-7xl lg:text-6xl md:text-6xl text-5xl font-arya font-bold;
+  }
+  .min-text {
+    @apply xl:text-2xl lg:text-xl md:text-lg font-saira font-semibold;
+  }
+  .main-text {
+    @apply xl:text-xl lg:text-lg md:text-medium text-sm font-saira;
+  }
+  .sub-text {
+    @apply xl:text-lg lg:text-base md:text-sm text-xs font-saira font-light;
+  }
+  .main-slogan {
+    @apply xl:text-9xl lg:text-7xl md:text-6xl text-5xl font-bodoni uppercase font-extrabold;
+  }
+  .sub-slogan {
+    @apply xl:text-5xl lg:text-4xl md:text-4xl text-3xl capitalize font-julius;
+  }
+  /**/
+  .titulo {
+    @apply md:text-5xl sm:text-4xl text-3xl text-foreground font-semibold;
+  }
+  .subtitulo {
+    @apply lg:text-2xl md:text-xl sm:text-lg text-lg text-foreground font-normal;
+  }
+  .minititulo {
+    @apply md:text-2xl sm:text-xl text-medium text-foreground font-extralight;
+  }
+  .parrafo {
+    @apply lg:text-xl md:text-medium text-sm text-foreground font-light;
+  }
+}
+/*animaciones*/
+/* Kenburns (zoom-in con movimiento hacia arriba) */
+.kenburns-top {
+  animation: kenburns-top 5s ease-out forwards;
+}
+
+/* Tracking text entry */
+.tracking-in-contract {
+  animation: tracking-in-contract 1s ease-out both;
+}
+
+/* Text pop-up top */
+.text-pop-up-top {
+  animation: text-pop-up-top 1s ease-out both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2025-11-20 1:33:31
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow:
+      0 1px 0 #ccc,
+      0 2px 0 #ccc,
+      0 3px 0 #ccc,
+      0 4px 0 #ccc,
+      0 5px 0 #ccc,
+      0 6px 0 #ccc,
+      0 7px 0 #ccc,
+      0 8px 0 #ccc,
+      0 9px 0 #ccc,
+      0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow:
+      0 1px 0 #ccc,
+      0 2px 0 #ccc,
+      0 3px 0 #ccc,
+      0 4px 0 #ccc,
+      0 5px 0 #ccc,
+      0 6px 0 #ccc,
+      0 7px 0 #ccc,
+      0 8px 0 #ccc,
+      0 9px 0 #ccc,
+      0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+    transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+    transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+}
+
+/* GSPA GALERIA ZOOM OUT */
+.size-sm {
+  @apply w-[5vw] h-[5vw];
+}
+
+.size-md {
+  @apply w-[10vw] h-[10vw];
+}
+
+.size-lg {
+  @apply w-[20vw] h-[20vw];
+}
+
+.size-xl {
+  @apply w-[30vw] h-[30vw];
+}
+</file>
+
+<file path="src/types/index.ts">
+import { SVGProps } from "react";
+
+export type IconSvgProps = SVGProps<SVGSVGElement> & {
+  size?: number;
+};
+</file>
+
+<file path="src/types/inteerface.ts">
+export interface Buttons {
+  label?: string;
+  icon?: React.ReactNode;
+  href?: string;
+  variant?: string;
+  color?: string;
+  size?: string;
+  radius?: string;
+  css?: string;
+}
+
+export interface GaleriaItem {
+  id: number;
+  url?: string;
+  size?: "sm" | "md" | "lg" | "xl";
+  position?: string; // clases tailwind para top/left/right/bottom
+}
+
+export interface Contenido {
+  img?: string;
+  min_title?: string;
+  sub_title?: string;
+  main_text?: string;
+  href?: string;
+  btn?: Buttons;
+}
+
+export interface Props {
+  bg_img?: string; //imagen de fondo
+  css?: string; //css de la seccion
+  btns?: Buttons[]; //lista de botones
+  main_slogan?: string; //slogan vistoso baner etc (h1)
+  sub_slogan?: string; //slogan vistoso baner etc (h2)
+  min_title?: string; //pequña palabra clave (p)
+  main_title?: string; //titulo del texto (h1)
+  min_text?: string; //texto resumen (p)
+  main_text?: string; //texto principal (p)
+  sub_text?: string; //texto complementario (p)
+  contenido?: Contenido[]; //lista de sub titlos y parrafos extra (h2 y h3)
+  cont_order?: boolean; //ordena star end contenido
+  btn_position?: boolean; // botones dentro o fuera del contenedor
+  img?: string; // imagen o svg extra de acompañamiento
+  video?: string;
+  galleries?: GaleriaItem[]; //lista de listas de imagenes
+  btn_disable?: boolean; //habilitar botones
+  img_color?: boolean; //invertir img o svg extra de acompañamiento
+  size_i?: number; //largo de la seccion
+  format_i?: number; //formato vertical o horizontal de la seccion
+  order_i?: number; // orientacion izq - centrado - der
+  btn_order_i?: number; // orientacion botones izq - centrado - der
+}
+
+// export const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
+// export const format = ["format-row", "format-col"];
+// export const orientacion = ["orientacion-r", "orientacion-m", "orientacion-l"];
+// export const btn_orientacion = [
+//   "btn_orientacion-r",
+//   "btn_orientacion-m",
+//   "btn_orientacion-l",
+// ];
+</file>
+
+<file path="src/vite-env.d.ts">
+/// <reference types="vite/client" />
+</file>
+
+<file path="tailwind.config.js">
+import { heroui } from "@heroui/theme";
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+/** @type {import('tailwindcss').Config} */
+export default withMT({
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements-react/dist/js/**/*.js",
+    "./src/layouts/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+  ],
+
+  theme: {
+    extend: {
+      fontFamily: {
+        anton: ["Anton", "sans-serif"],
+        bebas: ["Bebas Neue", "sans-serif"],
+        saira: ["Saira Condensed", "sans-serif"],
+        tinos: ["Tinos", "serif"],
+        playfair: ["Playfair Display SC", "serif"],
+        bowlby: ["Bowlby One SC", "sans-serif"],
+        cinzel: ["Cinzel Decorative", "serif"],
+        cutive: ["Cutive Mono", "monospace"],
+        julius: ["Julius Sans One", "sans-serif"],
+        bona: ["Bona Nova SC", "serif"],
+        rye: ["Rye", "serif"],
+        aboreto: ["Aboreto", "system-ui"],
+        notable: ["Notable", "sans-serif"],
+        metal: ["Metal Mania", "system-ui"],
+        vina: ["Vina Sans", "sans-serif"],
+        megrim: ["Megrim", "system-ui"],
+        ruthie: ["Ruthie", "cursive"],
+        bigShouldersInline: ["Big Shoulders Inline", "sans-serif"],
+        bigShouldersStencil: ["Big Shoulders Stencil", "sans-serif"],
+        bodoni: ["Bodoni Moda SC", "serif"],
+        dorsa: ["Dorsa", "sans-serif"],
+        publicSans: ["Public Sans", "sans-serif"],
+        anaheim: ["Anaheim", "sans-serif"],
+        syncopate: ["Syncopate", "sans-serif"],
+        aya: ["Arya", "sans-serif"],
+        arya: ["Arya", "sans-serif"],
+      },
+    },
+  },
+  darkMode: "class",
+  plugins: [heroui(), require("tw-elements-react/dist/plugin.cjs")],
+});
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+</file>
+
+<file path="tsconfig.node.json">
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts"]
+}
+</file>
+
+<file path="vercel.json">
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+</file>
+
+<file path="vite.config.ts">
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
+});
+</file>
+
+</files>
