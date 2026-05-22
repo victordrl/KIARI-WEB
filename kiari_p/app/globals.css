@@ -239,14 +239,6 @@
 /* SCROLLTRIGGER SECTION */
 .scrolltrigger-sec {
   position: relative;
-  height: 400vh;
-}
-
-.scrolltrigger-sec .sticky-w {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .scrolltrigger-sec .comp-video {

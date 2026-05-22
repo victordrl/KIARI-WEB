@@ -1,11 +1,10 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitText from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(SplitText);
 
 export default function ScrolltriggerSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -13,8 +12,9 @@ export default function ScrolltriggerSection() {
   const videoRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const [explainerOpen, setExplainerOpen] = useState(false);
+  const playedRef = useRef(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const section = sectionRef.current;
     const title = titleRef.current;
     const video = videoRef.current;
@@ -25,57 +25,67 @@ export default function ScrolltriggerSection() {
       const splits = new SplitText(title, { type: "chars" });
       const chars = splits.chars;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top center",
-          end: "bottom bottom+=100%",
-          invalidateOnRefresh: true,
-          scrub: 1,
-        },
-      });
-
       gsap.set(chars, {
         scale: 0,
         rotation: () => Math.random() * 360 - 180,
       });
 
+      gsap.set(video, {
+        clipPath: "inset(10% 50% 10% 50%)",
+        yPercent: 100,
+        scale: 0.5,
+      });
+
+      gsap.set(img, {
+        scale: 2.8,
+        yPercent: 40,
+      });
+
+      const tl = gsap.timeline({ paused: true });
+
       tl.to(chars, {
         scale: 1,
-        duration: 0.2,
+        duration: 0.5,
         rotation: 0,
         ease: "expo.out",
-        stagger: { each: 0.05, from: "random" },
+        stagger: { each: 0.04, from: "random" },
       });
 
       tl.fromTo(
         video,
-        { clipPath: "inset(10% 50% 10% 50%)", yPercent: 100 },
+        { clipPath: "inset(10% 50% 10% 50%)", yPercent: 100, scale: 0.5 },
         {
           ease: "power3",
           clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1,
+          duration: 0.8,
           yPercent: 0,
+          scale: 1,
         },
-        ".3"
-      );
-
-      tl.fromTo(
-        video,
-        { scale: 0.5 },
-        { ease: "back.inOut(.2)", scale: 1, duration: 0.8 },
-        "<"
+        ">-0.2"
       );
 
       tl.fromTo(
         img,
         { scale: 2.8, yPercent: 40 },
-        { scale: 1.2, duration: 0.8, delay: 0.2, yPercent: 0 },
+        { scale: 1.2, duration: 0.6, yPercent: 0 },
         "<"
       );
 
-      tl.to(video, { scale: 0.9, ease: "linear" });
-      tl.to(img, { scale: 1, ease: "linear" }, "<");
+      tl.to(video, { scale: 0.9, duration: 0.4, ease: "linear" });
+      tl.to(img, { scale: 1, duration: 0.4, ease: "linear" }, "<");
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !playedRef.current) {
+            playedRef.current = true;
+            tl.play();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(section);
     }, section);
 
     return () => ctx.revert();
@@ -84,35 +94,27 @@ export default function ScrolltriggerSection() {
   return (
     <section
       ref={sectionRef}
-      id="scrolltrigger"
-      data-animate="videogrow"
-      className="scrolltrigger-sec"
+      className="scrolltrigger-sec h-screen relative overflow-hidden"
     >
-      <div className="sticky-w">
-        <div className="comp-video">
-          <div
-            ref={titleRef}
-            data-videogrow="title"
-            className="font-c size-screen overflow-cut"
-            aria-label="SABALO - REY DE PLATA"
-          >
-            SABALO - REY DE PLATA
-          </div>
+      <div className="comp-video">
+        <div
+          ref={titleRef}
+          data-videogrow="title"
+          className="font-c size-screen overflow-cut"
+          aria-label="SABALO - REY DE PLATA"
+        >
+          SABALO - REY DE PLATA
         </div>
-        <div className="layer">
-          <div
-            ref={videoRef}
-            data-videogrow="video"
-            className="sky-scroller"
-          >
-            <img
-              ref={imgRef}
-              src="/img/sabalo_naranja.png"
-              alt=""
-              className="img-sky"
-              loading="lazy"
-            />
-          </div>
+      </div>
+      <div className="layer">
+        <div ref={videoRef} data-videogrow="video" className="sky-scroller">
+          <img
+            ref={imgRef}
+            src="/img/sabalo_naranja.png"
+            alt=""
+            className="img-sky"
+            loading="lazy"
+          />
         </div>
       </div>
       <div className="layer flex-b z-3">
