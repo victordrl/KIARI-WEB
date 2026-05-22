@@ -235,3 +235,164 @@
 .size-xl {
   @apply w-[30vw] h-[30vw];
 }
+
+/* SCROLLTRIGGER SECTION */
+.scrolltrigger-sec {
+  position: relative;
+  height: 400vh;
+}
+
+.scrolltrigger-sec .sticky-w {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scrolltrigger-sec .comp-video {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrolltrigger-sec .layer {
+  position: absolute;
+  inset: 0;
+}
+
+.scrolltrigger-sec .font-c {
+  font-family: 'Bodoni Moda SC', serif;
+  font-weight: 900;
+}
+
+.scrolltrigger-sec .size-screen {
+  font-size: clamp(6rem, 12vw, 16rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.scrolltrigger-sec .overflow-cut {
+  overflow: hidden;
+}
+
+.scrolltrigger-sec .char {
+  display: inline-block;
+}
+
+.scrolltrigger-sec .sky-scroller {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrolltrigger-sec .img-sky {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scrolltrigger-sec .flex-b {
+  display: flex;
+  align-items: flex-end;
+}
+
+.scrolltrigger-sec .z-3 {
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* EXPLAINER */
+.explainer-w {
+  pointer-events: auto;
+  padding: 2rem;
+}
+
+.explainer-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.explainer-label:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.explainer-input {
+  display: none;
+}
+
+.explainer-span {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.explainer-he {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+}
+
+.plus-icon-w {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.plus-line {
+  display: block;
+  width: 0.75rem;
+  height: 1.5px;
+  background: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.plus-line.rotate {
+  transform: rotate(45deg) translateY(0.5px);
+}
+
+.plus-line + .plus-line {
+  opacity: 1;
+}
+
+.plus-line.rotate + .plus-line {
+  opacity: 0;
+}
+
+.explainer-expandable-w {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.explainer-expandable-w.open {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+.explainer-overflow {
+  padding: 1rem;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.explainer-par {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}

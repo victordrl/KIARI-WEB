@@ -1,6 +1,7 @@
 import MiNavbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Seccion_1 from "@/sections/seccion_1";
+import ScrolltriggerSection from "@/sections/scrolltrigger-section";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/interface";
@@ -175,6 +176,7 @@ export default function IndexPage() {
       <Galeria_1Client carrusel={carrusel} />
       <Seccion_1 {...medallon} />
       <Seccion_1 {...nugget} />
+      <ScrolltriggerSection />
       <NutritionBars title="Info Nutricional" items={nutritionalData} />
       <Footer />
     </div>
