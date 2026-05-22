@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Navbar as HeroUINavbar,
   NavbarBrand,
@@ -13,7 +15,12 @@ import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
-import { ThemeSwitch } from "@/components/theme-switch";
+import dynamic from "next/dynamic";
+const ThemeSwitch = dynamic(
+  () => import("@/components/theme-switch").then((mod) => ({ default: mod.ThemeSwitch })),
+  { ssr: false, loading: () => <div className="w-6 h-6" /> }
+);
+
 import { Logo } from "@/components/icons";
 import {
   RiArrowRightSLine,
@@ -22,7 +29,7 @@ import {
   RiInstagramFill,
 } from "react-icons/ri";
 
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/data/site";
 
 export default function MiNavbar() {
   return (

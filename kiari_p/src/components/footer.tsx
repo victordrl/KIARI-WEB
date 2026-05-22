@@ -1,9 +1,11 @@
+"use client";
+
 import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
 import { Divider } from "@heroui/react";
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/data/site";
 import { Logo } from "@/components/icons";
 
 import {
