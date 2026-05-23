@@ -1,7 +1,6 @@
 import MiNavbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SecPresten from "@/sections/sec_presten";
-import SecDemo from "@/sections/secdemo";
 import SecInicio from "@/sections/sec_ini";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
@@ -165,6 +164,9 @@ const carrusel: I.Props[] = [
 const sabaloProps: I.Props = {
   css: "text-white bg-black",
   size_i: 2,
+  main_slogan: "SÁBALO",
+  sub_slogan: "REY DE PLATA",
+  video: "/video/orda.mp4",
 };
 
 const nutritionalData = [
@@ -178,13 +180,12 @@ export default function IndexPage() {
   return (
     <div className="flex flex-col w-full min-h-screen">
       <MiNavbar />
+      <SecInicio {...sabaloProps} />
       <SecPresten {...pisillo} />
       <Galeria_1Client carrusel={carrusel} />
       <SecPresten {...medallon} />
       <SecPresten {...nugget} />
-      <SecInicio />
       <NutritionBars title="Info Nutricional" items={nutritionalData} />
-      <SecDemo {...sabaloProps} />
       <Footer />
     </div>
   );

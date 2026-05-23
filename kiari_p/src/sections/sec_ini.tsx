@@ -3,26 +3,38 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import * as I from "@/types/interface";
 
 gsap.registerPlugin(SplitText);
 
-export default function ScrolltriggerSection() {
+const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
+const NUM_POINTS = 10;
+const NUM_PATHS = 2;
+
+export default function SecDemo({
+  size_i = 4,
+  css,
+  main_slogan = "SÁBALO",
+  sub_slogan = "REY DE PLATA",
+  video = "/video/orda.mp4"
+}: I.Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const title1Ref = useRef<HTMLHeadingElement>(null);
   const title2Ref = useRef<HTMLHeadingElement>(null);
-  const clipRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const videoBgRef = useRef<HTMLVideoElement>(null);
   const playedRef = useRef(false);
+  const overlayRef = useRef<SVGSVGElement>(null);
+  const pathRefs = useRef<SVGPathElement[]>([]);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
+  const isOpenedRef = useRef(false);
+  const allPointsRef = useRef<number[][]>([[], []]);
 
   useEffect(() => {
     const section = sectionRef.current;
     const title1 = title1Ref.current;
     const title2 = title2Ref.current;
-    const clip = clipRef.current;
-    const img = imgRef.current;
-    const videoBg = videoBgRef.current;
-    if (!section || !title1 || !title2 || !clip || !img || !videoBg) return;
+    const overlay = overlayRef.current;
+    const paths = pathRefs.current;
+    if (!section || !title1 || !title2 || !overlay || !paths[0] || !paths[1]) return;
 
     const ctx = gsap.context(() => {
       const split1 = new SplitText(title1, { type: "chars" });
@@ -30,60 +42,24 @@ export default function ScrolltriggerSection() {
       const chars = [...split1.chars, ...split2.chars];
 
       gsap.set(chars, {
-        scale: 0,
-        rotation: () => Math.random() * 360 - 180,
+        scaleY: () => Math.random() > 0.15 ? 0 : 1,
+        transformOrigin: "50% 50%",
       });
 
-      gsap.set(clip, {
-        clipPath: "inset(10% 50% 10% 50%)",
-        yPercent: 100,
-        scale: 0.5,
+      const tlLetters = gsap.timeline({ paused: true });
+
+      tlLetters.to(chars, {
+        scaleY: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: { each: 0.06, from: "random" },
       });
-
-      gsap.set(img, {
-        scale: 2,
-        yPercent: 40,
-      });
-
-      const tl = gsap.timeline({ paused: true });
-
-      tl.to(chars, {
-        scale: 1,
-        duration: 0.5,
-        rotation: 0,
-        ease: "expo.out",
-        stagger: { each: 0.04, from: "random" },
-      });
-
-      tl.fromTo(
-        clip,
-        { clipPath: "inset(10% 50% 10% 50%)", yPercent: 100, scale: 0.5 },
-        {
-          ease: "power3",
-          clipPath: "inset(0% 0% 0% 0%)",
-          duration: 0.8,
-          yPercent: 0,
-          scale: 1,
-        },
-        ">-0.2"
-      );
-
-      tl.fromTo(
-        img,
-        { scale: 2, yPercent: 40 },
-        { scale: 1.8, duration: 0.6, yPercent: 0 },
-        "<"
-      );
-
-      tl.to(clip, { scale: 1.5, duration: 0.4, ease: "linear" });
-      tl.to(img, { scale: 1.3, duration: 0.4, ease: "linear" }, "<");
 
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting && !playedRef.current) {
             playedRef.current = true;
-            videoBg.play().catch(() => {});
-            tl.play();
+            tlLetters.play();
             observer.disconnect();
           }
         },
@@ -91,55 +67,143 @@ export default function ScrolltriggerSection() {
       );
 
       observer.observe(section);
+
+      const allPoints = allPointsRef.current;
+      for (let i = 0; i < NUM_PATHS; i++) {
+        allPoints[i] = [];
+        for (let j = 0; j < NUM_POINTS; j++) {
+          allPoints[i].push(100);
+        }
+      }
+
+      const tl = gsap.timeline({
+        onUpdate: () => render(paths, allPoints, isOpenedRef.current),
+        defaults: { ease: "power2.inOut", duration: 0.9 },
+      });
+      tlRef.current = tl;
+
+      function onClick() {
+        if (!tl.isActive()) {
+          isOpenedRef.current = !isOpenedRef.current;
+          toggle(allPoints, tl, isOpenedRef.current);
+        }
+      }
+
+      overlay.addEventListener("click", onClick);
+
+      toggle(allPoints, tl, isOpenedRef.current);
+
+      return () => {
+        overlay.removeEventListener("click", onClick);
+      };
     }, section);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="scrolltrigger-sec h-screen relative overflow-hidden bg-black" ref={sectionRef}>
+    <section
+      ref={sectionRef}
+      className={`relative flex items-center w-full h-screen overflow-hidden ${size[size_i]} ${css}`}
+    >
       <video
-        ref={videoBgRef}
-        src="/video/orda.mp4"
+        src={video}
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-black/30 z-5" />
 
-      <div className="absolute inset-0 z-20">
-        <div ref={clipRef} data-videogrow="video" className="w-full h-full overflow-hidden flex items-center justify-center">
-          <img
-            ref={imgRef}
-            src="/img/sabalo_naranja.png"
-            alt=""
-            className="max-h-[55vh] max-w-[70%] object-contain"
-            loading="lazy"
-          />
-        </div>
-      </div>
-
-      <div className="absolute inset-0 z-30 pointer-events-none flex items-start justify-center pt-[20vh]">
-        <h1
-          ref={title1Ref}
-          className="main-slogan text-[13rem] text-white text-center"
-          aria-label="SABALO"
-        >
-          SABALO
+      <div className="relative z-10 flex flex-col justify-between w-full items-center py-12 mix-blend-difference">
+        <h1 ref={title1Ref} className="gigant-title" aria-label={main_slogan}>
+          {main_slogan}
+        </h1>
+        <h1 ref={title2Ref} className="gigant-title" aria-label={sub_slogan}>
+          {sub_slogan}
         </h1>
       </div>
 
-      <div className="absolute inset-0 z-[5] pointer-events-none flex items-end justify-center pb-[20vh]">
-        <h1
-          ref={title2Ref}
-          className="main-slogan text-[13rem] text-white text-center"
-          aria-label="REY DE PLATA"
-        >
-          REY DE PLATA
-        </h1>
-      </div>
+      <svg
+        ref={overlayRef}
+        className="shape-overlays absolute inset-0 w-full h-full z-50 cursor-pointer"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        {/* <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#ff8709" />
+            <stop offset="100%" stopColor="#f7bdf8" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#ffd9b0" />
+            <stop offset="100%" stopColor="#ff8709" />
+          </linearGradient>
+        </defs> */}
+        <path
+          ref={(el) => { if (el) pathRefs.current[0] = el; }}
+          className="shape-overlays__path"
+          fill="url(#gradient2)"
+        />
+        <path
+          ref={(el) => { if (el) pathRefs.current[1] = el; }}
+          className="shape-overlays__path"
+          fill="url(#gradient1)"
+        />
+      </svg>
     </section>
   );
+}
+
+function toggle(
+  allPoints: number[][],
+  tl: gsap.core.Timeline,
+  isOpened: boolean
+) {
+  tl.progress(0).clear();
+
+  const delayPointsMax = 0.3;
+  const delayPerPath = 0.25;
+
+  const pointsDelay: number[] = [];
+  for (let i = 0; i < NUM_POINTS; i++) {
+    pointsDelay[i] = Math.random() * delayPointsMax;
+  }
+
+  for (let i = 0; i < NUM_PATHS; i++) {
+    const points = allPoints[i];
+    const pathDelay = delayPerPath * (isOpened ? i : (NUM_PATHS - i - 1));
+
+    for (let j = 0; j < NUM_POINTS; j++) {
+      tl.to(points, {
+        [j]: 0,
+      }, pointsDelay[j] + pathDelay);
+    }
+  }
+}
+
+function render(
+  paths: SVGPathElement[],
+  allPoints: number[][],
+  isOpened: boolean
+) {
+  for (let i = 0; i < NUM_PATHS; i++) {
+    const path = paths[i];
+    const points = allPoints[i];
+    if (!path || !points) continue;
+
+    let d = "";
+    d += isOpened ? `M 0 0 V ${points[0]} C` : `M 0 ${points[0]} C`;
+
+    for (let j = 0; j < NUM_POINTS - 1; j++) {
+      const p = ((j + 1) / (NUM_POINTS - 1)) * 100;
+      const cp = p - (1 / (NUM_POINTS - 1) * 100) / 2;
+      d += ` ${cp} ${points[j]} ${cp} ${points[j + 1]} ${p} ${points[j + 1]}`;
+    }
+
+    d += isOpened ? ` V 100 H 0` : ` V 0 H 0`;
+    path.setAttribute("d", d);
+  }
 }

@@ -71,7 +71,7 @@
     @apply xl:text-lg lg:text-base md:text-sm text-xs font-saira font-light;
   }
   .main-slogan {
-    @apply xl:text-9xl lg:text-7xl md:text-6xl text-5xl font-bodoni uppercase font-extrabold;
+    @apply xl:text-9xl lg:text-8xl md:text-7xl text-5xl font-bodoni uppercase font-extrabold;
   }
   .sub-slogan {
     @apply xl:text-5xl lg:text-4xl md:text-4xl text-3xl capitalize font-julius;
