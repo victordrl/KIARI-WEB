@@ -101,9 +101,20 @@ export default function SecDemo({
   return (
     <section
       ref={sectionRef}
-      className={`relative flex items-center bg-cover bg-center bg-no-repeat w-full h-screen overflow-hidden ${size[size_i]} ${css}`}
+      className={`relative flex items-center w-full h-screen overflow-hidden ${size[size_i]} ${css}`}
     >
-      <div className="flex flex-col justify-between w-full items-center py-12 z-10">
+      <video
+        src="/video/orda.mp4"
+        muted
+        loop
+        playsInline
+        autoPlay
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+
+      <div className="absolute inset-0 bg-black/50 z-5" />
+
+      <div className="relative z-10 flex flex-col justify-between w-full items-center py-12 mix-blend-overlay ">
         <h1 ref={title1Ref} className="gigant-title" aria-label="SABALO">
           SÁBALO
         </h1>
@@ -114,18 +125,18 @@ export default function SecDemo({
 
       <svg
         ref={overlayRef}
-        className="shape-overlays absolute inset-0 w-full h-full z-20 cursor-pointer"
+        className="shape-overlays absolute inset-0 w-full h-full z-50 cursor-pointer"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
         <defs>
           <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ff8709" />
-            <stop offset="100%" stop-color="#f7bdf8" />
+            <stop offset="0%" stopColor="#ff8709" />
+            <stop offset="100%" stopColor="#f7bdf8" />
           </linearGradient>
           <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ffd9b0" />
-            <stop offset="100%" stop-color="#ff8709" />
+            <stop offset="0%" stopColor="#ffd9b0" />
+            <stop offset="100%" stopColor="#ff8709" />
           </linearGradient>
         </defs>
         <path
