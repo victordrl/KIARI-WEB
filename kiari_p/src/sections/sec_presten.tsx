@@ -34,7 +34,7 @@ export default function Seccion_1({
   return (
     //seccion principal
     <section
-      className={`flex items-center bg-cover bg-center bg-no-repeat w-full margen ${size[size_i]} ${css}`}
+      className={`flex items-center bg-cover bg-center bg-no-repeat w-full margen ${size[size_i]} ${css} `}
       style={{
         backgroundImage: bg_img ? `url(${bg_img})` : "",
         backgroundBlendMode: "overlay",

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import {
   Navbar as HeroUINavbar,
   NavbarBrand,
@@ -32,8 +33,37 @@ import {
 import { siteConfig } from "@/data/site";
 
 export default function MiNavbar() {
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const diff = currentScrollY - lastScrollY.current;
+
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else if (diff > 0) {
+        setIsVisible(false);
+      } else if (diff < 0) {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <HeroUINavbar isBordered isBlurred maxWidth="xl" position="sticky">
+    <HeroUINavbar
+      isBordered
+      isBlurred
+      maxWidth="xl"
+      position="sticky"
+      className={`transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+    >
       {/* nav izquierda */}
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         {/* logo y titulo */}

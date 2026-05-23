@@ -6,16 +6,16 @@
 @layer components {
   /**/
   .seccion-sm {
-    @apply h-[calc(45vh-64px)];
+    @apply h-[45vh];
   }
   .seccion-md {
-    @apply h-[calc(60vh-64px)];
+    @apply h-[60vh];
   }
   .seccion-lg {
-    @apply h-[calc(80vh-64px)];
+    @apply h-[80vh];
   }
   .seccion-xl {
-    @apply h-[calc(100vh-64px)];
+    @apply h-[100vh];
   }
 
   /**/
