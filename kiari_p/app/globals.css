@@ -77,6 +77,13 @@
     @apply xl:text-5xl lg:text-4xl md:text-4xl text-3xl capitalize font-julius;
   }
   /**/
+  .gigant-title {
+    @apply font-saira font-extrabold uppercase xl:text-[16rem] lg:text-[14rem] md:text-[10rem] sm:text-[7.5rem] text-[5rem] tracking-normal;
+  }
+  .char {
+    display: inline-block;
+  }
+  /**/
   .titulo {
     @apply md:text-5xl sm:text-4xl text-3xl text-foreground font-semibold;
   }

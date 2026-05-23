@@ -1,6 +1,6 @@
 import MiNavbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Seccion_1 from "@/sections/seccion_1";
+import Seccion_1 from "@/sections/sec_presten";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/interface";
