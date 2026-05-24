@@ -1,13 +1,13 @@
 import MiNavbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import SecPresten from "@/sections/sec_presten";
-import SecInicio from "@/sections/sec_ini";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/interface";
+import SecPresent from "@/sections/sec_presten";
+import SecProducto1 from "@/sections/sec_producto1";
+import SecInicio from "@/sections/sec_ini";
 import Galeria_1Client from "@/components/galeria-1-client";
 import NutritionBars from "@/components/nutrition-bars";
-import Frame from "@/components/frame";
 
 export const dynamic = "force-dynamic";
 
@@ -181,10 +181,10 @@ export default function IndexPage() {
     <div className="flex flex-col w-full min-h-screen">
       <MiNavbar />
       <SecInicio {...sabaloProps} />
-      <SecPresten {...pisillo} />
+      <SecProducto1 {...pisillo} />
       <Galeria_1Client carrusel={carrusel} />
-      <SecPresten {...medallon} />
-      <SecPresten {...nugget} />
+      <SecProducto1 {...medallon} />
+      <SecProducto1 {...nugget} />
       <NutritionBars title="Info Nutricional" items={nutritionalData} />
       <Footer />
     </div>
