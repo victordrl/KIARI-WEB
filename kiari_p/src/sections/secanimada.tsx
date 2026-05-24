@@ -57,7 +57,7 @@ export default function SecProducto1({
                             <div className="h-[1px] bg-default w-full"/>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center gap-6">
+                    <div className="flex flex-col pt-16 gap-6">
                         {img ? (
                             <div className="flex justify-center w-full">
                             <img
