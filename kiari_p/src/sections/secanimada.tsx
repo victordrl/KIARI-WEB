@@ -3,7 +3,6 @@
 import { Button } from "@heroui/react";
 import * as I from "@/types/interface";
 import Frame from "@/components/frame";
-import { div } from "framer-motion/client";
 
 export default function SecProducto1({
   bg_img,
@@ -14,6 +13,7 @@ export default function SecProducto1({
   main_text,
   sub_text,
   min_text,
+  contenido,
   btns,
   img,
   img_color = true,
@@ -39,23 +39,13 @@ export default function SecProducto1({
             <div className="flex h-full py-8">
                 <div className="flex flex-col justify-between h-full">
                     <div className="flex flex-col gap-6">
-                        <p className="main-text pb-2">Nuestro pisillo artesanal es la forma más versátil de disfrutar el sábalo. Desmenuzado, sazonado con especias tradicionales venezolanas y listo para acompañar tus arepas, empanadas o cualquier plato</p>
-                        <div className="min-text w-full">
-                            <p>Presentacion <span className="font-bold text-primary">250g</span></p>
-                            <div className="h-[1px] bg-default w-full"/>
-                        </div>
-                        <div className="min-text w-full">
-                            <p>Conservacion <span className="font-bold text-primary">Refrigerado -4`C</span></p>
-                            <div className="h-[1px] bg-default w-full"/>
-                        </div>
-                        <div className="min-text w-full">
-                            <p>Vida util<span className="font-bold text-primary">1 año</span></p>
-                            <div className="h-[1px] bg-default w-full"/>
-                        </div>
-                        <div className="min-text w-full">
-                            <p>Ingredientes<span className="font-bold text-primary">Pescado frescoa</span></p>
-                            <div className="h-[1px] bg-default w-full"/>
-                        </div>
+                        <p className="main-text pb-2">{main_text}</p>
+                        {contenido ? contenido.map((item, index) => (
+                            <div key={index} className="min-text w-full">
+                                <p>{item.sub_title}  {"    "} <span className="font-bold text-primary">{item.main_text}</span></p>
+                                <div className="h-[1px] bg-default w-full"/>
+                            </div>
+                        )) : ""}
                     </div>
                     <div className="flex flex-col pt-16 gap-6">
                         {img ? (
@@ -69,7 +59,7 @@ export default function SecProducto1({
                         ) : (
                             ""
                         )}
-                        {main_text ? <p className="main-text max-w-3xl">{main_text}</p> : ""}
+                        {min_text ? <p className="main-text max-w-3xl">{min_text}</p> : ""}
                         {sub_text ? <p className="sub-text  max-w-2xl">{sub_text}</p> : ""}
                         {btns ? (
                             <div className="flex gap-3 w-full justify-start">

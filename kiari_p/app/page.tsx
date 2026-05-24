@@ -3,7 +3,6 @@ import Footer from "@/components/footer";
 import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/interface";
-import SecPresent from "@/sections/sec_presten";
 import SecAnimada from "@/sections/secanimada";
 import SecProducto1 from "@/sections/sec_producto1";
 import SecInicio from "@/sections/sec_ini";
@@ -19,7 +18,13 @@ const pisillo: I.Props = {
   sub_slogan: "La versatilidad del mar en tu plato",
   min_title: "kiari",
   main_text:
-    "De la red a tu mesa, la comodidad de nuestro Pisillo de Pescado desespinado.",
+    "Nuestro pisillo artesanal es la forma más versátil de disfrutar el sábalo. Desmenuzado, sazonado con especias tradicionales venezolanas y listo para acompañar tus arepas, empanadas o cualquier plato.",
+  contenido: [
+    { sub_title: "Presentacion", main_text: "250g" },
+    { sub_title: "Conservacion", main_text: "Refrigerado -4°C" },
+    { sub_title: "Vida util", main_text: "1 año" },
+    { sub_title: "Ingredientes", main_text: "Pescado fresco" },
+  ],
   btns: [
     {
       label: "Ordenar",
