@@ -6,13 +6,10 @@ import SplitText from "gsap/SplitText";
 import * as I from "@/types/interface";
 
 gsap.registerPlugin(SplitText);
-
-const size = ["seccion-sm", "seccion-md", "seccion-lg", "seccion-xl"];
 const NUM_POINTS = 10;
 const NUM_PATHS = 2;
 
 export default function SecDemo({
-  size_i = 4,
   css,
   main_slogan = "SÁBALO",
   sub_slogan = "REY DE PLATA",
@@ -104,7 +101,7 @@ export default function SecDemo({
   return (
     <section
       ref={sectionRef}
-      className={`relative flex items-center w-full h-screen overflow-hidden ${size[size_i]} ${css}`}
+      className={`relative flex items-center w-full h-screen overflow-hidden ${css}`}
     >
       <video
         src={video}

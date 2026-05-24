@@ -163,7 +163,6 @@ const carrusel: I.Props[] = [
 
 const sabaloProps: I.Props = {
   css: "text-white bg-black",
-  size_i: 2,
   main_slogan: "SÁBALO",
   sub_slogan: "REY DE PLATA",
   video: "/video/orda.mp4",
