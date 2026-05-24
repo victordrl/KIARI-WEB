@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import * as I from "@/types/interface";
+import Frame from "@/components/frame";
 
 gsap.registerPlugin(SplitText);
 const NUM_POINTS = 10;
@@ -112,7 +113,11 @@ export default function SecDemo({
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      <div className="absolute inset-0 bg-black/30 z-5" />
+      <div className="absolute flex items-center justify-center inset-0 bg-black/30 z-5">
+        <Frame size="sm" color="secondary" className="bg-default-500">
+          <p className="sub-slogan">Disfruta del auténtico sabor del Rey de Plata con la comodidad que mereces. Del mar a tu hogar, 100% natural y listo para preparar. </p>
+        </Frame>
+      </div>
 
       <div className="relative z-10 flex flex-col justify-between w-full items-center py-12 mix-blend-difference">
         <h1 ref={title1Ref} className="gigant-title" aria-label={main_slogan}>

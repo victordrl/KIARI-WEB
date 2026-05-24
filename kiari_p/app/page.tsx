@@ -7,6 +7,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 import * as I from "@/types/interface";
 import Galeria_1Client from "@/components/galeria-1-client";
 import NutritionBars from "@/components/nutrition-bars";
+import Frame from "@/components/frame";
 
 export const dynamic = "force-dynamic";
 
@@ -162,7 +163,7 @@ const carrusel: I.Props[] = [
 ];
 
 const sabaloProps: I.Props = {
-  css: "text-white bg-black",
+  css: "text-white",
   main_slogan: "SÁBALO",
   sub_slogan: "REY DE PLATA",
   video: "/video/orda.mp4",

@@ -74,7 +74,7 @@
     @apply xl:text-9xl lg:text-8xl md:text-7xl text-5xl font-bodoni uppercase font-extrabold;
   }
   .sub-slogan {
-    @apply xl:text-5xl lg:text-4xl md:text-4xl text-3xl capitalize font-julius;
+    @apply xl:text-5xl lg:text-4xl md:text-4xl text-2xl capitalize font-julius;
   }
   /**/
   .gigant-title {
