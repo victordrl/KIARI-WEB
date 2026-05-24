@@ -17,6 +17,7 @@ const pisillo: I.Props = {
   main_slogan: "Pisillo",
   sub_slogan: "La versatilidad del mar en tu plato",
   min_title: "kiari",
+  min_text: "De la red a tu mesa, la comodidad de nuestro Pisillo de Pescado desespinado.",
   main_text:
     "Nuestro pisillo artesanal es la forma más versátil de disfrutar el sábalo. Desmenuzado, sazonado con especias tradicionales venezolanas y listo para acompañar tus arepas, empanadas o cualquier plato.",
   contenido: [

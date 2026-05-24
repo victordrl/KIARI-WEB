@@ -34,7 +34,6 @@ export default function SecProducto1({
                 </div>
                 {main_slogan ? <h1 className="main-slogan">{main_slogan}</h1> : ""}
                 {sub_slogan ? <h2 className="sub-slogan">{sub_slogan}</h2> : ""}
-                {min_text ? <p className="min-text max-w-2xl">{min_text}</p> : ""}
             </div>
             <div className="flex h-full py-8">
                 <div className="flex flex-col justify-between h-full">

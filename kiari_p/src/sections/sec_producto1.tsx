@@ -29,8 +29,7 @@ export default function SecProducto1({
         <div className="flex flex-col items-center text-center gap-4">
           {min_title ? <span className="min-title">{min_title}</span> : ""}
           {main_slogan ? <h1 className="main-slogan">{main_slogan}</h1> : ""}
-          {sub_slogan ? <h2 className="sub-slogan">{sub_slogan}</h2> : ""}
-          {min_text ? <p className="min-text text-center max-w-2xl">{min_text}</p> : ""}
+          {sub_slogan ? <h2 className="sub-slogan">{sub_slogan}</h2> : ""} 
         </div>
 
         <div className="flex flex-col items-center gap-6">
@@ -69,7 +68,7 @@ export default function SecProducto1({
             ""
           )}
 
-          {main_text ? <p className="main-text text-center max-w-3xl">{main_text}</p> : ""}
+          {min_text ? <p className="main-text text-center max-w-3xl">{min_text}</p> : ""}
           {sub_text ? <p className="sub-text text-center max-w-2xl">{sub_text}</p> : ""}
         </div>
       </div>
