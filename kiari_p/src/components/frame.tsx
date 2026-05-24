@@ -66,17 +66,17 @@ export default function Frame({ children, size = "md", color = "foreground", cla
   return (
     <div className="container sm:px-24 flex items-center justify-center w-full">
       <div className="relative inline-block">
-        <div className={clsx("absolute", s.tl, s.solid, c.bg)} />
-        <div className={clsx("absolute", s.tr, s.solid, c.bg)} />
-        <div className={clsx("absolute", s.bl, s.solid, c.bg)} />
-        <div className={clsx("absolute", s.br, s.solid, c.bg)} />
+        <div className={clsx("absolute border-t-5 border-l-5 rounded-tl-sm", s.tl, s.solid, c.border)} />
+        <div className={clsx("absolute border-t-5 border-r-5 rounded-tr-sm", s.tr, s.solid, c.border)} />
+        <div className={clsx("absolute border-b-5 border-l-5 rounded-bl-sm", s.bl, s.solid, c.border)} />
+        <div className={clsx("absolute border-b-5 border-r-5 rounded-br-sm", s.br, s.solid, c.border)} />
 
         <div className={clsx("text-center relative z-10", s.pad, className)}>{children}</div>
 
-        <div className={clsx("absolute z-20 border-t border-l", c.border, s.btl, s.border)} />
-        <div className={clsx("absolute z-20 border-t border-r", c.border, s.btr, s.border)} />
-        <div className={clsx("absolute z-20 border-b border-l", c.border, s.bbl, s.border)} />
-        <div className={clsx("absolute z-20 border-b border-r", c.border, s.bbr, s.border)} />
+        <div className={clsx("absolute z-20 border-t border-l rounded-sm", c.border, s.btl, s.border)} />
+        <div className={clsx("absolute z-20 border-t border-r rounded-sm", c.border, s.btr, s.border)} />
+        <div className={clsx("absolute z-20 border-b border-l rounded-sm", c.border, s.bbl, s.border)} />
+        <div className={clsx("absolute z-20 border-b border-r rounded-sm", c.border, s.bbr, s.border)} />
       </div>
     </div>
   );
