@@ -12,7 +12,7 @@ const sizeMap = {
     btr: "right-2.5 top-2.5",
     bbl: "bottom-2.5 left-2.5",
     bbr: "bottom-2.5 right-2.5",
-    pad: "p-8",
+    pad: "p-0",
   },
   md: {
     solid: "h-24 w-24",
@@ -25,7 +25,7 @@ const sizeMap = {
     btr: "right-3 top-3",
     bbl: "bottom-3 left-3",
     bbr: "bottom-3 right-3",
-    pad: "p-8",
+    pad: "p-0",
   },
   lg: {
     solid: "h-32 w-32",
@@ -38,7 +38,7 @@ const sizeMap = {
     btr: "right-4 top-4",
     bbl: "bottom-4 left-4",
     bbr: "bottom-4 right-4",
-    pad: "p-12",
+    pad: "p-0",
   },
 };
 
@@ -65,13 +65,13 @@ export default function Frame({ children, size = "md", color = "foreground", cla
 
   return (
     <div className="container sm:px-24 flex items-center justify-center w-full">
-      <div className="relative inline-block">
+      <div className="relative inline-block ">
         <div className={clsx("absolute border-t-5 border-l-5 rounded-tl-sm", s.tl, s.solid, c.border)} />
         <div className={clsx("absolute border-t-5 border-r-5 rounded-tr-sm", s.tr, s.solid, c.border)} />
         <div className={clsx("absolute border-b-5 border-l-5 rounded-bl-sm", s.bl, s.solid, c.border)} />
         <div className={clsx("absolute border-b-5 border-r-5 rounded-br-sm", s.br, s.solid, c.border)} />
 
-        <div className={clsx("text-center relative z-10", s.pad, className)}>{children}</div>
+        <div className={clsx("text-center w-full h-full relative z-10  bg-black", s.pad, className)}>{children}</div>
 
         <div className={clsx("absolute z-20 border-t border-l rounded-sm", c.border, s.btl, s.border)} />
         <div className={clsx("absolute z-20 border-t border-r rounded-sm", c.border, s.btr, s.border)} />

@@ -4,6 +4,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 
 import * as I from "@/types/interface";
 import SecPresent from "@/sections/sec_presten";
+import SecAnimada from "@/sections/secanimada";
 import SecProducto1 from "@/sections/sec_producto1";
 import SecInicio from "@/sections/sec_ini";
 import Galeria_1Client from "@/components/galeria-1-client";
@@ -182,6 +183,7 @@ export default function IndexPage() {
       <MiNavbar />
       <SecInicio {...sabaloProps} />
       <SecProducto1 {...pisillo} />
+      <SecAnimada {...pisillo} />
       <Galeria_1Client carrusel={carrusel} />
       <SecProducto1 {...medallon} />
       <SecProducto1 {...nugget} />

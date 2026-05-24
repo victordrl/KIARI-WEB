@@ -114,7 +114,7 @@ export default function SecDemo({
       />
 
       <div className="absolute flex items-center justify-center inset-0 bg-black/30 z-5">
-        <Frame size="sm" color="secondary" className="bg-black/40">
+        <Frame size="sm" color="secondary" className="bg-black/40 p-8">
           <p className="sub-slogan">Disfruta del auténtico sabor del Rey de Plata con la comodidad que mereces. Del mar a tu hogar, 100% natural y listo para preparar. </p>
         </Frame>
       </div>
